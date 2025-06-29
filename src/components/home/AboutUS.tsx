@@ -5,12 +5,12 @@ import { Button } from '@/components/ui/button';
 export default function AboutUS() {
   return (
     <section aria-label="Sobre a IBE">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-16">
+      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24">
         <div className="flex flex-col gap-8">
           <h2 className="text-6xl font-bold text-center text-primary">
             Venha Conhecer a IBE
           </h2>
-          <p className="text-2xl text-center">
+          <p className="text-2xl text-center text-black/80">
             Estamos de braços abertos para receber você e sua família. Venha
             fazer parte da nossa comunidade e descobrir mais sobre nossa missão
             e valores.
@@ -28,7 +28,7 @@ export default function AboutUS() {
             <h3 className="text-4xl font-bold text-center text-primary">
               Nossa Missão
             </h3>
-            <p className="text-2xl">
+            <p className="text-xl text-black/80">
               A contribuição fiel garante que a igreja mantenha sua voz
               profética, sem precisar negociar princípios por favores ou
               recursos governamentais.
@@ -44,7 +44,7 @@ export default function AboutUS() {
             <h3 className="text-4xl font-bold text-center text-primary">
               Nosso Foco
             </h3>
-            <p className="text-2xl">
+            <p className="text-xl text-black/80">
               A generosidade contínua dos fiéis preserva a integridade da missão
               da igreja.
             </p>
@@ -59,7 +59,7 @@ export default function AboutUS() {
             <h3 className="text-4xl font-bold text-center text-primary">
               O que cremos
             </h3>
-            <p className="text-2xl">
+            <p className="text-xl text-black/80">
               Quando cada membro assume seu papel com compromisso, a igreja
               permanece firme, autônoma e fiel à sua vocação divina.
             </p>

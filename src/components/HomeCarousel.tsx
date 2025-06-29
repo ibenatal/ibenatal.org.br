@@ -83,7 +83,7 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
                 priority
                 unoptimized={slide.image.startsWith('http')}
               />
-              <div className="absolute inset-0 bg-black/70" />
+              <div className="absolute inset-0 bg-secondary/50" />
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-8 text-white">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">

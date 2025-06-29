@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import HomeCarousel from '@/components/HomeCarousel';
 import AboutUS from '@/components/home/AboutUS';
 
@@ -35,9 +36,27 @@ const slides = [
 
 export default function SitePage() {
   return (
-    <main>
+    <main className="bg-neutral-100">
       <HomeCarousel slides={slides} />
+      <AboutUS />
+      <Separator />
       <AboutUS />
     </main>
   );
 }
+
+const Separator = () => {
+  return (
+    <div className=" w-full flex flex-row items-center justify-center gap-8 px-8">
+      <div className="h-[2px] w-full bg-secondary/50"></div>
+      <Image
+        src="/images/icons/separator.png"
+        alt="Separator"
+        width={90}
+        height={90}
+        className="opacity-50"
+      />
+      <div className="h-[2px] w-full bg-secondary/50"></div>
+    </div>
+  );
+};
