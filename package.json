@@ -3,22 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "env-cmd next dev --turbopack",
+    "build": "env-cmd next build",
+    "start": "env-cmd next start",
+    "lint": "next lint",
+    "lint:biome": "biome lint .",
+    "format": "biome format .",
+    "format:check": "biome format --check ."
   },
   "dependencies": {
+    "next": "15.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@biomejs/biome": "2.0.6",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "env-cmd": "^10.1.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
