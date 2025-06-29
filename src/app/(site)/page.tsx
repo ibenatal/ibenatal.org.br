@@ -1,4 +1,5 @@
 import HomeCarousel from '@/components/HomeCarousel';
+import AboutUS from '@/components/home/AboutUS';
 
 export const metadata = {
   title: 'IBE - Igreja Batista da Esperança',
@@ -36,6 +37,7 @@ export default function SitePage() {
   return (
     <main>
       <HomeCarousel slides={slides} />
+      <AboutUS />
     </main>
   );
 }
