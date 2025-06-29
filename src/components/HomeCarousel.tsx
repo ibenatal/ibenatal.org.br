@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { cn } from '@/lib/utils';
+import { Button } from './ui/button';
 
 type SlideItem = {
   id: number;
@@ -89,12 +90,14 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
                 {slide.title}
               </h2>
               <p className="text-xl md:text-2xl mb-8">{slide.subtitle}</p>
-              <Link
-                href={slide.buttonLink}
-                className="px-6 py-3 bg-white text-black font-medium rounded-md hover:bg-opacity-90 transition-all"
+              <Button
+                variant="outline"
+                size="lg"
+                className=" text-black"
+                asChild
               >
-                {slide.buttonText}
-              </Link>
+                <Link href={slide.buttonLink}>{slide.buttonText}</Link>
+              </Button>
             </div>
           </SwiperSlide>
         ))}
