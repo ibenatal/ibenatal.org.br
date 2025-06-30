@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import HomeCarousel from '@/components/HomeCarousel';
 import AboutUS from '@/components/home/AboutUS';
+import OurMinistries from '@/components/home/OurMinistries';
 
 export const metadata = {
-  title: 'IBE - Igreja Batista da Esperança',
-  description: 'Igreja Batista da Esperança',
+  // title: 'IBE - Igreja Batista da Esperança',
+  // description: 'Igreja Batista da Esperança',
 };
 
 const slides = [
@@ -40,7 +41,7 @@ export default function SitePage() {
       <HomeCarousel slides={slides} />
       <AboutUS />
       <Separator />
-      <AboutUS />
+      <OurMinistries />
     </main>
   );
 }
