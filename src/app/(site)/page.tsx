@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import HomeCarousel from '@/components/HomeCarousel';
 import AboutUS from '@/components/home/AboutUS';
+import FromBlog from '@/components/home/FromBlog';
+import LastEvents from '@/components/home/LastEvents';
 import OurMinistries from '@/components/home/OurMinistries';
+import OurSermon from '@/components/home/OurSermon';
 
 export const metadata = {
   // title: 'IBE - Igreja Batista da Esperança',
@@ -42,6 +45,12 @@ export default function SitePage() {
       <AboutUS />
       <Separator />
       <OurMinistries />
+      <Separator />
+      <OurSermon />
+      <Separator />
+      <LastEvents />
+      <Separator />
+      <FromBlog />
     </main>
   );
 }

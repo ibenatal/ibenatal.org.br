@@ -4,7 +4,7 @@ import { MobileMenu } from './menu/MobileMenu';
 
 export function Header() {
   return (
-    <header className="bg-[#696D5F] text-white">
+    <header className="bg-primary-500 text-white">
       <div className="flex max-w-7xl mx-auto justify-between items-center px-3 py-2 md:py-4 md:px-4">
         <div aria-description="Logo" className="flex items-center gap-8">
           <Image

@@ -7,7 +7,7 @@ export default function AboutUS() {
     <section aria-label="Sobre a IBE">
       <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24">
         <div className="flex flex-col gap-8">
-          <h2 className="text-6xl font-bold text-center text-primary">
+          <h2 className="md:text-6xl text-4xl font-bold text-center text-primary">
             Venha Conhecer a IBE
           </h2>
           <p className="text-2xl text-center text-black/80">
