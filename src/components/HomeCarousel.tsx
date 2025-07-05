@@ -91,9 +91,10 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
               </h2>
               <p className="text-xl md:text-2xl mb-8">{slide.subtitle}</p>
               <Button
-                variant="outline"
+                variant="primary"
+                outline
                 size="lg"
-                className=" text-black"
+                className="text-white"
                 asChild
               >
                 <Link href={slide.buttonLink}>{slide.buttonText}</Link>

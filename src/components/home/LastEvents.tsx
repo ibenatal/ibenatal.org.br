@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { EventSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
+import { Button } from '../ui/button';
 
 export default function LastEvents() {
   return (
@@ -101,16 +102,18 @@ const EventCard = ({
           />
         </div>
         <h3 className="text-4xl font-bold text-primary">{title}</h3>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 justify-start items-start">
           <p className="text-lg text-black/80">{description}</p>
           <address className="text-black/80 not-italic">{address}</address>
-          <Link
-            href={url}
-            className="text-primary hover:underline"
-            aria-label={`Ver detalhes do evento ${title}`}
-          >
-            Ver detalhes
-          </Link>
+          <Button asChild outline variant="link" className="px-0">
+            <Link
+              href={url}
+              className="text-primary hover:underline"
+              aria-label={`Ver detalhes do evento ${title}`}
+            >
+              Ver detalhes
+            </Link>
+          </Button>
         </div>
       </div>
     </article>

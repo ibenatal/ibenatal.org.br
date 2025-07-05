@@ -110,7 +110,7 @@ const ArticleCard = ({
       </div>
       <p className="text-lg text-black/80">{shortDescription}</p>
       <div className="flex flex-row gap-2">
-        <Button asChild>
+        <Button asChild outline variant="link" className="px-0">
           <Link href={url} aria-label={`Ler mais sobre ${title}`}>
             Ver mais
           </Link>

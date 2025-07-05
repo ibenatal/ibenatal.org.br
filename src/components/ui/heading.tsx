@@ -7,11 +7,11 @@ import { cn } from '@/lib/utils';
 const headingVariants = cva('scroll-m-20 tracking-tight text-balance', {
   variants: {
     variant: {
-      h1: 'text-4xl font-extrabold text-center',
-      h2: 'text-3xl font-semibold border-b pb-2 first:mt-0',
-      h3: 'text-2xl font-semibold',
-      h4: 'text-xl font-semibold',
-      h5: 'text-lg font-semibold',
+      h1: 'text-4xl font-bold leading-relaxed',
+      h2: 'text-3xl font-semibold leading-relaxed',
+      h3: 'text-2xl font-semibold leading-relaxed',
+      h4: 'text-xl font-semibold leading-relaxed',
+      h5: 'text-lg font-semibold leading-relaxed',
     },
   },
   defaultVariants: {

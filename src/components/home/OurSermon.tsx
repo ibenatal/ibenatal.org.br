@@ -64,7 +64,7 @@ export default function OurSermon() {
               </span>
             </div>
             <div>
-              <Button asChild>
+              <Button asChild outline>
                 <Link
                   href={sermonUrl}
                   aria-label={`Ver mais sobre a pregação ${sermonTitle}`}
