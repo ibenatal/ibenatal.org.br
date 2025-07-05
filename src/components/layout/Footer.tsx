@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-primary-700 text-white divide-y divide-white/50">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-4 pt-14 pb-10">
+    <footer className="bg-primary-700 text-white divide-y divide-white/50 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 sm:gap-4 pt-14 pb-10">
         <section
           className="flex flex-col gap-4 md:w-6/12"
           aria-label="Informações de contato"

@@ -1,23 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import {
+  CardDescription,
+  CardTitle,
+  SectionDescription,
+  SectionTitle,
+} from './HomeTypography';
 
 export default function AboutUS() {
   return (
     <section aria-label="Sobre a IBE">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24">
+      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
         <div className="flex flex-col gap-8">
-          <h2 className="md:text-6xl text-4xl font-bold text-center text-primary-600">
-            Venha Conhecer a IBE
-          </h2>
-          <p className="text-2xl text-center text-black/80">
-            Estamos de braços abertos para receber você e sua família. Venha
-            fazer parte da nossa comunidade e descobrir mais sobre nossa missão
-            e valores.
-          </p>
+          <SectionTitle title="Venha Conhecer a IBE" />
+          <SectionDescription description="Estamos de braços abertos para receber você e sua família. Venha fazer parte da nossa comunidade e descobrir mais sobre nossa missão e valores." />
         </div>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col gap-8 items-center">
             <Image
               src="/images/icons/igreja.png"
@@ -25,14 +25,8 @@ export default function AboutUS() {
               width={80}
               height={80}
             />
-            <h3 className="text-4xl font-bold text-center text-primary">
-              Nossa Missão
-            </h3>
-            <p className="text-xl text-black/80">
-              A contribuição fiel garante que a igreja mantenha sua voz
-              profética, sem precisar negociar princípios por favores ou
-              recursos governamentais.
-            </p>
+            <CardTitle title="Nossa Missão" />
+            <CardDescription description="A contribuição fiel garante que a igreja mantenha sua voz profética, sem precisar negociar princípios por favores ou recursos governamentais." />
           </div>
           <div className="flex flex-col gap-8 items-center">
             <Image
@@ -41,13 +35,8 @@ export default function AboutUS() {
               width={80}
               height={80}
             />
-            <h3 className="text-4xl font-bold text-center text-primary">
-              Nosso Foco
-            </h3>
-            <p className="text-xl text-black/80">
-              A generosidade contínua dos fiéis preserva a integridade da missão
-              da igreja.
-            </p>
+            <CardTitle title="Nosso Foco" />
+            <CardDescription description="A generosidade contínua dos fiéis preserva a integridade da missão da igreja." />
           </div>
           <div className="flex flex-col gap-8 items-center">
             <Image
@@ -56,19 +45,14 @@ export default function AboutUS() {
               width={80}
               height={80}
             />
-            <h3 className="text-4xl font-bold text-center text-primary">
-              O que cremos
-            </h3>
-            <p className="text-xl text-black/80">
-              Quando cada membro assume seu papel com compromisso, a igreja
-              permanece firme, autônoma e fiel à sua vocação divina.
-            </p>
+            <CardTitle title="O que cremos" />
+            <CardDescription description="Quando cada membro assume seu papel com compromisso, a igreja permanece firme, autônoma e fiel à sua vocação divina." />
           </div>
         </div>
 
         <div className="flex justify-center">
-          <Button size="lg" variant="outline">
-            <Link href="/contato">Quer nos conhcer?</Link>
+          <Button size="lg" variant="primary" outline>
+            <Link href="/contato">Quer nos conhecer?</Link>
           </Button>
         </div>
       </div>

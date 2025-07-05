@@ -3,23 +3,20 @@ import Link from 'next/link';
 import { EventSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
+import { SectionDescription, SectionTitle } from './HomeTypography';
 
 export default function LastEvents() {
   return (
     <section aria-label="Últimos Eventos">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24">
+      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
         <header className="flex flex-col gap-8">
-          <h2 className="text-6xl font-bold text-center text-primary">
-            Últimos Eventos
-          </h2>
-          <p className="text-2xl text-center text-black/80">
-            Confira os últimos eventos da nossa igreja.
-          </p>
+          <SectionTitle title="Últimos Eventos" />
+          <SectionDescription description="Confira os últimos eventos da nossa igreja." />
         </header>
 
-        <div className="flex flex-row gap-8">
+        <div className="flex flex-col sm:flex-row gap-8">
           <EventCard
-            className="w-1/2"
+            className="w-full sm:w-1/2"
             title="Evento 1"
             image="/images/jovens.png"
             date="2024-01-01"
@@ -28,7 +25,7 @@ export default function LastEvents() {
             url="/eventos/evento-1"
           />
           <EventCard
-            className="w-1/2"
+            className="w-full sm:w-1/2"
             title="Evento 2"
             image="/images/jovens.png"
             date="2024-01-01"

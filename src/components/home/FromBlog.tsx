@@ -3,21 +3,18 @@ import Link from 'next/link';
 import { BlogPostSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
+import { SectionDescription, SectionTitle } from './HomeTypography';
 
 export default function FromBlog() {
   return (
     <section aria-label="Do Blog">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24">
+      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
         <header className="flex flex-col gap-8">
-          <h2 className="text-6xl font-bold text-center text-primary">
-            Do blog
-          </h2>
-          <p className="text-2xl text-center text-black/80">
-            Confira as últimas notícias do nosso blog.
-          </p>
+          <SectionTitle title="Do blog" />
+          <SectionDescription description="Confira as últimas notícias do nosso blog." />
         </header>
 
-        <div className="flex flex-row gap-8">
+        <div className="flex flex-col sm:flex-row gap-8">
           <ArticleCard
             title="Article 1"
             image="/images/jovens.png"
@@ -25,7 +22,7 @@ export default function FromBlog() {
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             url="/blog/article-1"
-            className="w-1/3"
+            className="w-full sm:w-1/3"
           />
           <ArticleCard
             title="Article 2"
@@ -34,7 +31,7 @@ export default function FromBlog() {
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             url="/blog/article-2"
-            className="w-1/3"
+            className="w-full sm:w-1/3"
           />
           <ArticleCard
             title="Article 3"
@@ -43,7 +40,7 @@ export default function FromBlog() {
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             url="/blog/article-3"
-            className="w-1/3"
+            className="w-full sm:w-1/3"
           />
         </div>
       </div>

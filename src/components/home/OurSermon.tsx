@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { VideoSchema } from '@/lib/schema';
 import { Button } from '../ui/button';
+import { CardTitle, SectionDescription, SectionTitle } from './HomeTypography';
 
 export default function OurSermon() {
   const sermonTitle = 'Heading Title for Sermon Series';
@@ -23,17 +24,13 @@ export default function OurSermon() {
 
   return (
     <section aria-label="Nossas Pregações">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24">
+      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
         <header className="flex flex-col gap-8">
-          <h2 className="text-6xl font-bold text-center text-primary">
-            Nossas Pregações
-          </h2>
-          <p className="text-2xl text-center text-black/80">
-            Confira as últimas pregações da nossa igreja.
-          </p>
+          <SectionTitle title="Nossas Pregações" />
+          <SectionDescription description="Confira as últimas pregações da nossa igreja." />
         </header>
 
-        <article className="flex flex-row gap-8">
+        <article className="flex flex-col sm:flex-row gap-8">
           <VideoSchema
             name={sermonTitle}
             description="Sermão da série sobre o livro de Romanos"
@@ -42,7 +39,7 @@ export default function OurSermon() {
             contentUrl={videoUrl}
             author={preacher}
           />
-          <div className="relative h-[192px] w-1/2">
+          <div className="relative h-[192px] w-full sm:w-1/2">
             <Image
               src={thumbnailUrl}
               alt={sermonTitle}
@@ -51,10 +48,8 @@ export default function OurSermon() {
               className="rounded object-cover"
             />
           </div>
-          <div className="flex flex-col gap-8 w-1/2">
-            <h3 className="text-4xl font-semibold text-primary">
-              {sermonTitle}
-            </h3>
+          <div className="flex flex-col gap-8 w-full sm:w-1/2">
+            <CardTitle title={sermonTitle} className="text-left" />
             <div className="flex flex-row gap-8">
               <time dateTime={sermonDate} className="text-sm text-black/80">
                 August 2024
@@ -63,7 +58,7 @@ export default function OurSermon() {
                 Preleitor: {preacher}
               </span>
             </div>
-            <div>
+            <div className="flex justify-center sm:justify-start">
               <Button asChild outline>
                 <Link
                   href={sermonUrl}
