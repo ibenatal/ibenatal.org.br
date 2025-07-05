@@ -1,19 +1,21 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { BlogPostSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 
 export default function FromBlog() {
   return (
-    <section aria-label="Nossas Pregações">
+    <section aria-label="Do Blog">
       <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24">
-        <div className="flex flex-col gap-8">
+        <header className="flex flex-col gap-8">
           <h2 className="text-6xl font-bold text-center text-primary">
             Do blog
           </h2>
           <p className="text-2xl text-center text-black/80">
             Confira as últimas notícias do nosso blog.
           </p>
-        </div>
+        </header>
 
         <div className="flex flex-row gap-8">
           <ArticleCard
@@ -22,22 +24,25 @@ export default function FromBlog() {
             date="2024-01-01"
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            url="/blog/article-1"
             className="w-1/3"
           />
           <ArticleCard
-            title="Article 1"
+            title="Article 2"
             image="/images/jovens.png"
             date="2024-01-01"
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            url="/blog/article-2"
             className="w-1/3"
           />
           <ArticleCard
-            title="Article 1"
+            title="Article 3"
             image="/images/jovens.png"
             date="2024-01-01"
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            url="/blog/article-3"
             className="w-1/3"
           />
         </div>
@@ -52,6 +57,7 @@ type ArticleCardProps = {
   date: string;
   author: string;
   shortDescription: string;
+  url: string;
   className?: string;
 };
 
@@ -61,28 +67,55 @@ const ArticleCard = ({
   date,
   author,
   shortDescription,
+  url,
   className,
 }: ArticleCardProps) => {
+  const formattedDate = new Date(date).toLocaleDateString('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+  // Full absolute URL for schema
+  const fullImageUrl = new URL(image, 'https://ibenatal.org').toString();
+  const fullUrl = new URL(url, 'https://ibenatal.org').toString();
+
   return (
-    <div className={cn('flex flex-col gap-2', className)}>
+    <article className={cn('flex flex-col gap-2', className)}>
+      <BlogPostSchema
+        headline={title}
+        description={shortDescription}
+        datePublished={date}
+        author={author}
+        image={fullImageUrl}
+        url={fullUrl}
+      />
       <div className="relative h-[192px] w-full">
         <Image
           src={image}
           alt={title}
-          width={100}
-          height={100}
-          className="rounded object-cover absolute inset-0 left-0 top-0 w-full h-full"
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="rounded object-cover"
         />
       </div>
       <h3 className="text-4xl font-bold text-primary">{title}</h3>
       <div className="flex flex-row gap-2">
-        <span className="text-sm text-black/80">{date}</span>
-        <span className="text-sm text-black/80">{author}</span>
+        <time dateTime={date} className="text-sm text-black/80">
+          {formattedDate}
+        </time>
+        <span className="text-sm text-black/80">
+          por <span>{author}</span>
+        </span>
       </div>
       <p className="text-lg text-black/80">{shortDescription}</p>
       <div className="flex flex-row gap-2">
-        <Button>Ver mais</Button>
+        <Button asChild>
+          <Link href={url} aria-label={`Ler mais sobre ${title}`}>
+            Ver mais
+          </Link>
+        </Button>
       </div>
-    </div>
+    </article>
   );
 };
