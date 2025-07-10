@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { SectionContainer } from '../layout/Container';
 import {
   CardDescription,
   CardTitle,
@@ -11,14 +12,14 @@ import {
 export default function AboutUS() {
   return (
     <section aria-label="Sobre a IBE">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
-        <div className="flex flex-col gap-8">
+      <SectionContainer>
+        <div className="flex flex-col gap-6 sm:gap-8">
           <SectionTitle title="Venha Conhecer a IBE" />
           <SectionDescription description="Estamos de braços abertos para receber você e sua família. Venha fazer parte da nossa comunidade e descobrir mais sobre nossa missão e valores." />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex flex-col gap-8 items-center">
+          <div className="flex flex-col gap-6 sm:gap-8 items-center">
             <Image
               src="/images/icons/igreja.png"
               alt="Nossa Missão"
@@ -28,7 +29,7 @@ export default function AboutUS() {
             <CardTitle title="Nossa Missão" />
             <CardDescription description="A contribuição fiel garante que a igreja mantenha sua voz profética, sem precisar negociar princípios por favores ou recursos governamentais." />
           </div>
-          <div className="flex flex-col gap-8 items-center">
+          <div className="flex flex-col gap-6 sm:gap-8 items-center">
             <Image
               src="/images/icons/por-do-sol.png"
               alt="Nosso Foco"
@@ -38,7 +39,7 @@ export default function AboutUS() {
             <CardTitle title="Nosso Foco" />
             <CardDescription description="A generosidade contínua dos fiéis preserva a integridade da missão da igreja." />
           </div>
-          <div className="flex flex-col gap-8 items-center">
+          <div className="flex flex-col gap-6 sm:gap-8 items-center">
             <Image
               src="/images/icons/biblia.png"
               alt="Nossas Crenças"
@@ -55,7 +56,7 @@ export default function AboutUS() {
             <Link href="/contato">Quer nos conhecer?</Link>
           </Button>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

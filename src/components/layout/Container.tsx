@@ -13,3 +13,22 @@ export function Container({
     </div>
   );
 }
+
+export function SectionContainer({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        'max-w-6xl mx-auto flex flex-col gap-16 py-16 sm:py-24 px-4',
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
+}

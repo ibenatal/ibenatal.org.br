@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { VideoSchema } from '@/lib/schema';
+import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
 import { CardTitle, SectionDescription, SectionTitle } from './HomeTypography';
 
@@ -24,13 +25,13 @@ export default function OurSermon() {
 
   return (
     <section aria-label="Nossas Pregações">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
+      <SectionContainer>
         <header className="flex flex-col gap-8">
           <SectionTitle title="Nossas Pregações" />
           <SectionDescription description="Confira as últimas pregações da nossa igreja." />
         </header>
 
-        <article className="flex flex-col sm:flex-row gap-8">
+        <article className="flex flex-col gap-6 sm:gap-8 sm:flex-row">
           <VideoSchema
             name={sermonTitle}
             description="Sermão da série sobre o livro de Romanos"
@@ -70,7 +71,7 @@ export default function OurSermon() {
             </div>
           </div>
         </article>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

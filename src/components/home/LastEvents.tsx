@@ -2,13 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { EventSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
+import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
 import { SectionDescription, SectionTitle } from './HomeTypography';
 
 export default function LastEvents() {
   return (
     <section aria-label="Últimos Eventos">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
+      <SectionContainer>
         <header className="flex flex-col gap-8">
           <SectionTitle title="Últimos Eventos" />
           <SectionDescription description="Confira os últimos eventos da nossa igreja." />
@@ -34,7 +35,7 @@ export default function LastEvents() {
             url="/eventos/evento-2"
           />
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

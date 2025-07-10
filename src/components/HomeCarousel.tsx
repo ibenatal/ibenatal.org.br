@@ -46,6 +46,13 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
           font-size: 20px;
         }
         
+        @media (max-width: 767px) {
+          .home-carousel .swiper-button-next,
+          .home-carousel .swiper-button-prev {
+            top: 90%;
+          }
+        }
+        
         .home-carousel .swiper-pagination-bullet {
           background: white;
           opacity: 0.7;
@@ -54,6 +61,9 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
         .home-carousel .swiper-pagination-bullet-active {
           background: white;
           opacity: 1;
+        }
+        .home-carousel .swiper-pagination-bullet {
+         padding: 4px;
         }
       `}</style>
       <Swiper
@@ -86,10 +96,10 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
               <div className="absolute inset-0 bg-secondary/50" />
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-8 text-white">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="text-2xl md:text-5xl font-bold mb-4">
                 {slide.title}
               </h2>
-              <p className="text-xl md:text-2xl mb-8">{slide.subtitle}</p>
+              <p className="text-lg md:text-2xl mb-8">{slide.subtitle}</p>
               <Button
                 variant="primary"
                 outline

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { SectionContainer } from '../layout/Container';
 import {
   CardDescription,
   CardTitle,
@@ -9,14 +10,14 @@ import {
 export default function OurMinistries() {
   return (
     <section aria-label="Nossos Ministérios">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
-        <div className="flex flex-col gap-8">
+      <SectionContainer>
+        <div className="flex flex-col gap-6 sm:gap-8">
           <SectionTitle title="Nossos Ministérios" />
           <SectionDescription description="Nossa igreja é composta por vários ministérios que trabalham juntos para levar a palavra de Deus a todos." />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 sm:gap-8">
             <div className="relative h-[192px] w-full">
               <Image
                 src="/images/jovens.png"
@@ -29,7 +30,7 @@ export default function OurMinistries() {
             <CardTitle title="Jovens" />
             <CardDescription description="A contribuição fiel garante que a igreja mantenha sua voz profética, sem precisar negociar princípios por favores ou recursos governamentais." />
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 sm:gap-8">
             <div className="relative h-[192px] w-full">
               <Image
                 src="/images/casais.png"
@@ -42,7 +43,7 @@ export default function OurMinistries() {
             <CardTitle title="Casais" />
             <CardDescription description="A rede de apoio para casais que desejam viver uma vida de amor e harmonia." />
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 sm:gap-8">
             <div className="relative h-[192px] w-full">
               <Image
                 src="/images/criancas.png"
@@ -56,7 +57,7 @@ export default function OurMinistries() {
             <CardDescription description="A igreja que ama os filhos e os transforma em líderes." />
           </div>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

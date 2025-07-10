@@ -2,13 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BlogPostSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
+import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
 import { SectionDescription, SectionTitle } from './HomeTypography';
 
 export default function FromBlog() {
   return (
     <section aria-label="Do Blog">
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 py-24 px-4">
+      <SectionContainer>
         <header className="flex flex-col gap-8">
           <SectionTitle title="Do blog" />
           <SectionDescription description="Confira as últimas notícias do nosso blog." />
@@ -43,7 +44,7 @@ export default function FromBlog() {
             className="w-full sm:w-1/3"
           />
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }
