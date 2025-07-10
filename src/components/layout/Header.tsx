@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import { DesktopMenu } from './menu/DesktopMenu';
-import { MobileMenu } from './menu/MobileMenu';
 
 export function Header() {
   return (
     <header className="bg-primary-500 text-white/90">
-      <div className="flex max-w-7xl mx-auto justify-between items-center px-3 py-2 md:py-4 md:px-4">
+      <div className="flex max-w-7xl mx-auto justify-center md:justify-between items-center px-3 py-2 md:py-4 md:px-4">
         <div aria-description="Logo" className="flex items-center gap-8">
           <Image
             src="/ibe-logo.svg"
@@ -18,7 +17,7 @@ export function Header() {
         <h1 className="text-xl font-bold text-white/90 hidden md:block">
           Igreja Batista da Esperança
         </h1>
-        <MobileMenu />
+        {/* <MobileMenu /> */}
         <DesktopMenu />
       </div>
     </header>

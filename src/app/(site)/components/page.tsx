@@ -1,10 +1,21 @@
+import { icons } from '@/components/icons/list';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 
 export default function Page() {
   return (
-    <Container className="py-16">
+    <Container className="py-16 flex flex-col gap-16">
+      <ButtonDocs />
+      <LucideIconsDocs />
+      <IconsDocs />
+    </Container>
+  );
+}
+
+function ButtonDocs() {
+  return (
+    <section>
       <Heading className="">Button</Heading>
       <div className="space-y-8">
         <div className="space-y-4">
@@ -205,6 +216,55 @@ export default function Page() {
           </div>
         </div>
       </div>
-    </Container>
+    </section>
+  );
+}
+
+function IconsDocs() {
+  return (
+    <section>
+      <Heading className="">Custom Icons</Heading>
+      <div className="space-y-8">
+        <div className="space-y-4">
+          <Heading as="h2" variant="h2">
+            Icons
+          </Heading>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-4">
+        {Object.entries(icons).map(([name, Icon]) => (
+          <div key={name} className="flex flex-col items-center gap-2">
+            <Icon className="w-6 h-6" />
+            <span>{name}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LucideIconsDocs() {
+  return (
+    <section>
+      <Heading className="">Lucide Icons</Heading>
+      <div className="space-y-8">
+        <div className="space-y-4">
+          <Heading as="h2" variant="h2">
+            Icons
+          </Heading>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-4">
+        <Button variant="primary" asChild>
+          <a
+            href="https://lucide.dev/icons/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lucide Icons
+          </a>
+        </Button>
+      </div>
+    </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { MobileBottomBar } from '@/components/layout/menu/MobileBottomBar';
 
 export default function SiteLayout({
   children,
@@ -15,6 +16,7 @@ export default function SiteLayout({
       <Header />
       {children}
       <Footer />
+      <MobileBottomBar />
     </div>
   );
 }

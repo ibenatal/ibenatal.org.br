@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BaselineClose } from '@/components/icons/BaselineCloseIcon';
+import { BaselineCloseIcon } from '@/components/icons/BaselineCloseIcon';
 import { RoundMenuIcon } from '@/components/icons/RoundMenuIcon';
 import {
   Drawer,
@@ -32,7 +32,7 @@ export function MobileMenu() {
             className="absolute right-4 top-4 rounded-full hover:bg-black/50 p-2"
             aria-label="Close menu"
           >
-            <BaselineClose className="w-6 h-6 text-white" />
+            <BaselineCloseIcon className="w-6 h-6 text-white" />
           </DrawerClose>
         </DrawerHeader>
         <div className="p-4">
