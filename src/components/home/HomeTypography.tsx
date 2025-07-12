@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 export function SectionTitle({ title }: { title: string }) {
   return (
-    <h2 className="md:text-6xl sm:text-4xl text-3xl font-bold text-center text-primary-700">
+    <h2 className="lg:text-6xl md:text-5xl sm:text-4xl text-2xl font-bold text-center text-primary-700">
       {title}
     </h2>
   );
@@ -10,7 +10,7 @@ export function SectionTitle({ title }: { title: string }) {
 
 export function SectionDescription({ description }: { description: string }) {
   return (
-    <p className="text-base sm:text-2xl text-center text-black/80 leading-relaxed">
+    <p className="text-base sm:text-xl lg:text-2xl text-center text-black/80 leading-relaxed">
       {description}
     </p>
   );
@@ -26,7 +26,7 @@ export function CardTitle({
   return (
     <h3
       className={cn(
-        'sm:text-4xl text-2xl font-bold text-center text-primary-700',
+        'sm:text-2xl text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary-700 ',
         className,
       )}
     >
@@ -37,7 +37,7 @@ export function CardTitle({
 
 export function CardDescription({ description }: { description: string }) {
   return (
-    <p className="text-sm sm:text-xl text-black/80 leading-relaxed">
+    <p className="text-sm sm:text-base lg:text-xl text-black/80 leading-relaxed">
       {description}
     </p>
   );

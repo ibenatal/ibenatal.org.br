@@ -10,7 +10,7 @@ export function DesktopMenu() {
             <Link
               href={item.to}
               title={item.label}
-              className="text-xl hover:bg-black/60 px-4 py-3"
+              className="text-lg xl:text-xl hover:bg-black/60 px-4 py-3"
             >
               {item.label}
             </Link>

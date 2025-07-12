@@ -16,7 +16,7 @@ export default function OurMinistries() {
           <SectionDescription description="Nossa igreja é composta por vários ministérios que trabalham juntos para levar a palavra de Deus a todos." />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col gap-6 sm:gap-8">
             <div className="relative h-[192px] w-full">
               <Image

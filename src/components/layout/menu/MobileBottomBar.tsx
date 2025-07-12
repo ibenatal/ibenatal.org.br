@@ -9,7 +9,7 @@ export function MobileBottomBar() {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path;
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-primary-100 block md:hidden px-4">
+    <div className="fixed bottom-0 left-0 right-0 bg-primary-100 block md:hidden px-4 z-50">
       <div className="flex justify-between gap-[1px]">
         {menuItems.map((item) => {
           const Icon = item.icon;

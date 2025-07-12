@@ -14,7 +14,7 @@ export function Header() {
             className="w-[48px] md:w-[107px] h-auto"
           />
         </div>
-        <h1 className="text-xl font-bold text-white/90 hidden md:block">
+        <h1 className="textlg xl:text-xl font-bold text-white/90 hidden lg:block">
           Igreja Batista da Esperança
         </h1>
         {/* <MobileMenu /> */}

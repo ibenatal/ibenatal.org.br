@@ -15,7 +15,7 @@ export default function FromBlog() {
           <SectionDescription description="Confira as últimas notícias do nosso blog." />
         </header>
 
-        <div className="flex flex-col sm:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           <ArticleCard
             title="Article 1"
             image="/images/jovens.png"
@@ -23,7 +23,7 @@ export default function FromBlog() {
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             url="/blog/article-1"
-            className="w-full sm:w-1/3"
+            className="w-full md:w-1/2 lg:w-1/3"
           />
           <ArticleCard
             title="Article 2"
@@ -32,7 +32,7 @@ export default function FromBlog() {
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             url="/blog/article-2"
-            className="w-full sm:w-1/3"
+            className="w-full md:w-1/2 lg:w-1/3"
           />
           <ArticleCard
             title="Article 3"
@@ -41,7 +41,7 @@ export default function FromBlog() {
             author="John Doe"
             shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             url="/blog/article-3"
-            className="w-full sm:w-1/3"
+            className="w-full md:w-1/2 lg:w-1/3 last-of-type:hidden lg:last-of-type:block"
           />
         </div>
       </SectionContainer>

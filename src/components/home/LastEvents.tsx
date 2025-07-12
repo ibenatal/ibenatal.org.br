@@ -15,9 +15,9 @@ export default function LastEvents() {
           <SectionDescription description="Confira os últimos eventos da nossa igreja." />
         </header>
 
-        <div className="flex flex-col sm:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           <EventCard
-            className="w-full sm:w-1/2"
+            className="w-full md:w-1/2"
             title="Evento 1"
             image="/images/jovens.png"
             date="2024-01-01"
@@ -26,7 +26,7 @@ export default function LastEvents() {
             url="/eventos/evento-1"
           />
           <EventCard
-            className="w-full sm:w-1/2"
+            className="w-full md:w-1/2"
             title="Evento 2"
             image="/images/jovens.png"
             date="2024-01-01"

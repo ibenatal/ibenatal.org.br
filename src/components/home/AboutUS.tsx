@@ -18,7 +18,7 @@ export default function AboutUS() {
           <SectionDescription description="Estamos de braços abertos para receber você e sua família. Venha fazer parte da nossa comunidade e descobrir mais sobre nossa missão e valores." />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-8">
           <div className="flex flex-col gap-6 sm:gap-8 items-center">
             <Image
               src="/images/icons/igreja.png"
