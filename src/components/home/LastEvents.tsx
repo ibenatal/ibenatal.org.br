@@ -11,19 +11,19 @@ export default function LastEvents() {
     <section aria-label="Últimos Eventos">
       <SectionContainer>
         <header className="flex flex-col gap-8">
-          <SectionTitle title="Últimos Eventos" />
-          <SectionDescription description="Confira os últimos eventos da nossa igreja." />
+          <SectionTitle title="Próximos Eventos" />
+          <SectionDescription description="Confira os próximos eventos da nossa igreja" />
         </header>
 
         <div className="flex flex-col md:flex-row gap-8">
           <EventCard
             className="w-full md:w-1/2"
-            title="Evento 1"
-            image="/images/jovens.png"
-            date="2024-01-01"
-            address="Rua 1, 12345-678"
-            description="Descrição do evento 1"
-            url="/eventos/evento-1"
+            title="Um dia na roça"
+            image="/images/eventos/um-dia-de-roca.png"
+            date="2025-08-02"
+            address="Avenida Adolfo Gordo - 1188, Cidade da esperança"
+            description="Brincadeiras, brindes, comidas tipicas, quadrilhas malucas e sorteiro de balaio"
+            url="/eventos/um-dia-de-roca"
           />
           <EventCard
             className="w-full md:w-1/2"

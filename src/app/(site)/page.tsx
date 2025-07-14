@@ -4,49 +4,22 @@ import AboutUS from '@/components/home/AboutUS';
 import FromBlog from '@/components/home/FromBlog';
 import LastEvents from '@/components/home/LastEvents';
 import OurMinistries from '@/components/home/OurMinistries';
-import OurSermon from '@/components/home/OurSermon';
+import { homeSlides } from '@/data/carousel';
 
 export const metadata = {
   // title: 'IBE - Igreja Batista da Esperança',
   // description: 'Igreja Batista da Esperança',
 };
 
-const slides = [
-  {
-    id: 1,
-    image: '/images/carousel/slide-1.jpg',
-    title: 'Igreja Batista da Esperança',
-    subtitle: 'Uma igreja que transforma vidas',
-    buttonText: 'Saiba Mais',
-    buttonLink: '/sobre',
-  },
-  {
-    id: 2,
-    image: '/images/carousel/slide-2.jpg',
-    title: 'Junte-se a Nós',
-    subtitle: 'Faça parte da nossa comunidade',
-    buttonText: 'Nossos Horários',
-    buttonLink: '/horarios',
-  },
-  {
-    id: 3,
-    image: '/images/carousel/slide-3.jpg',
-    title: 'Ministérios',
-    subtitle: 'Descubra como você pode servir',
-    buttonText: 'Conheça',
-    buttonLink: '/ministerios',
-  },
-];
-
 export default function SitePage() {
   return (
     <main className="bg-neutral-100">
-      <HomeCarousel slides={slides} />
+      <HomeCarousel slides={homeSlides} />
       <AboutUS />
       <Separator />
       <OurMinistries />
-      <Separator />
-      <OurSermon />
+      {/* <Separator />
+      <OurSermon /> */}
       <Separator />
       <LastEvents />
       <Separator />

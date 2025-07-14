@@ -21,33 +21,41 @@ export default function AboutUS() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-8">
           <div className="flex flex-col gap-6 sm:gap-8 items-center">
             <Image
+              src="/images/icons/biblia.png"
+              alt="Nossa Visão"
+              width={80}
+              height={80}
+            />
+            <CardTitle title="Nossa Visão" />
+            <CardDescription description="Ser uma família de muitos filhos semelhantes a Jesus." />
+          </div>
+          <div className="flex flex-col gap-6 sm:gap-8 items-center">
+            <Image
               src="/images/icons/igreja.png"
               alt="Nossa Missão"
               width={80}
               height={80}
             />
             <CardTitle title="Nossa Missão" />
-            <CardDescription description="A contribuição fiel garante que a igreja mantenha sua voz profética, sem precisar negociar princípios por favores ou recursos governamentais." />
+            <CardDescription description="Atrai, Conecta e Disciplina pessoas, para que se tornem semelhantes a Jesus, sirvam com excelência e façam novos discípulos." />
           </div>
           <div className="flex flex-col gap-6 sm:gap-8 items-center">
             <Image
               src="/images/icons/por-do-sol.png"
-              alt="Nosso Foco"
+              alt="Nossos Valores"
               width={80}
               height={80}
             />
-            <CardTitle title="Nosso Foco" />
-            <CardDescription description="A generosidade contínua dos fiéis preserva a integridade da missão da igreja." />
-          </div>
-          <div className="flex flex-col gap-6 sm:gap-8 items-center">
-            <Image
-              src="/images/icons/biblia.png"
-              alt="Nossas Crenças"
-              width={80}
-              height={80}
-            />
-            <CardTitle title="O que cremos" />
-            <CardDescription description="Quando cada membro assume seu papel com compromisso, a igreja permanece firme, autônoma e fiel à sua vocação divina." />
+            <CardTitle title="Nossos Valores" />
+            <ul className="w-full md:w-auto list-none list-inside text-sm sm:text-base lg:text-xl text-black/80 leading-relaxed lg:ml-6">
+              <li>- Amor Compassivo</li>
+              <li>- Acolhimento Genuíno</li>
+              <li>- Disciplinado Transformador</li>
+              <li>- Servir com Excelência</li>
+              <li>- Unidade na Diversidade</li>
+              <li>- Compromisso com a Multiplicação</li>
+              <li>- Mordomia Responsável</li>
+            </ul>
           </div>
         </div>
 

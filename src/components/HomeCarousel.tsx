@@ -2,17 +2,16 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { A11y, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 
-type SlideItem = {
+export type SlideItem = {
   id: number;
   image: string;
   title: string;
@@ -67,29 +66,23 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
         }
       `}</style>
       <Swiper
-        modules={[Navigation, Pagination, A11y, Autoplay]}
+        modules={[Navigation, Pagination, A11y /*, Autoplay*/]}
         spaceBetween={0}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 10_000, disableOnInteraction: false }}
         loop={true}
-        className="w-full h-[500px]"
+        className="w-full h-[700px]"
       >
         {slides.map((slide) => (
-          <SwiperSlide
-            key={slide.id}
-            className={cn(
-              'relative w-full h-full',
-              `bg-[url(${slide.image})] bg-cover bg-center`,
-            )}
-          >
+          <SwiperSlide key={slide.id} className="relative w-full h-full">
             <div className="absolute inset-0">
               <Image
                 src={slide.image}
                 alt={slide.title}
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 priority
                 unoptimized={slide.image.startsWith('http')}
               />

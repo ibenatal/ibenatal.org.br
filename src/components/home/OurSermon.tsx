@@ -27,8 +27,8 @@ export default function OurSermon() {
     <section aria-label="Nossas Pregações">
       <SectionContainer>
         <header className="flex flex-col gap-8">
-          <SectionTitle title="Nossas Pregações" />
-          <SectionDescription description="Confira as últimas pregações da nossa igreja." />
+          <SectionTitle title="Reflexões" />
+          <SectionDescription description="Confira as últimas reflexões" />
         </header>
 
         <article className="flex flex-col gap-6 sm:gap-8 sm:flex-row">

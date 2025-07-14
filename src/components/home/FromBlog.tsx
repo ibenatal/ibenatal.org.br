@@ -8,10 +8,10 @@ import { SectionDescription, SectionTitle } from './HomeTypography';
 
 export default function FromBlog() {
   return (
-    <section aria-label="Do Blog">
+    <section aria-label="Reflexões e Artigos">
       <SectionContainer>
         <header className="flex flex-col gap-8">
-          <SectionTitle title="Do blog" />
+          <SectionTitle title="Reflexões e Artigos" />
           <SectionDescription description="Confira as últimas notícias do nosso blog." />
         </header>
 
