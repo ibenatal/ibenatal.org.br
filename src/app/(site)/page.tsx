@@ -2,8 +2,10 @@ import Image from 'next/image';
 import HomeCarousel from '@/components/HomeCarousel';
 import AboutUS from '@/components/home/AboutUS';
 import FromBlog from '@/components/home/FromBlog';
+import { GetInTouch } from '@/components/home/GetInTouch';
 import LastEvents from '@/components/home/LastEvents';
 import OurMinistries from '@/components/home/OurMinistries';
+import { OurPastor } from '@/components/home/OurPastor';
 import { homeSlides } from '@/data/carousel';
 
 export const metadata = {
@@ -21,6 +23,9 @@ export default function SitePage() {
       {/* <Separator />
       <OurSermon /> */}
       <Separator />
+      <OurPastor />
+      {/* <Separator /> */}
+      <GetInTouch />
       <LastEvents />
       <Separator />
       <FromBlog />
