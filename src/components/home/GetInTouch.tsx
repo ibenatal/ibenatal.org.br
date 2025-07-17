@@ -19,12 +19,12 @@ export function GetInTouch() {
         priority
       />
       <SectionContainer className="relative z-10 sm:p-0 p-0">
-        <div className="flex flex-col items-center gap-6 bg-primary-500 text-white py-10 absolute -top-5 left-10 w-80 rounded shadow-2xl">
+        <div className="flex flex-col items-center gap-6 bg-primary-500 text-white py-10 absolute -top-5 left-4 right-4 md:right-auto md:left-10 w-80 mx-auto md:mx-0 rounded shadow-2xl">
           <WhatsappFillIcon className="w-16 h-16" />
-          <div>Nos chame no WhatsApp</div>
-          <div className="text-2xl">(84) 99912-3905</div>
+          <div className="text-lg sm:text-2xl">Faça seu pedido de oração</div>
+          <div className="text-3xl">(84) 99912-3905</div>
         </div>
-        <div className="flex flex-col ml-96 text-white gap-6 relative px-4 pt-16 pb-20">
+        <div className="flex flex-col mt-60 md:mt-0 md:ml-96 text-white gap-6 lg:relative px-4 pt-16 pb-10 sm:pb-20 md:pb-20">
           <div className="flex flex-col gap-2">
             <div className="text-base text-primary-300">
               Entre em contato conosco
@@ -51,7 +51,7 @@ export function GetInTouch() {
               Email
             </Button>
           </div>
-          <div className="flex gap-12 absolute -bottom-10 right-0 w-full px-8">
+          <div className="flex gap-8 sm:gap-12 sm:absolute sm:-bottom-12 md:-bottom-10 right-0 w-full sm:px-8 flex-col sm:flex-row mt-10 sm:mt-0">
             <EventCard title="Culto de Fé" />
             <EventCard title="Culto de celebração dominical" />
           </div>
@@ -67,7 +67,7 @@ interface EventCardProps {
 
 const EventCard = ({ title }: EventCardProps) => {
   return (
-    <div className="flex flex-row gap-2 bg-white rounded-2xl px-3 py-3 w-1/2 shadow-2xl">
+    <div className="flex flex-row gap-2 bg-white rounded-2xl px-3 py-3 sm:w-1/2 shadow-2xl">
       <div className="flex flex-col shrink-0">
         <div className="text-sm bg-primary-200 text-primary-500 text-center px-2 py-3 rounded-t-lg">
           16 Jul

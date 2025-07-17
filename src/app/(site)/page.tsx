@@ -6,6 +6,7 @@ import { GetInTouch } from '@/components/home/GetInTouch';
 import LastEvents from '@/components/home/LastEvents';
 import OurMinistries from '@/components/home/OurMinistries';
 import { OurPastor } from '@/components/home/OurPastor';
+import OurPGMs from '@/components/home/OurPGMs';
 import { homeSlides } from '@/data/carousel';
 
 export const metadata = {
@@ -26,9 +27,11 @@ export default function SitePage() {
       <OurPastor />
       {/* <Separator /> */}
       <GetInTouch />
-      <LastEvents />
+      <OurPGMs />
       <Separator />
       <FromBlog />
+      <Separator />
+      <LastEvents />
     </main>
   );
 }

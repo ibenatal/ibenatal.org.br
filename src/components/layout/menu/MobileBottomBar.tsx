@@ -9,15 +9,15 @@ export function MobileBottomBar() {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path;
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-primary-100 block md:hidden px-4 z-50">
-      <div className="flex justify-between gap-[1px]">
+    <div className="fixed bottom-0 left-0 right-0 bg-primary-100 block md:hidden px-1 sm:px-4 z-50">
+      <div className="flex justify-between h-15 items-center max-w-[21rem] w-full mx-auto">
         {menuItems.map((item) => {
           const Icon = item.icon;
           return (
             <Button
               key={item.to}
               size="icon"
-              className="size-15"
+              className="size-12 sm:size-15"
               variant="ghost"
             >
               <div className="flex flex-col items-center justify-center gap-1">

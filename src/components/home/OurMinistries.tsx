@@ -9,10 +9,10 @@ import {
 
 export default function OurMinistries() {
   return (
-    <section aria-label="Redes de Comunhão">
+    <section aria-label="Nossas Redes">
       <SectionContainer>
         <div className="flex flex-col gap-6 sm:gap-8">
-          <SectionTitle title="Redes de Comunhão" />
+          <SectionTitle title="Nossas Redes" />
           <SectionDescription description="Nossa igreja é composta por várias redes que trabalham juntos para levar a palavra de Deus a todos." />
         </div>
 
