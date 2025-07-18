@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FeaturedArticle } from '@/components/blog/FeaturedArticle';
 import { Widget } from '@/components/blog/Widget';
 import { SectionContainer } from '@/components/layout/Container';
@@ -87,32 +88,34 @@ function Pagination() {
 
 function CartArticle() {
   return (
-    <div className="flex flex-col gap-4 h-full bg-white rounded-lg">
-      <div className="relative w-full pt-[60%]">
-        <Image
-          src="/images/articles/blog-header.png"
-          alt="Blog"
-          fill
-          className="object-cover rounded-lg"
-        />
-      </div>
-      <div className="flex flex-col gap-4 px-4 pt-4 pb-8">
-        <h3 className="text-xl font-medium line-clamp-2">
-          Using RichTextEditor in Your .NET MAUI Apps
-        </h3>
-        <p className="text-gray-600 line-clamp-3">
-          Learn how to create sections of a landing page in Blazor—navigation
-          bar, hero section, customer logos section, features sections, pricing
-          section and a form section.
-        </p>
-        <div className="flex flex-row gap-4 text-sm text-gray-500">
-          <span>by John Doe</span>
-          <span>•</span>
-          <span>12/12/2021</span>
-          <span>•</span>
-          <span>12 min read</span>
+    <Link href="/blog/using-richtexteditor-in-net-maui-apps" className="block">
+      <div className="flex flex-col gap-4 h-full bg-white rounded-lg hover:shadow-lg transition-shadow">
+        <div className="relative w-full pt-[60%]">
+          <Image
+            src="/images/articles/blog-header.png"
+            alt="Blog"
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex flex-col gap-4 px-4 pt-4 pb-8">
+          <h3 className="text-xl font-medium line-clamp-2">
+            Using RichTextEditor in Your .NET MAUI Apps
+          </h3>
+          <p className="text-gray-600 line-clamp-3">
+            Learn how to create sections of a landing page in Blazor—navigation
+            bar, hero section, customer logos section, features sections,
+            pricing section and a form section.
+          </p>
+          <div className="flex flex-row gap-4 text-sm text-gray-500">
+            <span>by John Doe</span>
+            <span>•</span>
+            <span>12/12/2021</span>
+            <span>•</span>
+            <span>12 min read</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
