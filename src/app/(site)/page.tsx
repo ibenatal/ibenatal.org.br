@@ -21,11 +21,8 @@ export default function SitePage() {
       <AboutUS />
       <Separator />
       <OurMinistries />
-      {/* <Separator />
-      <OurSermon /> */}
       <Separator />
       <OurPastor />
-      {/* <Separator /> */}
       <GetInTouch />
       <OurPGMs />
       <Separator />
