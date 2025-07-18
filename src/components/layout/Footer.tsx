@@ -1,5 +1,8 @@
+import { Instagram, MapPin, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { WhatsappFillIcon } from '../icons/WhatsappFillIcon';
+import { LinkUI } from '../ui/link-ui';
 
 export function Footer() {
   return (
@@ -9,18 +12,43 @@ export function Footer() {
           className="flex flex-col gap-4 md:w-6/12"
           aria-label="Informações de contato"
         >
-          <Image
-            src="/ibe-logo.svg"
-            alt="IBENATAL"
-            width={107}
-            height={80}
-            className="w-[48px] md:w-[107px] h-auto"
-          />
+          <Link href="/" title="Ir para a página inicial">
+            <Image
+              src="/ibe-logo.svg"
+              alt="Igreja Batista da Esperança"
+              width={107}
+              height={80}
+              className="w-[48px] md:w-[107px] h-auto"
+            />
+          </Link>
           <div>Igreja Batista da Esperança</div>
-          <div>(84) 99912-3905</div>
+          <LinkUI
+            href="https://wa.me/5584999123905"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2"
+            variant="inverse"
+            title="Abrir no WhatsApp"
+            aria-label="Abrir no WhatsApp"
+          >
+            <WhatsappFillIcon className="w-4 h-4" />
+            <span>(84) 99912-3905</span>
+          </LinkUI>
           <address className="not-italic">
-            <p>Avenida Adolfo Gordo - 1188, Cidade da esperança,</p>
-            <p>Natal, Rio Grande do Norte</p>
+            <LinkUI
+              className="flex-wrap"
+              variant="inverse"
+              href="https://maps.app.goo.gl/D64iKMTtLtv8MuvXA"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir no Google Maps"
+              title="Abrir no Google Maps"
+            >
+              <MapPin className="w-4 h-4" />
+              <span>Avenida Adolfo Gordo - 1188</span>
+              <span>Cidade da esperança,</span>
+              <span>Natal, Rio Grande do Norte</span>
+            </LinkUI>
           </address>
         </section>
         <section
@@ -41,21 +69,29 @@ export function Footer() {
           aria-label="Redes sociais"
         >
           <h3 className="text-2xl font-bold">Siga-nos</h3>
-          <nav className="flex flex-col gap-2">
-            <Link
+          <nav className="flex flex-col">
+            <LinkUI
               href="https://www.youtube.com/c/Fam%C3%ADliaIBE"
               target="_blank"
               rel="noopener noreferrer"
+              variant="inverse"
+              title="Abrir no Youtube"
+              aria-label="Abrir no Youtube"
             >
-              Youtube
-            </Link>
-            <Link
+              <Youtube className="w-4 h-4" />
+              <span>Youtube</span>
+            </LinkUI>
+            <LinkUI
               href="https://www.instagram.com/familiaibe"
               target="_blank"
               rel="noopener noreferrer"
+              variant="inverse"
+              title="Abrir no Instagram"
+              aria-label="Abrir no Instagram"
             >
-              Instagram
-            </Link>
+              <Instagram className="w-4 h-4" />
+              <span>Instagram</span>
+            </LinkUI>
           </nav>
         </section>
       </div>

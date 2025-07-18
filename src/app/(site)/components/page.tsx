@@ -2,11 +2,13 @@ import { icons } from '@/components/icons/list';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
+import { LinkUI } from '@/components/ui/link-ui';
 
 export default function Page() {
   return (
     <Container className="py-16 flex flex-col gap-16">
       <ButtonDocs />
+      <LinkDocs />
       <LucideIconsDocs />
       <IconsDocs />
     </Container>
@@ -264,6 +266,132 @@ function LucideIconsDocs() {
             Lucide Icons
           </a>
         </Button>
+      </div>
+    </section>
+  );
+}
+
+function LinkDocs() {
+  return (
+    <section>
+      <Heading>Link</Heading>
+      <div className="space-y-8">
+        <div className="space-y-4">
+          <Heading as="h2" variant="h2">
+            Link Props
+          </Heading>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left p-2">Prop</th>
+                  <th className="text-left p-2">Type</th>
+                  <th className="text-left p-2">Default</th>
+                  <th className="text-left p-2">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="p-2 font-medium">variant</td>
+                  <td className="p-2">
+                    <code>default | muted | destructive</code>
+                  </td>
+                  <td className="p-2">
+                    <code>default</code>
+                  </td>
+                  <td className="p-2">Visual style of the link</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-2 font-medium">asChild</td>
+                  <td className="p-2">
+                    <code>boolean</code>
+                  </td>
+                  <td className="p-2">
+                    <code>false</code>
+                  </td>
+                  <td className="p-2">
+                    When true, link will be rendered as a child element
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-2 font-medium">className</td>
+                  <td className="p-2">
+                    <code>string</code>
+                  </td>
+                  <td className="p-2">-</td>
+                  <td className="p-2">Additional CSS classes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <Heading as="h2" variant="h2">
+            Variants
+          </Heading>
+          <div className="flex flex-wrap gap-8">
+            <LinkUI href="#" variant="default">
+              Default Link
+            </LinkUI>
+            <LinkUI href="#" variant="muted">
+              Muted Link
+            </LinkUI>
+            <LinkUI href="#" variant="inverse">
+              Inverse Link
+            </LinkUI>
+            <LinkUI href="#" variant="destructive">
+              Destructive Link
+            </LinkUI>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <Heading as="h2" variant="h2">
+            With Icons
+          </Heading>
+          <div className="flex flex-wrap gap-8">
+            <LinkUI href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <title>External link icon</title>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              External Link
+            </LinkUI>
+            <LinkUI href="#" variant="muted">
+              Documentation
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <title>Arrow right icon</title>
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </LinkUI>
+          </div>
+        </div>
       </div>
     </section>
   );
