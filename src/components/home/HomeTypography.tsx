@@ -10,7 +10,7 @@ export function SectionTitle({ title }: { title: string }) {
 
 export function SectionDescription({ description }: { description: string }) {
   return (
-    <p className="text-base sm:text-xl lg:text-2xl text-center text-black/80 leading-relaxed">
+    <p className="text-base sm:text-xl lg:text-2xl text-center leading-relaxed">
       {description}
     </p>
   );
@@ -37,7 +37,7 @@ export function CardTitle({
 
 export function CardDescription({ description }: { description: string }) {
   return (
-    <p className="text-sm sm:text-base lg:text-xl text-black/80 leading-relaxed">
+    <p className="text-sm sm:text-base lg:text-xl leading-relaxed">
       {description}
     </p>
   );

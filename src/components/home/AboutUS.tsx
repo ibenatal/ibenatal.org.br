@@ -47,7 +47,7 @@ export default function AboutUS() {
               height={80}
             />
             <CardTitle title="Nossos Valores" />
-            <ul className="w-full md:w-auto list-none list-inside text-sm sm:text-base lg:text-xl text-black/80 leading-relaxed lg:ml-6">
+            <ul className="w-full md:w-auto list-none list-inside text-sm sm:text-base lg:text-xl leading-relaxed lg:ml-6">
               <li>- Amor Compassivo</li>
               <li>- Acolhimento Genuíno</li>
               <li>- Disciplinado Transformador</li>

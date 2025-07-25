@@ -52,12 +52,10 @@ export default function OurSermon() {
           <div className="flex flex-col gap-8 w-full sm:w-1/2">
             <CardTitle title={sermonTitle} className="text-left" />
             <div className="flex flex-row gap-8">
-              <time dateTime={sermonDate} className="text-sm text-black/80">
+              <time dateTime={sermonDate} className="text-sm">
                 August 2024
               </time>
-              <span className="text-sm text-black/80">
-                Preleitor: {preacher}
-              </span>
+              <span className="text-sm">Preleitor: {preacher}</span>
             </div>
             <div className="flex justify-center sm:justify-start">
               <Button asChild outline>

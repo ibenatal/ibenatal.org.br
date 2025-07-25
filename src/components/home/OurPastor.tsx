@@ -27,7 +27,7 @@ export function OurPastor() {
               {pastorDescription.map((description, index) => (
                 <p
                   key={String(index)}
-                  className="text-sm sm:text-base lg:text-lg text-black/80 leading-relaxed"
+                  className="text-sm sm:text-base lg:text-lg leading-relaxed"
                 >
                   {description}
                 </p>

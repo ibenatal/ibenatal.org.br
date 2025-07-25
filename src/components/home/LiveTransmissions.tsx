@@ -91,7 +91,7 @@ function TransmissionCard({
         </h3>
         <time
           dateTime={transmission.publishedAt}
-          className="text-sm text-black/70"
+          className="text-sm text-primary-900/70"
         >
           {new Date(transmission.publishedAt).toLocaleDateString('pt-BR')}
         </time>

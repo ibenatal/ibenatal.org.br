@@ -8,6 +8,7 @@ import LiveTransmissions from '@/components/home/LiveTransmissions';
 import OurMinistries from '@/components/home/OurMinistries';
 import { OurPastor } from '@/components/home/OurPastor';
 import OurPGMs from '@/components/home/OurPGMs';
+import WaysToContribute from '@/components/home/WaysToContribute';
 import { homeSlides } from '@/data/carousel';
 
 export const metadata = {
@@ -32,6 +33,7 @@ export default function SitePage() {
       <LastEvents />
       <Separator />
       <LiveTransmissions />
+      <WaysToContribute />
     </main>
   );
 }

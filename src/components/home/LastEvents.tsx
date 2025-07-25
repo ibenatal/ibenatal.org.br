@@ -101,8 +101,8 @@ const EventCard = ({
         </div>
         <h3 className="text-4xl font-bold text-primary">{title}</h3>
         <div className="flex flex-col gap-2 justify-start items-start">
-          <p className="text-lg text-black/80">{description}</p>
-          <address className="text-black/80 not-italic">{address}</address>
+          <p className="text-lg">{description}</p>
+          <address className="not-italic">{address}</address>
           <Button asChild outline variant="link" className="px-0">
             <Link
               href={url}

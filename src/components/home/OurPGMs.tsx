@@ -16,7 +16,7 @@ export default function OurPGMs() {
         <div className="flex flex-col gap-6 sm:gap-8">
           <SectionTitle title="Nossos PGMs" />
           <div className="flex flex-col gap-2">
-            <p className="text-sm sm:text-base lg:text-lg text-left text-black/80 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-left leading-relaxed">
               Um Pequeno Grupo Multiplicador é um grupo de pessoas que se reúne
               regularmente com o objetivo de promover o crescimento espiritual,
               a comunhão, o evangelismo e o discipulado, tendo como missão clara
@@ -24,7 +24,7 @@ export default function OurPGMs() {
               grupo original. Os grupos se reúnem quinzenalmente, normalmente em
               casas ou em salas da igreja.
             </p>
-            <p className="text-sm sm:text-base lg:text-lg text-left text-black/80 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-left leading-relaxed">
               Os encontros geralmente incluem leitura e estudo da Bíblia,
               oração, partilha de experiências e apoio mútuo.
             </p>

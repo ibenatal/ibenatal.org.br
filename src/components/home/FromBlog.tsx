@@ -99,14 +99,14 @@ const ArticleCard = ({
       </div>
       <h3 className="text-4xl font-bold text-primary">{title}</h3>
       <div className="flex flex-row gap-2">
-        <time dateTime={date} className="text-sm text-black/80">
+        <time dateTime={date} className="text-sm">
           {formattedDate}
         </time>
-        <span className="text-sm text-black/80">
+        <span className="text-sm">
           por <span>{author}</span>
         </span>
       </div>
-      <p className="text-lg text-black/80">{shortDescription}</p>
+      <p className="text-lg">{shortDescription}</p>
       <div className="flex flex-row gap-2">
         <Button asChild outline variant="link" className="px-0">
           <Link href={url} aria-label={`Ler mais sobre ${title}`}>

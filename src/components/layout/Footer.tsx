@@ -69,7 +69,7 @@ export function Footer() {
           aria-label="Redes sociais"
         >
           <h3 className="text-2xl font-bold">Siga-nos</h3>
-          <nav className="flex flex-col">
+          <nav className="flex flex-col gap-2">
             <LinkUI
               href="https://www.youtube.com/c/Fam%C3%ADliaIBE"
               target="_blank"
