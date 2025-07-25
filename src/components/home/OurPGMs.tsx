@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { SectionContainer } from '../layout/Container';
-import { CardDescription, SectionTitle } from './HomeTypography';
+import { CardTitle, SectionTitle } from './HomeTypography';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -21,11 +21,8 @@ export default function OurPGMs() {
               regularmente com o objetivo de promover o crescimento espiritual,
               a comunhão, o evangelismo e o discipulado, tendo como missão clara
               a multiplicação — ou seja, a formação de novos grupos a partir do
-              grupo original.
-            </p>
-            <p className="text-sm sm:text-base lg:text-lg text-left text-black/80 leading-relaxed">
-              Os grupos se reúnem quinzenalmente, normalmente em casas ou em
-              salas da igreja.
+              grupo original. Os grupos se reúnem quinzenalmente, normalmente em
+              casas ou em salas da igreja.
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-left text-black/80 leading-relaxed">
               Os encontros geralmente incluem leitura e estudo da Bíblia,
@@ -57,11 +54,24 @@ export default function OurPGMs() {
             .our-pgs-carousel .swiper-button-prev {
               top: 90%;
             }
+            .our-pgs-carousel .swiper-button-next:hover,
+            .our-pgs-carousel .swiper-button-prev:hover {
+              background: rgba(0, 0, 0, 0.5);
+            }
             
+            .our-pgs-carousel .swiper-pagination {
+                left: 5rem;
+                right: 5rem;
+                width: calc(100% - 10rem);
+            }
             .our-pgs-carousel .swiper-pagination-bullet {
               background: black;
-              opacity: 0.7;
-              padding: 4px;
+              opacity: 0.3;
+              padding: 6px;
+            }
+            .our-pgs-carousel .swiper-pagination-bullet:hover {
+              background: black;
+              opacity: 0.5;
             }
             
             .our-pgs-carousel .swiper-pagination-bullet-active {
@@ -89,7 +99,7 @@ export default function OurPGMs() {
           >
             {redes.map((rede) => (
               <SwiperSlide key={rede.id}>
-                <div className="flex flex-col gap-6 sm:gap-8 p-4">
+                <div className="flex flex-col gap-6 sm:gap-8 p-4 pb-20">
                   <div className="relative h-[192px] w-full">
                     <Image
                       src={rede.image}
@@ -99,7 +109,7 @@ export default function OurPGMs() {
                       className="rounded object-cover absolute inset-0 left-0 top-0 w-full h-full"
                     />
                   </div>
-                  <CardDescription description={rede.description} />
+                  <CardTitle title={rede.description} />
                 </div>
               </SwiperSlide>
             ))}
@@ -117,32 +127,32 @@ const redes: {
 }[] = [
   {
     id: 3,
-    description: 'A igreja que ama os filhos e os transforma em líderes.',
+    description: 'Kids',
     image: '/images/carousel/pg-criancas.png',
   },
   {
     id: 4,
-    description: 'Turno extra: Líder Laura',
+    description: 'Turno Extra',
     image: '/images/carousel/pg-turno-extra.png',
   },
   {
     id: 5,
-    description: 'A forja: líder; Lilia e Ruth',
+    description: 'A Forja',
     image: '/images/carousel/pg-forja.png',
   },
   {
     id: 6,
-    description: 'Unidos em Cristo . Líder; George e Cida',
+    description: 'Unidos em Cristo',
     image: '/images/carousel/pg-unidos.png',
   },
   {
     id: 7,
-    description: 'Nasci de novo: Líder: Daniela e Eliane',
+    description: 'Nasci de Novo',
     image: '/images/carousel/pg-nasci-de-novo.png',
   },
   {
     id: 8,
-    description: 'PG esperança: Líder: Ana Paula',
+    description: 'Esperança',
     image: '/images/carousel/pg-esperanca.png',
   },
 ];

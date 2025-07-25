@@ -1,11 +1,6 @@
 import Image from 'next/image';
 import { SectionContainer } from '../layout/Container';
-import {
-  CardDescription,
-  CardTitle,
-  SectionDescription,
-  SectionTitle,
-} from './HomeTypography';
+import { CardTitle, SectionDescription, SectionTitle } from './HomeTypography';
 
 export default function OurMinistries() {
   return (
@@ -29,7 +24,6 @@ export default function OurMinistries() {
                 />
               </div>
               <CardTitle title={rede.title} />
-              <CardDescription description={rede.description} />
             </div>
           ))}
         </div>
@@ -59,10 +53,15 @@ export default function OurMinistries() {
 const redes: {
   id: number;
   title: string;
-  // description: string;
   image: string;
   link: string;
 }[] = [
+  {
+    id: 3,
+    title: 'Crianças',
+    image: '/images/rede-de-criancas.png',
+    link: '/criancas',
+  },
   {
     id: 1,
     title: 'Jovens',
@@ -74,12 +73,6 @@ const redes: {
     title: 'Casais',
     image: '/images/rede-de-casais.png',
     link: '/casais',
-  },
-  {
-    id: 3,
-    title: 'Crianças',
-    image: '/images/rede-de-criancas.png',
-    link: '/criancas',
   },
   {
     id: 4,

@@ -52,8 +52,12 @@ export function GetInTouch() {
             </Button>
           </div>
           <div className="flex gap-8 sm:gap-12 sm:absolute sm:-bottom-12 md:-bottom-10 right-0 w-full sm:px-8 flex-col sm:flex-row mt-10 sm:mt-0">
-            <EventCard title="Culto de Fé" />
-            <EventCard title="Culto de celebração dominical" />
+            <EventCard title="Culto de Fé" date="16 Jul" time="19:30" />
+            <EventCard
+              title="Culto de celebração dominical"
+              date="17 Jul"
+              time="18:00"
+            />
           </div>
         </div>
       </SectionContainer>
@@ -63,17 +67,19 @@ export function GetInTouch() {
 
 interface EventCardProps {
   title: string;
+  date: string;
+  time: string;
 }
 
-const EventCard = ({ title }: EventCardProps) => {
+const EventCard = ({ title, date, time }: EventCardProps) => {
   return (
     <div className="flex flex-row gap-2 bg-white rounded-2xl px-3 py-3 sm:w-1/2 shadow-2xl">
       <div className="flex flex-col shrink-0">
         <div className="text-sm bg-primary-200 text-primary-500 text-center px-2 py-3 rounded-t-lg">
-          16 Jul
+          {date}
         </div>
         <div className="text-xs bg-primary-500 text-center text-white px-2 py-1 rounded-b-lg">
-          19:30
+          {time}
         </div>
       </div>
       <div className="flex flex-col min-w-0">

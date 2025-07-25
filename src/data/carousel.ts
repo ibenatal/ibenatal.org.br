@@ -3,7 +3,7 @@ import type { SlideItem } from '@/components/HomeCarousel';
 export const homeSlides: SlideItem[] = [
   {
     id: 1,
-    image: '/images/carousel/igreja-pessoas-2.png',
+    image: '/images/carousel/igreja-pessoas-3.png',
     title: 'Igreja Batista da Esperança',
     subtitle: 'Ser uma família de muitos filhos semelhantes a Jesus.',
     buttonText: 'Saiba Mais',
