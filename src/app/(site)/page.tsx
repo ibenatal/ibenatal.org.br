@@ -4,6 +4,7 @@ import AboutUS from '@/components/home/AboutUS';
 import FromBlog from '@/components/home/FromBlog';
 import { GetInTouch } from '@/components/home/GetInTouch';
 import LastEvents from '@/components/home/LastEvents';
+import LiveTransmissions from '@/components/home/LiveTransmissions';
 import OurMinistries from '@/components/home/OurMinistries';
 import { OurPastor } from '@/components/home/OurPastor';
 import OurPGMs from '@/components/home/OurPGMs';
@@ -29,6 +30,8 @@ export default function SitePage() {
       <FromBlog />
       <Separator />
       <LastEvents />
+      <Separator />
+      <LiveTransmissions />
     </main>
   );
 }
