@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '../../ui/button';
@@ -14,29 +15,35 @@ export function MobileBottomBar() {
         {menuItems.map((item) => {
           const Icon = item.icon;
           return (
-            <Button
-              key={item.to}
-              size="icon"
-              className="size-12 sm:size-15"
-              variant="ghost"
-            >
-              <div className="flex flex-col items-center justify-center gap-1">
-                <Icon
-                  className={cn(
-                    'size-6',
-                    isActive(item.to) ? 'text-primary-700' : 'text-primary-400',
-                  )}
-                />
-                <span
-                  className={cn(
-                    'text-xs',
-                    isActive(item.to) ? 'text-primary-700' : 'text-primary-400',
-                  )}
-                >
-                  {item.label}
-                </span>
-              </div>
-            </Button>
+            <Link href={item.to} key={item.to}>
+              <Button
+                size="icon"
+                className="size-12 sm:size-15"
+                variant="ghost"
+                asChild
+              >
+                <div className="flex flex-col items-center justify-center gap-1">
+                  <Icon
+                    className={cn(
+                      'size-6',
+                      isActive(item.to)
+                        ? 'text-primary-700'
+                        : 'text-primary-400',
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      'text-xs',
+                      isActive(item.to)
+                        ? 'text-primary-700'
+                        : 'text-primary-400',
+                    )}
+                  >
+                    {item.label}
+                  </span>
+                </div>
+              </Button>
+            </Link>
           );
         })}
       </div>
