@@ -17,7 +17,7 @@ export default function BlogPage() {
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
       </div>
-      <SectionContainer className="relative z-10">
+      <SectionContainer className="relative z-10 pt-28">
         <div className="flex flex-col gap-4">
           <h1 className="text-white text-4xl font-bold">Reflexões e Artigos</h1>
           <p className="text-white text-lg">
@@ -25,7 +25,7 @@ export default function BlogPage() {
           </p>
         </div>
         <div>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-col lg:flex-row gap-4">
             <div className="w-full 2/3">
               <FeaturedArticle />
             </div>
