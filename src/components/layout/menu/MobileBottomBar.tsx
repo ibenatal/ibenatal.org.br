@@ -9,8 +9,8 @@ export function MobileBottomBar() {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path;
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-primary-100 block md:hidden px-1 sm:px-4 z-50">
-      <div className="flex justify-between h-15 items-center max-w-[21rem] w-full mx-auto">
+    <div className="fixed bottom-0 left-0 right-0 bg-primary-100 block md:hidden px-4 sm:px-4 z-50">
+      <div className="flex justify-between h-15 items-center max-w-[40rem]  w-full mx-auto">
         {menuItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -24,13 +24,13 @@ export function MobileBottomBar() {
                 <Icon
                   className={cn(
                     'size-6',
-                    isActive(item.to) ? 'text-primary-600' : 'text-primary-400',
+                    isActive(item.to) ? 'text-primary-700' : 'text-primary-400',
                   )}
                 />
                 <span
                   className={cn(
                     'text-xs',
-                    isActive(item.to) ? 'text-primary-600' : 'text-primary-400',
+                    isActive(item.to) ? 'text-primary-700' : 'text-primary-400',
                   )}
                 >
                   {item.label}
