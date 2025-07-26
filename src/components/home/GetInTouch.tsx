@@ -18,13 +18,25 @@ export function GetInTouch() {
         className="object-cover z-0 opacity-20"
         priority
       />
-      <SectionContainer className="relative z-10 sm:p-0 p-0">
-        <div className="flex flex-col items-center gap-6 bg-primary-500 text-white py-10 absolute -top-5 left-4 right-4 md:right-auto md:left-10 w-80 mx-auto md:mx-0 rounded shadow-2xl">
-          <WhatsappFillIcon className="w-16 h-16" />
-          <div className="text-lg sm:text-2xl">Faça seu pedido de oração</div>
-          <div className="text-3xl">(84) 99912-3905</div>
+      <SectionContainer className="relative z-10 sm:p-0 p-0 gap-0 lg:flex-row lg:px-4">
+        <div className="flex justify-center lg:w-[38rem] items-start">
+          <Link
+            href="https://wa.me/5584999123905"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir no WhatsApp"
+            aria-label="Abrir no WhatsApp"
+          >
+            <div className="flex flex-col items-center gap-6 bg-primary-500 max-w-[20rem] text-white py-10 rounded shadow-2xl -translate-y-5 px-4 text-center hover:bg-primary-500 transition hover:-translate-y-6">
+              <WhatsappFillIcon className="w-16 h-16" />
+              <div className="text-lg sm:text-2xl">
+                Faça seu pedido de oração
+              </div>
+              <div className="text-3xl">(84) 99912-3905</div>
+            </div>
+          </Link>
         </div>
-        <div className="flex flex-col mt-60 md:mt-0 md:ml-96 text-white gap-6 lg:relative px-4 pt-16 pb-10 sm:pb-20 md:pb-20">
+        <div className="flex flex-col text-white gap-6 lg:relative px-4 pt-16 pb-10 sm:pb-20 md:pb-20 lg:pl-8">
           <div className="flex flex-col gap-2">
             <div className="text-base text-primary-300">
               Entre em contato conosco
