@@ -4,8 +4,11 @@ import { FeaturedArticle } from '@/components/blog/FeaturedArticle';
 import { Widget } from '@/components/blog/Widget';
 import { SectionContainer } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
+import { isMobileDevice } from '@/utils/deviceDetection';
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const isMobile = await isMobileDevice();
+
   return (
     <main className="bg-neutral-100 relative">
       <div className="bg-blue-500 h-[500px] absolute top-0 left-0 w-full z-0">
@@ -29,13 +32,16 @@ export default function BlogPage() {
             <div className="w-full 2/3">
               <FeaturedArticle />
             </div>
-            <div className="w-1/3">
-              <Widget />
-            </div>
+            {/* Only render the widget on desktop */}
+            {!isMobile && (
+              <div className="w-1/3">
+                <Widget />
+              </div>
+            )}
           </div>
           <div>
             <h3 className="text-2xl font-bold my-8">Ultimos Artigos</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-lg">
               <CartArticle />
               <CartArticle />
               <CartArticle />
@@ -46,7 +52,8 @@ export default function BlogPage() {
               <CartArticle />
               <CartArticle />
             </div>
-            <Pagination />
+            {/* Only show pagination on desktop */}
+            {!isMobile && <Pagination />}
           </div>
         </div>
       </SectionContainer>

@@ -14,12 +14,13 @@ export default function OurMinistries() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {redes.slice(0, 3).map((rede) => (
             <div key={rede.id} className="flex flex-col gap-6 sm:gap-8">
-              <div className="relative h-[192px] w-full">
+              <div className="relative aspect-video w-full">
                 <Image
                   src={rede.image}
                   alt={rede.title}
                   height={333}
                   width={192}
+                  quality={100}
                   className="rounded object-cover absolute inset-0 left-0 top-0 w-full h-full"
                 />
               </div>

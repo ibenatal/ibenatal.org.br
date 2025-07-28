@@ -40,21 +40,21 @@ function getYouTubeVideoUrl(videoId: string) {
 const MOCK_TRANSMISSIONS: LiveTransmission[] = [
   {
     id: '1',
-    title: 'Culto de Domingo - 24/03/2024',
-    videoId: 'IHhFgFXJQDY',
-    publishedAt: '2024-03-24',
+    title: 'Culto de Domingo - 28/07/2025',
+    videoId: '24B-oRQwwfg',
+    publishedAt: '2025-07-28',
   },
   {
     id: '2',
-    title: 'Culto de Quarta - 20/03/2024',
-    videoId: 'IHhFgFXJQDY', // Replace with actual video IDs
-    publishedAt: '2024-03-20',
+    title: 'Culto de Domingo - 20/07/2025',
+    videoId: 'IHhFgFXJQDY',
+    publishedAt: '2025-07-20',
   },
   {
     id: '3',
-    title: 'Culto de Domingo - 17/03/2024',
-    videoId: 'IHhFgFXJQDY', // Replace with actual video IDs
-    publishedAt: '2024-03-17',
+    title: 'Culto de Quarta - 13/07/2025',
+    videoId: 'hcnwIISByxM',
+    publishedAt: '2025-07-13',
   },
 ];
 
@@ -93,7 +93,9 @@ function TransmissionCard({
           dateTime={transmission.publishedAt}
           className="text-sm text-primary-900/70"
         >
-          {new Date(transmission.publishedAt).toLocaleDateString('pt-BR')}
+          {new Date(
+            `${transmission.publishedAt}T00:00:00-03:00`,
+          ).toLocaleDateString('pt-BR')}
         </time>
       </div>
     </article>
@@ -104,7 +106,7 @@ export default function LiveTransmissions() {
   return (
     <section aria-label="Transmissões ao Vivo">
       <SectionContainer>
-        <header className="flex flex-col gap-8 mb-12">
+        <header className="flex flex-col gap-8">
           <SectionTitle title="Transmissões" />
           <SectionDescription description="Assista nossas últimas transmissões" />
         </header>

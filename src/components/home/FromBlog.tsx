@@ -88,7 +88,7 @@ const ArticleCard = ({
         image={fullImageUrl}
         url={fullUrl}
       />
-      <div className="relative h-[192px] w-full">
+      <div className="relative aspect-video w-full">
         <Image
           src={image}
           alt={title}

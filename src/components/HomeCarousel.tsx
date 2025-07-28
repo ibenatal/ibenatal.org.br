@@ -73,7 +73,7 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
         pagination={{ clickable: true }}
         autoplay={{ delay: 10_000, disableOnInteraction: false }}
         loop={true}
-        className="w-full h-[700px]"
+        className="w-full h-[400px] sm:h-[500px] md:h-[500px] lg:h-[600px]"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="relative w-full h-full">
@@ -84,7 +84,9 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
                 fill
                 className="object-cover object-center"
                 priority
-                unoptimized={slide.image.startsWith('http')}
+                // unoptimized={true}
+                quality={100}
+                // unoptimized={slide.image.startsWith('http')}
               />
               <div className="absolute inset-0 bg-secondary/50" />
             </div>

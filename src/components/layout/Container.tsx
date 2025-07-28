@@ -24,7 +24,7 @@ export function SectionContainer({
   return (
     <div
       className={cn(
-        'max-w-6xl mx-auto flex flex-col gap-16 py-16 sm:py-24 px-3 sm:px-4',
+        'max-w-6xl mx-auto flex flex-col gap-8 lg:gap-16 py-16 sm:py-24 px-3 sm:px-4',
         className,
       )}
     >
