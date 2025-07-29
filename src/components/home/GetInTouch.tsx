@@ -2,6 +2,7 @@ import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { email, whatsapp } from '@/data/contacts';
+import { WeeklyEvents } from '../events/WeeklyEvents';
 import { WhatsappFillIcon } from '../icons/WhatsappFillIcon';
 import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
@@ -77,14 +78,7 @@ export function GetInTouch() {
               </Link>
             </Button>
           </div>
-          <div className="flex gap-8 sm:gap-12 sm:absolute sm:-bottom-12 md:-bottom-10 right-0 w-full sm:px-8 flex-col sm:flex-row mt-10 sm:mt-0">
-            <EventCard title="Culto de Fé" date="16 Jul" time="19:30" />
-            <EventCard
-              title="Culto de celebração dominical"
-              date="17 Jul"
-              time="18:00"
-            />
-          </div>
+          <WeeklyEvents />
         </div>
       </SectionContainer>
     </section>
@@ -97,7 +91,7 @@ interface EventCardProps {
   time: string;
 }
 
-const EventCard = ({ title, date, time }: EventCardProps) => {
+export const EventCard = ({ title, date, time }: EventCardProps) => {
   return (
     <div className="flex flex-row gap-2 bg-white rounded-2xl px-3 py-3 sm:w-1/2 shadow-2xl">
       <div className="flex flex-col shrink-0">
