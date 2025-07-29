@@ -1,8 +1,10 @@
 import { Instagram, MapPin, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { locationInfo, socialLinks, whatsapp } from '@/data/contacts';
 import { WhatsappFillIcon } from '../icons/WhatsappFillIcon';
 import { LinkUI } from '../ui/link-ui';
+import { menuItems } from './menu/menuItems';
 
 export function Footer() {
   return (
@@ -23,7 +25,7 @@ export function Footer() {
           </Link>
           <div>Igreja Batista da Esperança</div>
           <LinkUI
-            href="https://wa.me/5584999123905"
+            href={whatsapp.hrefWithMessage}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2"
@@ -32,22 +34,31 @@ export function Footer() {
             aria-label="Abrir no WhatsApp"
           >
             <WhatsappFillIcon className="w-4 h-4" />
-            <span>(84) 99912-3905</span>
+            <span>{whatsapp.label}</span>
           </LinkUI>
           <address className="not-italic">
             <LinkUI
-              className="flex-wrap"
+              className="inline-flex items-start"
               variant="inverse"
-              href="https://maps.app.goo.gl/D64iKMTtLtv8MuvXA"
+              href={locationInfo.googleMaps}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Abrir no Google Maps"
               title="Abrir no Google Maps"
             >
-              <MapPin className="w-4 h-4" />
-              <span>Avenida Adolfo Gordo - 1188</span>
-              <span>Cidade da esperança,</span>
-              <span>Natal, Rio Grande do Norte</span>
+              <MapPin className="w-4 h-4 mt-1.5" />
+              <div className="flex flex-col gap-1">
+                <p className="w-full inline-flex items-center gap-2">
+                  {locationInfo.address},
+                  <span className="whitespace-nowrap">
+                    {locationInfo.neighborhood}
+                  </span>
+                </p>
+                <p>
+                  {locationInfo.city} {locationInfo.state} -{' '}
+                  {locationInfo.zipCode}
+                </p>
+              </div>
             </LinkUI>
           </address>
         </section>
@@ -57,11 +68,11 @@ export function Footer() {
         >
           <h3 className="text-2xl font-bold">Links</h3>
           <nav className="flex flex-col gap-2">
-            <Link href="/">Home</Link>
-            <Link href="/">Blog</Link>
-            <Link href="/">Sermões</Link>
-            <Link href="/">Eventos</Link>
-            <Link href="/">Contato</Link>
+            {menuItems.map((item) => (
+              <Link href={item.to} key={item.to}>
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </section>
         <section
@@ -71,7 +82,7 @@ export function Footer() {
           <h3 className="text-2xl font-bold">Siga-nos</h3>
           <nav className="flex flex-col gap-2">
             <LinkUI
-              href="https://www.youtube.com/c/Fam%C3%ADliaIBE"
+              href={socialLinks.youtube.href}
               target="_blank"
               rel="noopener noreferrer"
               variant="inverse"
@@ -82,7 +93,7 @@ export function Footer() {
               <span>Youtube</span>
             </LinkUI>
             <LinkUI
-              href="https://www.instagram.com/familiaibe"
+              href={socialLinks.instagram.href}
               target="_blank"
               rel="noopener noreferrer"
               variant="inverse"

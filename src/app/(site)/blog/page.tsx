@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FeaturedArticle } from '@/components/blog/FeaturedArticle';
+import { Pagination } from '@/components/blog/Pagination';
 import { Widget } from '@/components/blog/Widget';
 import { SectionContainer } from '@/components/layout/Container';
-import { Button } from '@/components/ui/button';
+import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { isMobileDevice } from '@/utils/deviceDetection';
 
 export default async function BlogPage() {
@@ -18,7 +19,7 @@ export default async function BlogPage() {
           fill
           className="object-cover"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black/70"></div>
       </div>
       <SectionContainer className="relative z-10 pt-28">
         <div className="flex flex-col gap-4">
@@ -26,15 +27,15 @@ export default async function BlogPage() {
           <p className="text-white text-lg">
             Confira as últimas notícias do nosso blog.
           </p>
+          <Breadcrumbs items={[{ label: 'Artigos', href: '/Artigos' }]} />
         </div>
         <div>
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="w-full 2/3">
               <FeaturedArticle />
             </div>
-            {/* Only render the widget on desktop */}
             {!isMobile && (
-              <div className="w-1/3">
+              <div className="w-1/3 hidden lg:block">
                 <Widget />
               </div>
             )}
@@ -52,44 +53,11 @@ export default async function BlogPage() {
               <CartArticle />
               <CartArticle />
             </div>
-            {/* Only show pagination on desktop */}
-            {!isMobile && <Pagination />}
+            <Pagination />
           </div>
         </div>
       </SectionContainer>
     </main>
-  );
-}
-
-function Pagination() {
-  return (
-    <div className="flex flex-row gap-4 relative justify-between py-10">
-      <Button variant="primary" outline className="self-end">
-        Anterior
-      </Button>
-
-      <div className="flex flex-row gap-4">
-        <Button variant="primary" disabled>
-          1
-        </Button>
-        <Button variant="primary" outline>
-          2
-        </Button>
-        <Button variant="primary" outline>
-          3
-        </Button>
-        <Button variant="primary" outline>
-          4
-        </Button>
-        <Button variant="primary" outline>
-          5
-        </Button>
-      </div>
-
-      <Button variant="primary" outline className="self-end">
-        Próxima
-      </Button>
-    </div>
   );
 }
 

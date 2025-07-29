@@ -1,6 +1,7 @@
 import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { email, whatsapp } from '@/data/contacts';
 import { WhatsappFillIcon } from '../icons/WhatsappFillIcon';
 import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
@@ -21,7 +22,7 @@ export function GetInTouch() {
       <SectionContainer className="relative z-10 sm:p-0 p-0 gap-0 lg:flex-row lg:px-4">
         <div className="flex justify-center lg:w-[38rem] items-start">
           <Link
-            href="https://wa.me/5584999123905"
+            href={whatsapp.hrefToPray}
             target="_blank"
             rel="noopener noreferrer"
             title="Abrir no WhatsApp"
@@ -32,7 +33,7 @@ export function GetInTouch() {
               <div className="text-lg sm:text-2xl">
                 Faça seu pedido de oração
               </div>
-              <div className="text-3xl">(84) 99912-3905</div>
+              <div className="text-3xl">{whatsapp.label}</div>
             </div>
           </Link>
         </div>
@@ -51,16 +52,29 @@ export function GetInTouch() {
           <div className="flex gap-4">
             <Button>
               <Link
-                href="https://wa.me/5584999123905"
-                className="inline-flex gap-2"
+                href={whatsapp.hrefToPray}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Abrir no WhatsApp"
+                aria-label="Abrir no WhatsApp"
+                className="inline-flex gap-2 items-center"
               >
                 <WhatsappFillIcon />
                 <span>WhatsApp</span>
               </Link>
             </Button>
             <Button>
-              <Mail />
-              Email
+              <Link
+                href={email.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Abrir no Email"
+                aria-label="Abrir no Email"
+                className="inline-flex gap-2 items-center"
+              >
+                <Mail />
+                <span>Email</span>
+              </Link>
             </Button>
           </div>
           <div className="flex gap-8 sm:gap-12 sm:absolute sm:-bottom-12 md:-bottom-10 right-0 w-full sm:px-8 flex-col sm:flex-row mt-10 sm:mt-0">

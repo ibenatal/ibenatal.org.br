@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import type {
   BlogPosting,
+  BreadcrumbList,
   Event,
   Thing,
   VideoObject,
@@ -132,4 +133,30 @@ export function VideoSchema({
   };
 
   return <JsonLd data={videoData} testId={`video-schema-${name}`} />;
+}
+
+// Breadcrumb schema
+export function BreadcrumbSchema({
+  items,
+}: {
+  items: {
+    name: string;
+    item: string;
+  }[];
+}) {
+  const breadcrumbData: WithContext<BreadcrumbList> = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Thing',
+        '@id': item.item,
+        name: item.name,
+      },
+    })),
+  };
+
+  return <JsonLd data={breadcrumbData} testId={`breadcrumb-schema`} />;
 }

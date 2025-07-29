@@ -1,11 +1,4 @@
-import {
-  BookIcon,
-  Calendar1Icon,
-  HomeIcon,
-  type LucideIcon,
-  MailIcon,
-  ScrollTextIcon,
-} from 'lucide-react';
+import { BookIcon, HomeIcon, type LucideIcon, MailIcon } from 'lucide-react';
 
 export const menuItems: {
   to: string;
@@ -19,22 +12,22 @@ export const menuItems: {
   },
   {
     to: '/blog',
-    label: 'Blog',
+    label: 'Artigos',
     icon: BookIcon,
   },
-  {
-    to: '/sermoes',
-    label: 'Sermões',
-    icon: ScrollTextIcon,
-  },
-  {
-    to: '/eventos',
-    label: 'Eventos',
-    icon: Calendar1Icon,
-  },
+  // {
+  //   to: '/sermoes',
+  //   label: 'Sermões',
+  //   icon: ScrollTextIcon,
+  // },
+  // {
+  //   to: '/eventos',
+  //   label: 'Eventos',
+  //   icon: Calendar1Icon,
+  // },
   {
     to: '/contatos',
-    label: 'Contato',
+    label: 'Contatos',
     icon: MailIcon,
   },
 ];
