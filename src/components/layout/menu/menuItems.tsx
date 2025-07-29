@@ -1,4 +1,4 @@
-import { BookIcon, HomeIcon, type LucideIcon, MailIcon } from 'lucide-react';
+import { BookIcon, HomeIcon, InfoIcon, type LucideIcon, MailIcon } from 'lucide-react';
 
 export const menuItems: {
   to: string;
@@ -15,11 +15,11 @@ export const menuItems: {
     label: 'Artigos',
     icon: BookIcon,
   },
-  // {
-  //   to: '/sermoes',
-  //   label: 'Sermões',
-  //   icon: ScrollTextIcon,
-  // },
+  {
+    to: '/sobre-nos',
+    label: 'Sobre Nós',
+    icon: InfoIcon,
+  },
   // {
   //   to: '/eventos',
   //   label: 'Eventos',

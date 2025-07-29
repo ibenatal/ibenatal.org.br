@@ -7,22 +7,18 @@ export const homeSlides: SlideItem[] = [
     title: 'Igreja Batista da Esperança',
     subtitle: 'Ser uma família de muitos filhos semelhantes a Jesus.',
     buttonText: 'Saiba Mais',
-    buttonLink: '/sobre',
+    buttonLink: '/sobre-nos',
   },
   {
     id: 2,
     image: '/images/carousel/slide-2.jpg',
     title: 'Junte-se a Nós',
     subtitle: 'Faça parte da nossa comunidade',
-    buttonText: 'Nossos Horários',
-    buttonLink: '/horarios',
   },
   {
     id: 3,
     image: '/images/carousel/slide-3.jpg',
     title: 'Ministérios',
     subtitle: 'Descubra como você pode servir',
-    buttonText: 'Conheça',
-    buttonLink: '/ministerios',
   },
 ];
