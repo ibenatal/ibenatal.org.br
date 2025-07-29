@@ -41,9 +41,10 @@ async function getArticle(slug: string): Promise<Article> {
 export default async function ArticlePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const article = await getArticle(params.slug);
+  const { slug } = await params;
+  const article = await getArticle(slug);
 
   // Format the date for display
   const formattedDate = new Date(article.publishedAt).toLocaleDateString(
@@ -70,7 +71,15 @@ export default async function ArticlePage({
 
   return (
     <main className="bg-neutral-100">
-      <SectionContainer className="relative  pb-16">
+      <SectionContainer className="relative pb-16 max-w-4xl lg:pt-8 lg:gap-8">
+        <Image
+          src={article.image}
+          alt={article.title}
+          width={1000}
+          height={1000}
+          className="w-full h-auto rounded-lg"
+        />
+
         <article className="bg-white rounded-lg shadow-lg overflow-hidden">
           <BlogPostSchema
             headline={article.title}
@@ -81,15 +90,8 @@ export default async function ArticlePage({
             url={fullUrl}
           />
 
-          <div className="p-8 md:p-12">
+          <div className="px-8 py-4 md:p-12 lg:py-8">
             <header className="max-w-3xl mx-auto mb-12">
-              <Image
-                src={article.image}
-                alt={article.title}
-                width={1000}
-                height={1000}
-                className="w-full h-auto"
-              />
               <Heading as="h1" className="mb-6">
                 {article.title}
               </Heading>
