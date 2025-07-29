@@ -5,7 +5,7 @@ export default function PerfilPastoralPage() {
   return (
     <ContentLayout
       image="/images/cultos/cultos-1.png"
-      title="Sobre a IBE"
+      title="Perfil Pastoral"
       breadcrumbs={[{ label: 'Perfil Pastoral', href: '/perfil-pastoral' }]}
     >
       <PerfilPastoral />
