@@ -10,7 +10,7 @@ export function OurPastor() {
     'O Rev. Celso Adriano da Silva é um servo dedicado à Palavra de Deus, com uma trajetória marcada pela fidelidade ao evangelho e pelo zelo no ensino bíblico. Com sólida formação teológica e uma vocação pastoral enraizada no amor a Cristo e às pessoas, ele tem servido à igreja com graça, profundidade e compromisso.',
   ];
   const pastorImageUrl = '/images/pastor-celso.jpeg';
-  const pastorUrl = '/sobre/pastor';
+  const pastorUrl = '/perfil-pastoral';
 
   return (
     <section aria-label="Perfil Pastoral">
@@ -25,20 +25,14 @@ export function OurPastor() {
             <CardTitle title={pastorName} className="text-left" />
             <div className="flex flex-col gap-4">
               {pastorDescription.map((description, index) => (
-                <p
-                  key={String(index)}
-                  className="text-sm sm:text-base lg:text-lg leading-relaxed"
-                >
+                <p key={String(index)} className="text-sm sm:text-base lg:text-lg leading-relaxed">
                   {description}
                 </p>
               ))}
             </div>
             <div className="flex justify-center sm:justify-start">
               <Button asChild outline>
-                <Link
-                  href={pastorUrl}
-                  aria-label={`Conhecer mais sobre ${pastorName}`}
-                >
+                <Link href={pastorUrl} aria-label={`Conhecer mais sobre ${pastorName}`}>
                   Conhecer mais
                 </Link>
               </Button>
