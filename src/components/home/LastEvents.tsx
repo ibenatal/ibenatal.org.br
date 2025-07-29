@@ -1,10 +1,9 @@
 import capitalize from 'lodash/capitalize';
 import Image from 'next/image';
-import Link from 'next/link';
+import { locationInfo } from '@/data/contacts';
 import { EventSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 import { SectionContainer } from '../layout/Container';
-import { Button } from '../ui/button';
 import { SectionDescription, SectionTitle } from './HomeTypography';
 
 export default function LastEvents() {
@@ -19,13 +18,13 @@ export default function LastEvents() {
         <div className="flex flex-col md:flex-row gap-12 sm:gap-8">
           <EventCard
             className="w-full md:w-1/3"
-            title="Um dia na roça"
-            image="/images/eventos/um-dia-de-roca.png"
-            date="2025-08-02"
-            time="10:00"
-            address="Avenida Adolfo Gordo - 1188, Cidade da esperança"
-            description="Brincadeiras, brindes, comidas tipicas, quadrilhas malucas e sorteiro de balaio"
-            url="/eventos/um-dia-de-roca"
+            title="Bazar"
+            image="/images/eventos/bazar.png"
+            date="2025-08-01"
+            time="08:00"
+            address={locationInfo.getFullAddress()}
+            description="Rede de Mulhores: Bazar"
+            url="/eventos/evento-2"
           />
           <EventCard
             className="w-full md:w-1/3"
@@ -33,19 +32,19 @@ export default function LastEvents() {
             image="/images/eventos/multirao.png"
             date="2024-08-02"
             time="08:00"
-            address="IBE Natal"
+            address={locationInfo.getFullAddress()}
             description="A Rede de Homens da Igreja Batista da Esperança convida todos para um mutirão de limpeza"
             url="/eventos/evento-2"
           />
           <EventCard
             className="w-full md:w-1/3"
-            title="Evento 2"
-            image="/images/jovens.png"
-            date="2024-01-01"
+            title="Um dia na roça"
+            image="/images/eventos/um-dia-de-roca.png"
+            date="2025-08-02"
             time="10:00"
-            address="Rua 2, 12345-678"
-            description="Descrição do evento 2"
-            url="/eventos/evento-2"
+            address={locationInfo.getFullAddress()}
+            description="Brincadeiras, brindes, comidas tipicas, quadrilhas malucas e sorteiro de balaio"
+            url="/eventos/um-dia-de-roca"
           />
         </div>
       </SectionContainer>
@@ -120,7 +119,7 @@ const EventCard = ({
         <div className="flex flex-col gap-2 justify-start items-start">
           <p className="text-lg">{description}</p>
           <address className="not-italic">{address}</address>
-          <Button asChild outline variant="link" className="px-0">
+          {/* <Button asChild outline variant="link" className="px-0">
             <Link
               href={url}
               className="text-primary hover:underline"
@@ -128,7 +127,7 @@ const EventCard = ({
             >
               Ver detalhes
             </Link>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </article>
