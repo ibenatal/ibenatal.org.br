@@ -1,7 +1,19 @@
 {
-  "name": "ibenatal-site",
+  "name": "ibenatal.org.br",
   "version": "0.1.0",
   "private": true,
+  "description": "Official website for Igreja Batista da Esperança - https://ibenatal.org.br",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibenatal/ibenatal.org.br.git"
+  },
+  "homepage": "https://ibenatal.org.br",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "author": "David Costa <davidcostadevr@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "env-cmd next dev --turbopack --hostname 0.0.0.0",
     "build": "next build",
@@ -9,7 +21,10 @@
     "lint": "next lint",
     "lint:biome": "biome lint .",
     "format": "biome format .",
-    "format:check": "biome format --check ."
+    "format:check": "biome format --check .",
+    "clean": "rm -rf .next out",
+    "typecheck": "tsc --noEmit",
+    "prepare": "pnpm run lint && pnpm run typecheck"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
