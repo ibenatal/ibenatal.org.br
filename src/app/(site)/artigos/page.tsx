@@ -7,6 +7,11 @@ import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { isMobileDevice } from '@/utils/deviceDetection';
 import { getPosts } from './get-posts';
 
+export const metadata = {
+  title: 'Reflexões e Artigos',
+  description: 'Confira as últimas notícias do nosso blog.',
+};
+
 export default async function BlogPage() {
   const isMobile = await isMobileDevice();
   const posts = await getPosts({ limit: 10 });
