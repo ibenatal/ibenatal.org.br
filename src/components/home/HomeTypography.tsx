@@ -18,9 +18,14 @@ export function SectionDescription({ description }: { description: string }) {
 
 export function CardTitle({
   title,
+  children,
   className,
 }: {
-  title: string;
+  /**
+   * @deprecated Use children instead
+   */
+  title?: string;
+  children?: React.ReactNode;
   className?: string;
 }) {
   return (
@@ -30,7 +35,7 @@ export function CardTitle({
         className,
       )}
     >
-      {title}
+      {title || children}
     </h3>
   );
 }
@@ -39,6 +44,25 @@ export function CardDescription({ description }: { description: string }) {
   return (
     <p className="text-sm sm:text-base lg:text-xl leading-relaxed">
       {description}
+    </p>
+  );
+}
+
+export function CardParagraph({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <p
+      className={cn(
+        'text-sm sm:text-base lg:text-xl leading-relaxed',
+        className,
+      )}
+    >
+      {children}
     </p>
   );
 }

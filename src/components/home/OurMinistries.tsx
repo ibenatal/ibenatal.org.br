@@ -1,14 +1,47 @@
 import Image from 'next/image';
 import { SectionContainer } from '../layout/Container';
-import { CardTitle, SectionDescription, SectionTitle } from './HomeTypography';
+import { CardParagraph, CardTitle, SectionTitle } from './HomeTypography';
 
 export default function OurMinistries() {
   return (
     <section aria-label="Nossas Redes">
       <SectionContainer>
-        <div className="flex flex-col gap-6 sm:gap-8">
+        <div className="flex flex-col gap-6 sm:gap-18">
           <SectionTitle title="Nossas Redes" />
-          <SectionDescription description="Nossa igreja é composta por várias redes que trabalham juntos para levar a palavra de Deus a todos." />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-8">
+            <div className="flex flex-col gap-6 sm:gap-8 items-center">
+              <CardTitle>Definição de Redes</CardTitle>
+              <CardParagraph className="lg:text-base">
+                As redes são grupos intencionais que visam conectar as pessoas
+                dentro da igreja, formados com base em características
+                compartilhadas, interesses comuns ou estágios de vida similares.
+                São grupos fundamentados nos princípios bíblicos de comunhão e
+                encorajamento mútuo (At. 2:42-47; Hb. 10:24-25). Estes grupos
+                servem como plataformas dinâmicas para promover conexões mais
+                profundas, crescimento qualitativo e quantitativo e engajamento
+                ativo na vida da igreja e na missão cristã.
+              </CardParagraph>
+            </div>
+
+            <div className="flex flex-col gap-6 sm:gap-8 items-center">
+              <CardTitle>Propósitos das Redes</CardTitle>
+              <CardParagraph className="lg:text-base">
+                Têm como objetivos primários atrair, conectar, e expandir,
+                promovendo crescimento tanto quantitativo quanto qualitativo da
+                rede. Devem focar em gerar oportunidades para evangelismo,
+                comunhão, discipulado, edificação e ampliar o alcance relacional
+                da igreja.
+              </CardParagraph>
+            </div>
+            <div className="flex flex-col gap-6 sm:gap-8 items-center">
+              <CardTitle>Foco das Redes</CardTitle>
+              <CardParagraph className="lg:text-base">
+                Devem Manter um componente devocional em todos os encontros,
+                incluindo momentos de louvor, adoração e compartilhamento da
+                Palavra, adaptados ao contexto de cada evento.
+              </CardParagraph>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -24,7 +57,7 @@ export default function OurMinistries() {
                   className="rounded object-cover absolute inset-0 left-0 top-0 w-full h-full"
                 />
               </div>
-              <CardTitle title={rede.title} />
+              <CardTitle>{rede.title}</CardTitle>
             </div>
           ))}
         </div>
