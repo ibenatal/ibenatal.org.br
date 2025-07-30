@@ -1,9 +1,6 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { getReadTime } from '@/utils/readtime';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export type Post = {
   image?: string;
@@ -23,9 +20,12 @@ type GetPostsProps = {
 
 async function loadPostMetadata(fileName: string): Promise<Post | null> {
   try {
-    const dirPath = path.join(__dirname, 'content');
-
-    const content = await readFile(`${dirPath}/${fileName}`, 'utf8');
+    const filePath = path.join(
+      process.cwd(),
+      'src/app/(site)/artigos/content',
+      fileName,
+    );
+    const content = await readFile(filePath, 'utf8');
     const post = await import(`./content/${fileName}`);
 
     const metadata = {
@@ -52,9 +52,9 @@ async function loadPostMetadata(fileName: string): Promise<Post | null> {
 
 async function getContentFiles(): Promise<string[]> {
   try {
-    const dirPath = path.join(__dirname, 'content');
+    const dirPath = path.join(process.cwd(), 'src/app/(site)/artigos/content');
     const files = (await readdir(dirPath, { withFileTypes: true }))
-      .filter((dirent) => dirent.isFile())
+      .filter((dirent) => dirent.isFile() && dirent.name.endsWith('.mdx'))
       .map((dirent) => dirent.name);
 
     return files;
