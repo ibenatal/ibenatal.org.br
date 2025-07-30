@@ -21,10 +21,10 @@ export default function AboutUS() {
 
         <div className="flex flex-col gap-2 lg:gap-14">
           <NossaVisaoContent className="w-full" />
-          <div className="flex flex-row gap-2 lg:gap-8">
-            <NossaMissaoContent className="w-1/3" />
-            <NossosValoresContent className="w-1/3" />
-            <PilaresContent className="w-1/3" />
+          <div className="flex flex-col gap-8 lg:flex-row">
+            <NossaMissaoContent className="w-full lg:w-1/3" />
+            <NossosValoresContent className="w-full lg:w-1/3" />
+            <PilaresContent className="w-full lg:w-1/3" />
           </div>
         </div>
 
