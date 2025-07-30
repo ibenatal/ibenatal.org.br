@@ -10,7 +10,7 @@ import { getPosts } from './get-posts';
 export default async function BlogPage() {
   const isMobile = await isMobileDevice();
   const posts = await getPosts({ limit: 10 });
-
+  console.log({ posts });
   const featuredPost = posts[0];
   const remainingPosts = posts.slice(1);
 

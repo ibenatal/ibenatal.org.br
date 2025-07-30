@@ -4,39 +4,16 @@ import { SectionContainer } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 import { BlogPostSchema } from '@/lib/schema';
-import type { Article } from '@/types/article';
+import { getPost } from '../get-post';
+import { getSlugs } from '../get-slugs';
 
-// This would typically come from your CMS or API
-async function getArticle(slug: string): Promise<Article> {
-  // Mock data for now - replace with actual API call
-  return {
-    id: '1',
-    slug,
-    title: 'Using RichTextEditor in Your .NET MAUI Apps',
-    description:
-      'Learn how to create sections of a landing page in Blazor—navigation bar, hero section, customer logos section, features sections, pricing section and a form section.',
-    content: `
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-      Getting Started
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-      Implementation
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-      Conclusion
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    `,
-    image: '/images/articles/blog-header.png',
-    author: {
-      name: 'John Doe',
-      avatar: '/images/authors/john-doe.png',
-    },
-    publishedAt: '2024-03-20',
-    readingTime: '12 min read',
-    tags: ['MAUI', '.NET', 'Development'],
-  };
+// Generate static params for all articles
+export async function generateStaticParams() {
+  const slugs = await getSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
+
+export const dynamicParams = false;
 
 export default async function ArticlePage({
   params,
@@ -44,48 +21,54 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = await getArticle(slug);
+  console.log({ slug });
+  // Get post metadata
+  const post = await getPost(slug);
+  console.log({ post });
+
+  if (!post) {
+    throw new Error(`Post not found: ${slug}`);
+  }
+
+  // Dynamically import the MDX content
+  const { default: Content } = await import(`../content/${slug}.mdx`);
 
   // Format the date for display
-  const formattedDate = new Date(article.publishedAt).toLocaleDateString(
-    'pt-BR',
-    {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    },
-  );
+  const formattedDate = new Date(post.date).toLocaleDateString('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   // Full URLs for schema
   const fullImageUrl = new URL(
-    article.image,
-    'https://ibenatal.org',
-  ).toString();
-  const fullUrl = new URL(
-    `/artigos/${article.slug}`,
+    post.image || '/images/articles/article-default.png',
     'https://ibenatal.org',
   ).toString();
 
-  // Format content paragraphs
-  const paragraphs = article.content.split('\n\n').filter((p) => p.trim());
+  const fullUrl = new URL(
+    `/artigos/${slug}`,
+    'https://ibenatal.org',
+  ).toString();
 
   return (
     <main className="bg-neutral-100">
       <SectionContainer className="relative pb-16 max-w-4xl lg:pt-8 lg:gap-8">
-        <Image
-          src={article.image}
-          alt={article.title}
-          width={1000}
-          height={1000}
-          className="w-full h-auto rounded-lg"
-        />
+        <div className="relative aspect-video">
+          <Image
+            src={post.image || '/images/articles/article-default.png'}
+            alt={post.title}
+            fill
+            className="rounded-lg object-cover"
+          />
+        </div>
 
         <article className="bg-white rounded-lg shadow-lg overflow-hidden">
           <BlogPostSchema
-            headline={article.title}
-            description={article.description}
-            datePublished={article.publishedAt}
-            author={article.author.name}
+            headline={post.title}
+            description={post.description}
+            datePublished={post.date}
+            author={post.author}
             image={fullImageUrl}
             url={fullUrl}
           />
@@ -93,31 +76,22 @@ export default async function ArticlePage({
           <div className="px-8 py-4 md:p-12 lg:py-8">
             <header className="max-w-3xl mx-auto mb-12">
               <Heading as="h1" className="mb-6">
-                {article.title}
+                {post.title}
               </Heading>
 
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
-                  {article.author.avatar && (
-                    <Image
-                      src={article.author.avatar}
-                      alt={article.author.name}
-                      width={32}
-                      height={32}
-                      className="rounded-full"
-                    />
-                  )}
-                  <span>por {article.author.name}</span>
+                  <span>por {post.author}</span>
                 </div>
                 <span>•</span>
-                <time dateTime={article.publishedAt}>{formattedDate}</time>
+                <time dateTime={post.date}>{formattedDate}</time>
                 <span>•</span>
-                <span>{article.readingTime}</span>
+                <span>{post.readTime} min de leitura</span>
               </div>
 
-              {article.tags && article.tags.length > 0 && (
+              {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {article.tags.map((tag) => (
+                  {post.tags.map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
@@ -129,15 +103,8 @@ export default async function ArticlePage({
               )}
             </header>
 
-            <div className="max-w-3xl mx-auto space-y-6 text-lg text-gray-700">
-              {paragraphs.map((paragraph, index) => (
-                <p
-                  key={`${index}-${paragraph.slice(0, 20)}`}
-                  className="leading-relaxed"
-                >
-                  {paragraph.trim()}
-                </p>
-              ))}
+            <div className="max-w-3xl mx-auto prose prose-lg prose-primary gap-4 flex flex-col">
+              <Content />
             </div>
 
             <footer className="max-w-3xl mx-auto mt-12 pt-8 border-t">

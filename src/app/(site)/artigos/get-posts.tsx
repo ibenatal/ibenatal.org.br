@@ -14,6 +14,7 @@ export type Post = {
   description: string;
   author: string;
   readTime: number;
+  file: string;
 };
 
 type GetPostsProps = {
@@ -38,7 +39,11 @@ async function loadPostMetadata(fileName: string): Promise<Post | null> {
     }
 
     const postMetadata: Omit<Post, 'slug' | 'lang'> = metadata;
-    return { slug: fileName, ...postMetadata };
+    return {
+      slug: fileName.replace('.mdx', ''),
+      ...postMetadata,
+      file: fileName,
+    };
   } catch (error) {
     console.error(`Error loading post ${fileName}:`, error);
     return null;
