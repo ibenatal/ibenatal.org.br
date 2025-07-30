@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Barlow, Roboto } from 'next/font/google';
 import './globals.css';
+import { ProductionLogger } from '@/components/ProductionLogger';
 
 const roboto = Roboto({
   variable: '--font-roboto',
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${roboto.variable} ${barlow.variable} antialiased`}
         suppressHydrationWarning
       >
+        <ProductionLogger />
         {children}
       </body>
     </html>
