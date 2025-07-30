@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "env-cmd next dev --turbopack --hostname 0.0.0.0",
-    "build": "env-cmd next build",
-    "start": "env-cmd next start",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "lint:biome": "biome lint .",
     "format": "biome format .",
