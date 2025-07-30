@@ -1,4 +1,4 @@
-import { Instagram, MapPin, Youtube } from 'lucide-react';
+import { Github, Instagram, MapPin, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { locationInfo, socialLinks, whatsapp } from '@/data/contacts';
@@ -107,10 +107,20 @@ export function Footer() {
         </section>
       </div>
       <div className=" ">
-        <div className="max-w-6xl mx-auto py-6">
+        <div className="max-w-6xl mx-auto py-6 flex justify-between">
           <small>
             &copy; {new Date().getFullYear()} Igreja Batista da Esperança. Todos
             os direitos reservados.
+          </small>
+          <small>
+            <LinkUI
+              href="https://github.com/ibenatal/ibenatal.org.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Quer ajudar com o site?"
+            >
+              <Github className="w-4 h- text-white/50" />
+            </LinkUI>
           </small>
         </div>
       </div>
