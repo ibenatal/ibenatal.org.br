@@ -68,7 +68,7 @@ export default async function ContactsPage() {
   );
 }
 
-export function ContactCard({
+function ContactCard({
   className,
   icon,
   title,
@@ -101,7 +101,7 @@ export function ContactCard({
   );
 }
 
-export function FeaturedArticle({
+function FeaturedArticle({
   title,
   description,
 }: {
