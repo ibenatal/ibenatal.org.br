@@ -62,7 +62,7 @@ export default async function ArticlePage({
     'https://ibenatal.org',
   ).toString();
   const fullUrl = new URL(
-    `/blog/${article.slug}`,
+    `/artigos/${article.slug}`,
     'https://ibenatal.org',
   ).toString();
 
@@ -142,7 +142,7 @@ export default async function ArticlePage({
 
             <footer className="max-w-3xl mx-auto mt-12 pt-8 border-t">
               <Button asChild variant="primary">
-                <Link href="/blog">← Voltar para o Blog</Link>
+                <Link href="/artigos">← Voltar para lista de artigos</Link>
               </Button>
             </footer>
           </div>

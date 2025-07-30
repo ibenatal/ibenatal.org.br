@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FeaturedArticle } from '@/components/blog/FeaturedArticle';
-import { Pagination } from '@/components/blog/Pagination';
-import { Widget } from '@/components/blog/Widget';
+import { FeaturedArticle } from '@/components/artigos/FeaturedArticle';
+import { Pagination } from '@/components/artigos/Pagination';
+import { Widget } from '@/components/artigos/Widget';
 import { SectionContainer } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { isMobileDevice } from '@/utils/deviceDetection';
@@ -63,7 +63,10 @@ export default async function BlogPage() {
 
 function CartArticle() {
   return (
-    <Link href="/blog/using-richtexteditor-in-net-maui-apps" className="block">
+    <Link
+      href="/artigos/using-richtexteditor-in-net-maui-apps"
+      className="block"
+    >
       <div className="flex flex-col gap-4 h-full bg-white rounded-lg hover:shadow-lg transition-shadow">
         <div className="relative w-full pt-[60%]">
           <Image
