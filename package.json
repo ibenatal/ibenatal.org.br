@@ -23,8 +23,7 @@
     "format": "biome format .",
     "format:check": "biome format --check .",
     "clean": "rm -rf .next out",
-    "typecheck": "tsc --noEmit",
-    "prepare": "pnpm run lint && pnpm run typecheck"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
