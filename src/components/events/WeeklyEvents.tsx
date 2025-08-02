@@ -1,4 +1,4 @@
-import { EventCard } from '@/components/home/GetInTouch';
+import { EventCard } from './EventCard';
 
 interface WeeklyEvent {
   title: string;
@@ -19,8 +19,8 @@ const WEEKLY_EVENTS: WeeklyEvent[] = [
   },
 ];
 
-export function WeeklyEvents() {
-  const getNextEvents = () => {
+async function getNextEvents() {
+  try {
     const now = new Date();
     const timeZone = 'America/Fortaleza';
     const currentDate = new Date(now.toLocaleString('en-US', { timeZone }));
@@ -47,20 +47,33 @@ export function WeeklyEvents() {
     return events
       .sort((a, b) => a.date.getTime() - b.date.getTime())
       .slice(0, 2)
-      .map((event) => ({
-        title: event.title,
-        date: event.date
-          .toLocaleDateString('pt-BR', {
-            day: '2-digit',
-            month: 'short',
-          })
-          .replace('.', '')
-          .replace(' de ', ' '),
-        time: event.time,
-      }));
-  };
+      .map((event) => {
+        const isToday =
+          event.date.toDateString() === currentDate.toDateString();
+        return {
+          title: event.title,
+          date: isToday
+            ? 'Hoje'
+            : event.date
+                .toLocaleDateString('pt-BR', {
+                  day: '2-digit',
+                  month: 'short',
+                })
+                .replace('.', '')
+                .replace(' de ', ' '),
+          time: event.time,
+        };
+      });
+  } catch (err) {
+    console.error('Error fetching events:', err);
+    throw new Error(
+      'Erro ao carregar eventos. Por favor, tente novamente mais tarde.',
+    );
+  }
+}
 
-  const nextEvents = getNextEvents();
+export async function WeeklyEvents() {
+  const nextEvents = await getNextEvents();
 
   return (
     <div className="flex gap-8 sm:gap-12 sm:absolute sm:-bottom-12 md:-bottom-10 right-0 w-full sm:px-8 flex-col sm:flex-row mt-10 sm:mt-0">

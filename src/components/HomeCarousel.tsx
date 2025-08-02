@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { A11y, Navigation, Pagination } from 'swiper/modules';
+import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -66,7 +66,7 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
         }
       `}</style>
       <Swiper
-        modules={[Navigation, Pagination, A11y /*, Autoplay*/]}
+        modules={[Navigation, Pagination, A11y, Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
         navigation
@@ -91,10 +91,18 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
               <div className="absolute inset-0 bg-secondary/50" />
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-8 text-white">
-              <h2 className="text-2xl md:text-5xl font-bold mb-4">{slide.title}</h2>
+              <h2 className="text-2xl md:text-5xl font-bold mb-4">
+                {slide.title}
+              </h2>
               <p className="text-lg md:text-2xl mb-8">{slide.subtitle}</p>
               {!!slide.buttonLink && !!slide.buttonText && (
-                <Button variant="primary" outline size="lg" className="text-white" asChild>
+                <Button
+                  variant="primary"
+                  outline
+                  size="lg"
+                  className="text-white"
+                  asChild
+                >
                   <Link href={slide.buttonLink}>{slide.buttonText}</Link>
                 </Button>
               )}
