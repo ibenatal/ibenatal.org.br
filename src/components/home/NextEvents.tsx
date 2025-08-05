@@ -1,58 +1,12 @@
-import capitalize from 'lodash/capitalize';
-import Image from 'next/image';
+import 'server-only';
+import { Suspense } from 'react';
 import { locationInfo } from '@/data/contacts';
-import { EventSchema } from '@/lib/schema';
-import { cn } from '@/lib/utils';
 import { SectionContainer } from '../layout/Container';
 import { SectionDescription, SectionTitle } from './HomeTypography';
+import { Separator } from './Separator';
+import { SpecialEventCards } from './SpecialEventCards';
 
-export default function NextEvents() {
-  return (
-    <section aria-label="Próximos Eventos">
-      <SectionContainer>
-        <header className="flex flex-col gap-8">
-          <SectionTitle title="Próximos Eventos" />
-          <SectionDescription description="Confira os próximos eventos da nossa igreja" />
-        </header>
-
-        <div className="flex flex-col md:flex-row gap-12 sm:gap-8">
-          <EventCard
-            className="w-full md:w-1/3"
-            title="Bazar"
-            image="/images/eventos/bazar.png"
-            date="2025-08-01"
-            time="08:00"
-            address={locationInfo.getFullAddress()}
-            description="Rede de Mulhores: Bazar"
-            url="/eventos/evento-2"
-          />
-          <EventCard
-            className="w-full md:w-1/3"
-            title="Mutirão com Feijoada"
-            image="/images/eventos/multirao.png"
-            date="2024-08-02"
-            time="08:00"
-            address={locationInfo.getFullAddress()}
-            description="A Rede de Homens da Igreja Batista da Esperança convida todos para um mutirão de limpeza"
-            url="/eventos/evento-2"
-          />
-          <EventCard
-            className="w-full md:w-1/3"
-            title="Um dia na roça"
-            image="/images/eventos/um-dia-de-roca.png"
-            date="2025-08-02"
-            time="10:00"
-            address={locationInfo.getFullAddress()}
-            description="Brincadeiras, brindes, comidas tipicas, quadrilhas malucas e sorteiro de balaio"
-            url="/eventos/um-dia-de-roca"
-          />
-        </div>
-      </SectionContainer>
-    </section>
-  );
-}
-
-type EventCardProps = {
+interface SpecialEvent {
   title: string;
   image: string;
   date: string;
@@ -60,76 +14,113 @@ type EventCardProps = {
   address: string;
   description: string;
   url: string;
-  className?: string;
-};
+}
 
-const EventCard = ({
-  title,
-  image,
-  date,
-  time,
-  address,
-  description,
-  url,
-  className,
-}: EventCardProps) => {
-  const eventDate = new Date(`${date}T00:00:00-03:00`);
-  const day = eventDate.getDate();
-  const monthName = eventDate
-    .toLocaleString('pt-BR', { month: 'long' })
-    .slice(0, 3);
+const SPECIAL_EVENTS: SpecialEvent[] = [
+  {
+    title: 'Bazar',
+    image: '/images/eventos/bazar.png',
+    date: '2025-08-01',
+    time: '08:00',
+    address: locationInfo.getFullAddress(),
+    description: 'Rede de Mulheres: Bazar',
+    url: '/eventos/evento-2',
+  },
+  {
+    title: 'Mutirão com Feijoada',
+    image: '/images/eventos/multirao.png',
+    date: '2024-08-02',
+    time: '08:00',
+    address: locationInfo.getFullAddress(),
+    description:
+      'A Rede de Homens da Igreja Batista da Esperança convida todos para um mutirão de limpeza',
+    url: '/eventos/evento-2',
+  },
+  {
+    title: 'Um dia na roça',
+    image: '/images/eventos/um-dia-de-roca.png',
+    date: '2025-08-02',
+    time: '10:00',
+    address: locationInfo.getFullAddress(),
+    description:
+      'Brincadeiras, brindes, comidas tipicas, quadrilhas malucas e sorteiro de balaio',
+    url: '/eventos/um-dia-de-roca',
+  },
+];
 
-  // Full absolute URL for schema
-  const fullImageUrl = new URL(image, 'https://ibenatal.org').toString();
-  const fullUrl = new URL(url, 'https://ibenatal.org').toString();
+function LoadingEventCards() {
+  return (
+    <div className="flex flex-col md:flex-row gap-12 sm:gap-8">
+      {[1, 2, 3].map((index) => (
+        <div
+          key={index}
+          className="w-full md:w-1/3 flex flex-row gap-2 items-start relative animate-pulse"
+        >
+          <div className="flex flex-col gap-2 bg-slate-200 rounded-lg p-2 h-[72px] w-[72px]" />
+          <div className="flex flex-col gap-4 flex-1">
+            <div className="relative aspect-3/4 w-full bg-slate-200 rounded" />
+            <div className="h-8 bg-slate-200 rounded w-3/4" />
+            <div className="flex flex-col gap-2">
+              <div className="h-4 bg-slate-200 rounded w-full" />
+              <div className="h-4 bg-slate-200 rounded w-2/3" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+async function getUpcomingEvents() {
+  try {
+    const now = new Date();
+    const timeZone = 'America/Fortaleza';
+    const currentDate = new Date(now.toLocaleString('en-US', { timeZone }));
+
+    // Filter and sort events
+    const upcomingEvents = SPECIAL_EVENTS.filter((event) => {
+      const eventDate = new Date(`${event.date}T${event.time}:00-03:00`);
+      return eventDate >= currentDate;
+    })
+      .sort((a, b) => {
+        const dateA = new Date(`${a.date}T${a.time}:00-03:00`);
+        const dateB = new Date(`${b.date}T${b.time}:00-03:00`);
+        return dateA.getTime() - dateB.getTime();
+      })
+      .slice(0, 3); // Get next 3 upcoming events
+
+    return upcomingEvents;
+  } catch (err) {
+    console.error('Error fetching special events:', err);
+    throw new Error(
+      'Erro ao carregar eventos especiais. Por favor, tente novamente mais tarde.',
+    );
+  }
+}
+
+export default async function NextEvents() {
+  const upcomingEvents = await getUpcomingEvents();
+
+  // Don't render the section if there are no upcoming events
+  if (upcomingEvents.length === 0) {
+    return null;
+  }
 
   return (
-    <article
-      className={cn('flex flex-row gap-2 items-start relative', className)}
-    >
-      <EventSchema
-        name={title}
-        description={description}
-        startDate={date}
-        location={address}
-        image={fullImageUrl}
-        url={fullUrl}
-      />
-      <div className="flex flex-col gap-2 bg-white rounded-lg p-2 max-sm:absolute max-sm:top-2 max-sm:left-2 max-sm:z-10 shadow-2xs max-sm:opacity-90">
-        <time dateTime={date} className="flex flex-col">
-          <span className="text-base text-primary text-center py-1">
-            {day} {capitalize(monthName)}
-          </span>
-          <span className="text-sm bg-primary p-2 rounded-md text-white text-center">
-            {time}
-          </span>
-        </time>
-      </div>
-      <div className="flex flex-col gap-4 flex-1">
-        <div className="relative aspect-3/4 w-full">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="rounded object-cover"
-          />
-        </div>
-        <h3 className="text-4xl font-bold text-primary">{title}</h3>
-        <div className="flex flex-col gap-2 justify-start items-start">
-          <p className="text-lg">{description}</p>
-          <address className="not-italic">{address}</address>
-          {/* <Button asChild outline variant="link" className="px-0">
-            <Link
-              href={url}
-              className="text-primary hover:underline"
-              aria-label={`Ver detalhes do evento ${title}`}
-            >
-              Ver detalhes
-            </Link>
-          </Button> */}
-        </div>
-      </div>
-    </article>
+    <>
+      <section aria-label="Próximos Eventos">
+        <SectionContainer>
+          <header className="flex flex-col gap-8">
+            <SectionTitle title="Próximos Eventos" />
+            <SectionDescription description="Confira os próximos eventos da nossa igreja" />
+          </header>
+
+          <Suspense fallback={<LoadingEventCards />}>
+            <SpecialEventCards events={upcomingEvents} />
+          </Suspense>
+        </SectionContainer>
+      </section>
+      <Separator />
+    </>
   );
-};
+}

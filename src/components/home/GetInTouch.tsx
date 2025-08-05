@@ -15,7 +15,7 @@ export function GetInTouch() {
       className="bg-quaternary-500 relative"
     >
       <Image
-        src="/images/bgGetInTouch.jpeg"
+        src="/images/bgGetInTouch.png"
         alt="Entre em contato"
         fill
         className="object-cover z-0 opacity-20"
