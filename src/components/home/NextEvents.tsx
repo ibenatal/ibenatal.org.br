@@ -6,9 +6,9 @@ import { cn } from '@/lib/utils';
 import { SectionContainer } from '../layout/Container';
 import { SectionDescription, SectionTitle } from './HomeTypography';
 
-export default function LastEvents() {
+export default function NextEvents() {
   return (
-    <section aria-label="Últimos Eventos">
+    <section aria-label="Próximos Eventos">
       <SectionContainer>
         <header className="flex flex-col gap-8">
           <SectionTitle title="Próximos Eventos" />

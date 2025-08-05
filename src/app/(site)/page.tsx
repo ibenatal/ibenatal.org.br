@@ -3,8 +3,8 @@ import HomeCarousel from '@/components/HomeCarousel';
 import AboutUS from '@/components/home/AboutUS';
 import FromBlog from '@/components/home/FromBlog';
 import { GetInTouch } from '@/components/home/GetInTouch';
-import LastEvents from '@/components/home/LastEvents';
 import LiveTransmissions from '@/components/home/LiveTransmissions';
+import NextEvents from '@/components/home/NextEvents';
 import OurMinistries from '@/components/home/OurMinistries';
 import { OurPastor } from '@/components/home/OurPastor';
 import OurPGMs from '@/components/home/OurPGMs';
@@ -30,7 +30,7 @@ export default function SitePage() {
       <Separator />
       <FromBlog />
       <Separator />
-      <LastEvents />
+      <NextEvents />
       <Separator />
       <LiveTransmissions />
       <WaysToContribute />
