@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { EventCard } from './EventCard';
 
 interface WeeklyEvent {
@@ -76,7 +78,7 @@ export async function WeeklyEvents() {
   const nextEvents = await getNextEvents();
 
   return (
-    <div className="flex gap-8 sm:gap-12 sm:absolute sm:-bottom-12 md:-bottom-10 right-0 w-full sm:px-8 flex-col sm:flex-row mt-10 sm:mt-0">
+    <>
       {nextEvents.map((event) => (
         <EventCard
           key={`${event.title}-${event.date}`}
@@ -85,6 +87,6 @@ export async function WeeklyEvents() {
           time={event.time}
         />
       ))}
-    </div>
+    </>
   );
 }

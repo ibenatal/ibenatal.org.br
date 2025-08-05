@@ -1,9 +1,9 @@
 import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { email, whatsapp } from '@/data/contacts';
 import { WeeklyEvents } from '../events/WeeklyEvents';
-
 import { WhatsappFillIcon } from '../icons/WhatsappFillIcon';
 import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
@@ -79,7 +79,18 @@ export function GetInTouch() {
               </Link>
             </Button>
           </div>
-          <WeeklyEvents />
+          <div className="flex gap-8 sm:gap-12 sm:absolute sm:-bottom-12 md:-bottom-10 right-0 w-full sm:px-8 flex-col sm:flex-row mt-10 sm:mt-0 relative">
+            <Suspense
+              fallback={
+                <>
+                  <div className="bg-slate-200 h-[92px] w-full rounded-2xl animate-pulse"></div>
+                  <div className="bg-slate-200 h-[92px] w-full rounded-2xl animate-pulse"></div>
+                </>
+              }
+            >
+              <WeeklyEvents />
+            </Suspense>
+          </div>
         </div>
       </SectionContainer>
     </section>
