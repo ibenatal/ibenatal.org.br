@@ -40,21 +40,21 @@ function getYouTubeVideoUrl(videoId: string) {
 const MOCK_TRANSMISSIONS: LiveTransmission[] = [
   {
     id: '1',
+    title: 'Culto de Domingo - 03/08/2025',
+    videoId: 'POUQ2fNIep4',
+    publishedAt: '2025-08-03',
+  },
+  {
+    id: '2',
     title: 'Culto de Domingo - 28/07/2025',
     videoId: '24B-oRQwwfg',
     publishedAt: '2025-07-28',
   },
   {
-    id: '2',
+    id: '3',
     title: 'Culto de Domingo - 20/07/2025',
     videoId: 'IHhFgFXJQDY',
     publishedAt: '2025-07-20',
-  },
-  {
-    id: '3',
-    title: 'Culto de Quarta - 13/07/2025',
-    videoId: 'hcnwIISByxM',
-    publishedAt: '2025-07-13',
   },
 ];
 
