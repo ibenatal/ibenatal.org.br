@@ -12,7 +12,7 @@ export default function SiteLayout({
   // const isMobile = useIsMobile();
 
   return (
-    <div>
+    <div className="pt-14 md:pt-0">
       <Header />
       {children}
       <Footer />

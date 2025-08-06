@@ -19,21 +19,21 @@ interface SpecialEvent {
 const SPECIAL_EVENTS: SpecialEvent[] = [
   {
     title: 'Bazar',
-    image: '/images/eventos/bazar.png',
-    date: '2025-08-01',
+    image: '/images/eventos/bazar-2.png',
+    date: '2025-08-16',
     time: '08:00',
     address: locationInfo.getFullAddress(),
     description: 'Rede de Mulheres: Bazar',
     url: '/eventos/evento-2',
   },
   {
-    title: 'Mutirão com Feijoada',
-    image: '/images/eventos/multirao.png',
-    date: '2024-08-02',
+    title: 'Retiro de Casais 2025',
+    image: '/images/eventos/retiro-de-casais.jpg',
+    date: '2025-10-31',
     time: '08:00',
     address: locationInfo.getFullAddress(),
     description:
-      'A Rede de Homens da Igreja Batista da Esperança convida todos para um mutirão de limpeza',
+      'Um final de semana especial para fortalecer laços, crescer em fé e viver momentos inesquecíveis. De 31 de outubro a 02 de novembro no Hotel Marista, com palestras, dinâmicas, noites temáticas e todas as refeições inclusas. Participe!',
     url: '/eventos/evento-2',
   },
   {

@@ -14,7 +14,8 @@ import { Button } from './ui/button';
 export type SlideItem = {
   id: number;
   image: string;
-  title: string;
+  imageAlt: string;
+  title?: string;
   subtitle?: string;
   buttonText?: string;
   buttonLink?: string;
@@ -73,16 +74,16 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
         pagination={{ clickable: true }}
         autoplay={{ delay: 10_000, disableOnInteraction: false }}
         loop={true}
-        className="w-full h-[400px] sm:h-[500px] md:h-[500px] lg:h-[600px]"
+        className="w-full aspect-video lg:aspect-auto lg:h-[600px]"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="relative w-full h-full">
             <div className="absolute inset-0">
               <Image
                 src={slide.image}
-                alt={slide.title}
+                alt={slide.imageAlt}
                 fill
-                className="object-cover object-center"
+                className="object-contain object-center lg:object-cover"
                 priority
                 // unoptimized={true}
                 quality={100}
@@ -91,9 +92,11 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
               <div className="absolute inset-0 bg-secondary/50" />
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-8 text-white">
-              <h2 className="text-2xl md:text-5xl font-bold mb-4">
-                {slide.title}
-              </h2>
+              {!!slide.title && (
+                <h2 className="text-2xl md:text-5xl font-bold mb-4">
+                  {slide.title}
+                </h2>
+              )}
               {!!slide.subtitle && (
                 <p className="text-lg md:text-2xl mb-8">{slide.subtitle}</p>
               )}
