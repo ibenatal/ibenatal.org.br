@@ -17,9 +17,68 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: 'IBE - Igreja Batista da Esperança',
+  title: 'IBE Natal - Igreja Batista da Esperança | Natal, RN',
   description:
-    'Somos a Igreja Batista da Esperança. Ser uma família de muitos filhos semelhantes a Jesus é o que queremos ser. Amar, transformar e multiplicar é o que fazemos. Somos guiados por princípios bíblicos: Oração, evangelização discipuladora, plantação de igrejas, formação de líderes, compaixão e graça. Nosso estilo devida nos faz viver a alegria da vitória de cristo, nos relacionando e crescendo com base no amor que Deus colocou em nossos corações, sempre alicerçados na pessoa de Jesus.',
+    'IBE Natal - Igreja Batista da Esperança em Natal, Rio Grande do Norte. Somos uma família de muitos filhos semelhantes a Jesus. Amar, transformar e multiplicar é o que fazemos. Igreja Batista em Natal, RN com princípios bíblicos: Oração, evangelização discipuladora, plantação de igrejas, formação de líderes, compaixão e graça.',
+  keywords: [
+    'IBE Natal',
+    'Igreja Batista da Esperança',
+    'Igreja Batista Natal',
+    'Igreja em Natal RN',
+    'Igreja Batista Rio Grande do Norte',
+    'IBE Rio Grande do Norte',
+    'Igreja Batista da Esperança Natal',
+    'igreja batista cidade da esperança',
+    'igreja batista potiguar',
+    'igreja cristã Natal',
+  ],
+  authors: [{ name: 'IBE - Igreja Batista da Esperança' }],
+  creator: 'IBE - Igreja Batista da Esperança',
+  publisher: 'IBE - Igreja Batista da Esperança',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://ibenatal.com.br'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'IBE Natal - Igreja Batista da Esperança | Natal, RN',
+    description:
+      'IBE Natal - Igreja Batista da Esperança em Natal, Rio Grande do Norte. Uma família de muitos filhos semelhantes a Jesus. Amar, transformar e multiplicar é o que fazemos.',
+    url: 'https://ibenatal.com.br',
+    siteName: 'IBE - Igreja Batista da Esperança',
+    locale: 'pt_BR',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'IBE Natal - Igreja Batista da Esperança',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IBE Natal - Igreja Batista da Esperança | Natal, RN',
+    description:
+      'IBE Natal - Igreja Batista da Esperança em Natal, Rio Grande do Norte. Uma família de muitos filhos semelhantes a Jesus.',
+    images: ['/images/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="light">
+    <html lang="pt-BR" suppressHydrationWarning className="light">
       <body
         className={`${roboto.variable} ${barlow.variable} antialiased`}
         suppressHydrationWarning
