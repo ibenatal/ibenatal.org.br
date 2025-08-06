@@ -15,7 +15,6 @@ export const metadata = {
 export default async function BlogPage() {
   const isMobile = await isMobileDevice();
   const posts = await getPosts({ limit: 10 });
-  console.log({ posts });
 
   if (!posts || posts.length === 0) {
     return (

@@ -15,7 +15,7 @@ export type SlideItem = {
   id: number;
   image: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   buttonText?: string;
   buttonLink?: string;
 };
@@ -94,7 +94,9 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
               <h2 className="text-2xl md:text-5xl font-bold mb-4">
                 {slide.title}
               </h2>
-              <p className="text-lg md:text-2xl mb-8">{slide.subtitle}</p>
+              {!!slide.subtitle && (
+                <p className="text-lg md:text-2xl mb-8">{slide.subtitle}</p>
+              )}
               {!!slide.buttonLink && !!slide.buttonText && (
                 <Button
                   variant="primary"

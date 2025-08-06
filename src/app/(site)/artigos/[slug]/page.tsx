@@ -21,10 +21,8 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  console.log({ slug });
   // Get post metadata
   const post = await getPost(slug);
-  console.log({ post });
 
   if (!post) {
     throw new Error(`Post not found: ${slug}`);

@@ -18,7 +18,7 @@ export const homeSlides: SlideItem[] = [
   {
     id: 3,
     image: '/images/carousel/slide-3.jpg',
-    title: 'Ministérios',
-    subtitle: 'Descubra como você pode servir',
+    title: 'Trocar Ministérios para redes',
+    // subtitle: 'Descubra como você pode servir',
   },
 ];
