@@ -68,11 +68,11 @@ const ArticleCard = ({
   // Full absolute URL for schema
   const fullImageUrl = new URL(
     post.image || '/images/articles/article-default.png',
-    'https://ibenatal.org',
+    'https://ibenatal.org.br',
   ).toString();
   const fullUrl = new URL(
     post.slug ? `/artigos/${post.slug}` : '/artigos',
-    'https://ibenatal.org',
+    'https://ibenatal.org.br',
   ).toString();
 
   return (

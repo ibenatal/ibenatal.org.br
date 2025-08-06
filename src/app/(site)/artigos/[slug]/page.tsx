@@ -41,12 +41,12 @@ export default async function ArticlePage({
   // Full URLs for schema
   const fullImageUrl = new URL(
     post.image || '/images/articles/article-default.png',
-    'https://ibenatal.org',
+    'https://ibenatal.org.br',
   ).toString();
 
   const fullUrl = new URL(
     `/artigos/${slug}`,
-    'https://ibenatal.org',
+    'https://ibenatal.org.br',
   ).toString();
 
   return (

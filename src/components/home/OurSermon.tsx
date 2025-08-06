@@ -15,12 +15,15 @@ export default function OurSermon() {
   // Full absolute URLs for schema
   const fullThumbnailUrl = new URL(
     thumbnailUrl,
-    'https://ibenatal.org',
+    'https://ibenatal.org.br',
   ).toString();
-  const _fullSermonUrl = new URL(sermonUrl, 'https://ibenatal.org').toString();
+  const _fullSermonUrl = new URL(
+    sermonUrl,
+    'https://ibenatal.org.br',
+  ).toString();
   const videoUrl = new URL(
     '/videos/sermon-video.mp4',
-    'https://ibenatal.org',
+    'https://ibenatal.org.br',
   ).toString();
 
   return (

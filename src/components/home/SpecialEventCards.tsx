@@ -41,8 +41,8 @@ const EventCard = ({
     .slice(0, 3);
 
   // Full absolute URL for schema
-  const fullImageUrl = new URL(image, 'https://ibenatal.org').toString();
-  const fullUrl = new URL(url, 'https://ibenatal.org').toString();
+  const fullImageUrl = new URL(image, 'https://ibenatal.org.br').toString();
+  const fullUrl = new URL(url, 'https://ibenatal.org.br').toString();
 
   return (
     <article

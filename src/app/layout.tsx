@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://ibenatal.com.br'),
+  metadataBase: new URL('https://ibenatal.org.br'),
   alternates: {
     canonical: '/',
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: 'IBE Natal - Igreja Batista da Esperança | Natal, RN',
     description:
       'IBE Natal - Igreja Batista da Esperança em Natal, Rio Grande do Norte. Uma família de muitos filhos semelhantes a Jesus. Amar, transformar e multiplicar é o que fazemos.',
-    url: 'https://ibenatal.com.br',
+    url: 'https://ibenatal.org.br',
     siteName: 'IBE - Igreja Batista da Esperança',
     locale: 'pt_BR',
     type: 'website',
