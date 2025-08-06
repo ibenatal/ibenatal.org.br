@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Barlow, Roboto } from 'next/font/google';
 import './globals.css';
+import { Monitoring } from '@/components/analytics/Monitoring';
 import { ProductionLogger } from '@/components/ProductionLogger';
 
 const roboto = Roboto({
@@ -33,6 +34,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ProductionLogger />
+        <Monitoring />
         {children}
       </body>
     </html>
