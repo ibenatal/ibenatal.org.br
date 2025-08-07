@@ -92,7 +92,7 @@ const NossosValoresContent = ({ className }: { className?: string }) => {
       <ul className="w-full md:w-auto list-disc list-inside text-sm sm:text-base lg:text-lg leading-relaxed lg:ml-2">
         <li>Amor Compassivo</li>
         <li>Acolhimento Genuíno</li>
-        <li>Disciplinado Transformador</li>
+        <li>Discipulado Transformador</li>
         <li>Servir com Excelência</li>
         <li>Unidade na Diversidade</li>
         <li>Compromisso com a Multiplicação</li>
