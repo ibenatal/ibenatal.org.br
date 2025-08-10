@@ -1,5 +1,6 @@
-import 'server-only';
+'use client';
 
+import { useEffect, useState } from 'react';
 import { EventCard } from './EventCard';
 
 interface WeeklyEvent {
@@ -21,7 +22,13 @@ const WEEKLY_EVENTS: WeeklyEvent[] = [
   },
 ];
 
-async function getNextEvents() {
+interface DisplayEvent {
+  title: string;
+  date: string;
+  time: string;
+}
+
+function computeNextEvents(): DisplayEvent[] {
   try {
     const now = new Date();
     const timeZone = 'America/Fortaleza';
@@ -29,10 +36,11 @@ async function getNextEvents() {
     const currentDay = currentDate.getDay();
     const currentTime = currentDate.getHours() * 100 + currentDate.getMinutes();
 
-    const events = WEEKLY_EVENTS.map((event) => {
+    const eventsWithDates = WEEKLY_EVENTS.map((event) => {
       let daysUntilEvent = event.dayOfWeek - currentDay;
-      if (daysUntilEvent < 0) daysUntilEvent += 7;
-      else if (daysUntilEvent === 0) {
+      if (daysUntilEvent < 0) {
+        daysUntilEvent += 7;
+      } else if (daysUntilEvent === 0) {
         const eventTime = parseInt(event.time.replace(':', ''));
         if (currentTime >= eventTime) daysUntilEvent = 7;
       }
@@ -42,21 +50,21 @@ async function getNextEvents() {
 
       return {
         ...event,
-        date: eventDate,
+        dateObj: eventDate,
       };
     });
 
-    return events
-      .sort((a, b) => a.date.getTime() - b.date.getTime())
+    return eventsWithDates
+      .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime())
       .slice(0, 2)
       .map((event) => {
         const isToday =
-          event.date.toDateString() === currentDate.toDateString();
+          event.dateObj.toDateString() === currentDate.toDateString();
         return {
           title: event.title,
           date: isToday
             ? 'Hoje'
-            : event.date
+            : event.dateObj
                 .toLocaleDateString('pt-BR', {
                   day: '2-digit',
                   month: 'short',
@@ -67,26 +75,35 @@ async function getNextEvents() {
         };
       });
   } catch (err) {
-    console.error('Error fetching events:', err);
-    throw new Error(
-      'Erro ao carregar eventos. Por favor, tente novamente mais tarde.',
-    );
+    console.error('Error computing events:', err);
+    return [];
   }
 }
 
-export async function WeeklyEvents() {
-  const nextEvents = await getNextEvents();
+export function WeeklyEvents() {
+  const [nextEvents, setNextEvents] = useState<DisplayEvent[]>([]);
+
+  useEffect(() => {
+    setNextEvents(computeNextEvents());
+  }, []);
 
   return (
     <>
-      {nextEvents.map((event) => (
-        <EventCard
-          key={`${event.title}-${event.date}`}
-          title={event.title}
-          date={event.date}
-          time={event.time}
-        />
-      ))}
+      {nextEvents.length === 0 ? (
+        <>
+          <div className="bg-slate-200 h-[92px] w-full rounded-2xl animate-pulse"></div>
+          <div className="bg-slate-200 h-[92px] w-full rounded-2xl animate-pulse"></div>
+        </>
+      ) : (
+        nextEvents.map((event) => (
+          <EventCard
+            key={`${event.title}-${event.date}`}
+            title={event.title}
+            date={event.date}
+            time={event.time}
+          />
+        ))
+      )}
     </>
   );
 }
