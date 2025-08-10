@@ -155,4 +155,9 @@ const redes: {
     description: 'Esperança',
     image: '/images/carousel/pg-esperanca.png',
   },
+  {
+    id: 9,
+    description: 'Só a Graça',
+    image: '/images/pg-so-a-graca.png',
+  },
 ];
