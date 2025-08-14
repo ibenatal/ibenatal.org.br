@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SectionContainer } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
@@ -7,6 +8,59 @@ import { BlogPostSchema } from '@/lib/schema';
 import { getPost } from '../get-post';
 import { getSlugs } from '../get-slugs';
 import { ArrowLeftIcon } from 'lucide-react';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPost(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  const imageUrl = new URL(
+    post.image || '/images/articles/article-default.png',
+    'https://ibenatal.org.br',
+  ).toString();
+
+  const pageUrl = new URL(
+    `/artigos/${slug}`,
+    'https://ibenatal.org.br',
+  ).toString();
+
+  return {
+    title: post.title,
+    description: post.description,
+    alternates: {
+      canonical: `/artigos/${slug}`,
+    },
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.description,
+      url: pageUrl,
+      siteName: 'IBE - Igreja Batista da Esperança',
+      locale: 'pt_BR',
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: [imageUrl],
+    },
+  };
+}
 
 // Generate static params for all articles
 export async function generateStaticParams() {
