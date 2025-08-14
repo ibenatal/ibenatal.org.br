@@ -6,6 +6,7 @@ import { Heading } from '@/components/ui/heading';
 import { BlogPostSchema } from '@/lib/schema';
 import { getPost } from '../get-post';
 import { getSlugs } from '../get-slugs';
+import { ArrowLeftIcon } from 'lucide-react';
 
 // Generate static params for all articles
 export async function generateStaticParams() {
@@ -71,15 +72,17 @@ export default async function ArticlePage({
             url={fullUrl}
           />
 
-          <div className="px-8 py-4 md:p-12 lg:py-8">
+          <div className="px-8 py-8 md:p-12 lg:py-12">
             <header className="max-w-3xl mx-auto mb-12">
-              <Heading as="h1" className="mb-6">
-                {post.title}
-              </Heading>
+              <Link href={`/artigos/${post.slug}`} className="flex items-center gap-2" prefetch={false} title={post.title}>
+                <Heading as="h1" className="mb-8 text-5xl">
+                  {post.title}
+                </Heading>
+              </Link>
 
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
-                  <span>por {post.author}</span>
+                  <span>Por {post.author}</span>
                 </div>
                 <span>•</span>
                 <time dateTime={post.date}>{formattedDate}</time>
@@ -92,7 +95,7 @@ export default async function ArticlePage({
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm capitalize"
                     >
                       {tag}
                     </span>
@@ -101,7 +104,7 @@ export default async function ArticlePage({
               )}
             </header>
 
-            <div className="max-w-3xl mx-auto prose prose-lg prose-primary gap-4 flex flex-col">
+            <div className="max-w-3xl mx-auto prose prose-lg prose-primary gap-6 flex flex-col">
               <Content />
             </div>
 
