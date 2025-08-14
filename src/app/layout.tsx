@@ -17,7 +17,10 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: 'IBE Natal - Igreja Batista da Esperança | Natal, RN',
+  title: {
+    default: 'IBE Natal - Igreja Batista da Esperança | Natal, RN',
+    template: '%s | IBE Natal',
+  },
   description:
     'IBE Natal - Igreja Batista da Esperança em Natal, Rio Grande do Norte. Somos uma família de muitos filhos semelhantes a Jesus. Amar, transformar e multiplicar é o que fazemos. Igreja Batista em Natal, RN com princípios bíblicos: Oração, evangelização discipuladora, plantação de igrejas, formação de líderes, compaixão e graça.',
   keywords: [
