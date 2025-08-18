@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { DesktopMenu } from './menu/DesktopMenu';
+import { cn } from '@/lib/utils';
 
 export function Header() {
   const [isVisible, setIsVisible] = useState(true);
@@ -44,15 +45,10 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`
-        bg-primary-500 text-white/90
-        md:relative
-        fixed top-0 left-0 right-0 w-full
-        transition-transform duration-300 ease-in-out
-        h-14 md:h-auto
-        z-50
-        ${!isVisible ? '-translate-y-full' : 'translate-y-0'}
-      `}
+      className={cn(
+        'bg-primary-500 text-white/90 md:relative fixed top-0 left-0 right-0 w-full transition-transform duration-300 ease-in-out h-14 md:h-auto z-50',
+        !isVisible ? '-translate-y-full' : 'translate-y-0',
+      )}
     >
       <div className="flex max-w-7xl mx-auto justify-center md:justify-between items-center px-3 py-2 md:py-4 md:px-4 h-full">
         <div aria-description="Logo" className="flex items-center gap-8">
