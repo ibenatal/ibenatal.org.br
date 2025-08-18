@@ -21,10 +21,14 @@ export async function generateMetadata({
     return {};
   }
 
+  // Add cache-busting parameter for social media
+  const buildTimestamp = process.env.BUILD_TIMESTAMP || Date.now().toString();
   const imageUrl = new URL(
     post.image || '/images/articles/article-default.png',
     'https://ibenatal.org.br',
-  ).toString();
+  );
+  imageUrl.searchParams.set('v', buildTimestamp);
+  const imageUrlString = imageUrl.toString();
 
   const pageUrl = new URL(
     `/artigos/${slug}`,
@@ -46,7 +50,7 @@ export async function generateMetadata({
       locale: 'pt_BR',
       images: [
         {
-          url: imageUrl,
+          url: imageUrlString,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -57,7 +61,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: [imageUrl],
+      images: [imageUrlString],
     },
   };
 }
@@ -93,11 +97,14 @@ export default async function ArticlePage({
     day: 'numeric',
   });
 
-  // Full URLs for schema
+  // Full URLs for schema with cache-busting
+  const buildTimestamp = process.env.BUILD_TIMESTAMP || Date.now().toString();
   const fullImageUrl = new URL(
     post.image || '/images/articles/article-default.png',
     'https://ibenatal.org.br',
-  ).toString();
+  );
+  fullImageUrl.searchParams.set('v', buildTimestamp);
+  const fullImageUrlString = fullImageUrl.toString();
 
   const fullUrl = new URL(
     `/artigos/${slug}`,
@@ -122,7 +129,7 @@ export default async function ArticlePage({
             description={post.description}
             datePublished={post.date}
             author={post.author}
-            image={fullImageUrl}
+            image={fullImageUrlString}
             url={fullUrl}
           />
 
