@@ -77,7 +77,7 @@ export default async function BlogPage() {
             )}
           </div>
           <div>
-            <h3 className="text-2xl font-bold my-8">Ultimos Artigos</h3>
+            <h3 className="text-2xl font-bold my-8">Últimos Artigos</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-lg">
               {remainingPosts.map((post) => (
                 <ArticleCard key={post.slug} post={post} />

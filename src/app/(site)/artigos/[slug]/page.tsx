@@ -158,7 +158,7 @@ export default async function ArticlePage({
               )}
             </header>
 
-            <div className="max-w-3xl mx-auto prose prose-lg prose-primary gap-6 flex flex-col">
+            <div className="max-w-3xl mx-auto prose prose-lg prose-primary gap-6 flex flex-col text-lg">
               <Content />
             </div>
 
