@@ -39,12 +39,6 @@ function getYouTubeVideoUrl(videoId: string) {
 // This would typically come from an API or CMS
 const MOCK_TRANSMISSIONS: LiveTransmission[] = [
   {
-    id: '1',
-    title: 'Culto de Domingo - 03/08/2025',
-    videoId: 'POUQ2fNIep4',
-    publishedAt: '2025-08-03',
-  },
-  {
     id: '2',
     title: 'Culto de Domingo - 28/07/2025',
     videoId: '24B-oRQwwfg',
@@ -55,6 +49,12 @@ const MOCK_TRANSMISSIONS: LiveTransmission[] = [
     title: 'Culto de Domingo - 20/07/2025',
     videoId: 'IHhFgFXJQDY',
     publishedAt: '2025-07-20',
+  },
+  {
+    id: '4',
+    title: 'Culto de Domingo - 18/08/2025',
+    videoId: 'nIQsOfelZyA',
+    publishedAt: '2025-08-18',
   },
 ];
 
@@ -103,6 +103,10 @@ function TransmissionCard({
 }
 
 export default function LiveTransmissions() {
+  const last3Transmissions = MOCK_TRANSMISSIONS.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  ).slice(0, 3);
   return (
     <section aria-label="Transmissões ao Vivo">
       <SectionContainer>
@@ -113,7 +117,7 @@ export default function LiveTransmissions() {
 
         <div className="flex flex-col gap-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {MOCK_TRANSMISSIONS.map((transmission) => (
+            {last3Transmissions.map((transmission) => (
               <TransmissionCard
                 key={transmission.id}
                 transmission={transmission}
