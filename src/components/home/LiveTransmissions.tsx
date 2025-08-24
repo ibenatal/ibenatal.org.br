@@ -56,6 +56,12 @@ const MOCK_TRANSMISSIONS: LiveTransmission[] = [
     videoId: 'nIQsOfelZyA',
     publishedAt: '2025-08-18',
   },
+  {
+    id: '5',
+    title: 'Culto de Domingo - 24/08/2025',
+    videoId: 'N6BPaytgUnU',
+    publishedAt: '2025-08-24',
+  },
 ];
 
 const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/FamíliaIBE/streams';
