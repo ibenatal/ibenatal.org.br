@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       'Conheça a história da Missão Riachuelo, a primeira Igreja Batista plantada nas terras riachuelenses.',
     type: 'website',
+    images: [
+      {
+        url: '/images/missao-riachuelo/igreja-batista-de-riachuelo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Missão Riachuelo - Igreja Batista da Esperança',
+      },
+    ],
   },
 };
 
