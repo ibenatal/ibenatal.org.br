@@ -1,14 +1,28 @@
 import type { MDXComponents } from 'mdx/types';
+import { Children, isValidElement } from 'react';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
-    p: (props) => (
-      <p
-        className="whitespace-pre-wrap font-body font-normal text-lg text-primary-900 leading-relaxed "
-        {...props}
-      />
-    ),
+    p: (props) => {
+      // Check if children is a div element
+      const hasDivChild = Children.toArray(props.children).some(
+        (child) => isValidElement(child) && child.type === 'div',
+      );
+
+      // If children contains a div, render only the children
+      if (hasDivChild) {
+        return <>{props.children}</>;
+      }
+
+      // Otherwise render the p wrapper with styling
+      return (
+        <p
+          className="whitespace-pre-wrap font-body font-normal text-lg text-primary-900 leading-relaxed "
+          {...props}
+        />
+      );
+    },
     h1: (props) => (
       <h1
         className="font-bold font-title text-5xl text-primary-900 leading-tight"
@@ -61,9 +75,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     a: (props) => (
       <a
-        className="-active text-link-light-normal underline hover:text-link-light--hover hover:no-underline active:text-link-light dark:text-link-dark-normal dark:active:text-link-dark-active dark:hover:text-link-dark--hover"
+        className="text-link-light-normal text-primary underline hover:text-link-light--hover hover:no-underline active:text-link-light dark:text-link-dark-normal dark:active:text-link-dark-active dark:hover:text-link-dark--hover"
         {...props}
       />
+    ),
+    img: (props) => (
+      // biome-ignore lint/a11y/useAltText: TODO: implement later
+      // biome-ignore lint/performance/noImgElement: TODO: implement later
+      <img className="h-auto w-full rounded shadow" {...props} />
     ),
   };
 }

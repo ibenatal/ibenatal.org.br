@@ -1,8 +1,4 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { SectionContainer } from '../layout/Container';
-import { Button } from '../ui/button';
-import { CardTitle, SectionDescription, SectionTitle } from './HomeTypography';
+import { ImageDescriptionSection } from './ImageDescriptionSection';
 
 export function OurPastor() {
   const pastorName = 'Rev. Celso';
@@ -13,48 +9,18 @@ export function OurPastor() {
   const pastorUrl = '/perfil-pastoral';
 
   return (
-    <section aria-label="Perfil Pastoral">
-      <SectionContainer>
-        <header className="flex flex-col gap-8">
-          <SectionTitle title="Perfil Pastoral" />
-          <SectionDescription description="Conheça o pastor da IBE Natal" />
-        </header>
-
-        <article className="flex flex-col gap-6 sm:flex-row sm:gap-8">
-          <div className="flex w-full flex-col gap-8 sm:w-5/12">
-            <CardTitle title={pastorName} className="text-left" />
-            <div className="flex flex-col gap-4">
-              {pastorDescription.map((description, index) => (
-                <p
-                  key={String(index)}
-                  className="text-sm leading-relaxed sm:text-base lg:text-lg"
-                >
-                  {description}
-                </p>
-              ))}
-            </div>
-            <div className="flex justify-center sm:justify-start">
-              <Button asChild outline>
-                <Link
-                  href={pastorUrl}
-                  aria-label={`Conhecer mais sobre ${pastorName}`}
-                >
-                  Conhecer mais
-                </Link>
-              </Button>
-            </div>
-          </div>
-          <div className="relative h-[450px] w-full sm:w-7/12">
-            <Image
-              src={pastorImageUrl}
-              alt={pastorName}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded object-cover"
-            />
-          </div>
-        </article>
-      </SectionContainer>
-    </section>
+    <ImageDescriptionSection
+      title="Perfil Pastoral"
+      subtitle="Conheça o pastor da IBE Natal"
+      personName={pastorName}
+      descriptions={pastorDescription}
+      imageUrl={pastorImageUrl}
+      imageAlt={pastorName}
+      buttonText="Conhecer mais"
+      buttonUrl={pastorUrl}
+      buttonAriaLabel={`Conhecer mais sobre ${pastorName}`}
+      imageClass="h-[450px]"
+      layout="left-to-right"
+    />
   );
 }

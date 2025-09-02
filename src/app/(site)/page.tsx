@@ -10,6 +10,7 @@ import OurPGMs from '@/components/home/OurPGMs';
 import { Separator } from '@/components/home/Separator';
 import WaysToContribute from '@/components/home/WaysToContribute';
 import { homeSlides } from '@/data/carousel';
+import { Riachuelo } from '@/components/home/Riachuelo';
 
 export const metadata = {
   // title: 'IBE - Igreja Batista da Esperança',
@@ -32,6 +33,7 @@ export default function SitePage() {
       <Separator />
       <NextEvents />
       <LiveTransmissions />
+      <Riachuelo />
       <WaysToContribute />
     </main>
   );
