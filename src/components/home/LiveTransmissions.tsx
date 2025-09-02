@@ -62,6 +62,12 @@ const MOCK_TRANSMISSIONS: LiveTransmission[] = [
     videoId: 'N6BPaytgUnU',
     publishedAt: '2025-08-24',
   },
+  {
+    id: '6',
+    title: 'Culto de Domingo - 02/09/2025',
+    videoId: 'hwY9Xb27Af8',
+    publishedAt: '2025-09-02',
+  },
 ];
 
 const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/FamíliaIBE/streams';
