@@ -5,9 +5,9 @@ import { SectionContainer } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 import { BlogPostSchema } from '@/lib/schema';
+import { formatArticleDate } from '@/utils/datetime';
 import { getPost } from '../get-post';
 import { getSlugs } from '../get-slugs';
-import { ArrowLeftIcon } from 'lucide-react';
 
 export async function generateMetadata({
   params,
@@ -90,12 +90,8 @@ export default async function ArticlePage({
   // Dynamically import the MDX content
   const { default: Content } = await import(`../content/${slug}.mdx`);
 
-  // Format the date for display
-  const formattedDate = new Date(post.date).toLocaleDateString('pt-BR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  // Format the date for display using the utility function
+  const formattedDate = formatArticleDate(post.date);
 
   // Full URLs for schema with cache-busting
   const buildTimestamp = process.env.BUILD_TIMESTAMP || Date.now().toString();
