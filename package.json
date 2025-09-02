@@ -20,7 +20,7 @@
     "start": "next start",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write --unsafe .",
-    "format": "biome format --check .",
+    "format": "biome format .",
     "format:fix": "biome format --write .",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .next out"
