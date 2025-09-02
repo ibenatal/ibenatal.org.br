@@ -31,9 +31,10 @@ export default function SitePage() {
       <Separator />
       <FromBlog />
       <Separator />
+      <Riachuelo />
+      <Separator />
       <NextEvents />
       <LiveTransmissions />
-      <Riachuelo />
       <WaysToContribute />
     </main>
   );
