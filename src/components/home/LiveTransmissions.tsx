@@ -64,9 +64,9 @@ const MOCK_TRANSMISSIONS: LiveTransmission[] = [
   },
   {
     id: '6',
-    title: 'Culto de Domingo - 02/09/2025',
+    title: 'Culto de Domingo - 31/08/2025',
     videoId: 'hwY9Xb27Af8',
-    publishedAt: '2025-09-02',
+    publishedAt: '2025-08-31',
   },
 ];
 
