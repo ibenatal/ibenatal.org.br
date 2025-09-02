@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function MissaoRiachueloPage() {
   return (
     <ContentLayout
-      image="/images/riachuelo.jpg"
+      image="/images/missao-riachuelo/igreja-batista-de-riachuelo.jpg"
       title="Missão Riachuelo"
       breadcrumbs={[{ label: 'Missão Riachuelo', href: '/missao-riachuelo' }]}
     >
