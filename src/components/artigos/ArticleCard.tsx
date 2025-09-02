@@ -7,10 +7,10 @@ export function ArticleCard({ post }: { post: Post }) {
   const formattedDate = dateIsoToDDMMYYYY(post.date);
 
   return (
-    <div className="flex flex-col gap-4 h-full bg-white rounded-lg">
+    <div className="flex h-full flex-col gap-4 rounded-lg bg-white">
       <Link
         href={`/artigos/${post.slug}`}
-        className="group relative w-full aspect-video block overflow-hidden rounded-lg"
+        className="group relative block aspect-video w-full overflow-hidden rounded-lg"
         aria-label={`Ler mais sobre ${post.title}`}
         title={`Ler mais sobre ${post.title}`}
       >
@@ -25,12 +25,12 @@ export function ArticleCard({ post }: { post: Post }) {
       </Link>
       <div className="flex flex-col gap-4 px-4 pt-4 pb-8">
         <Link href={`/artigos/${post.slug}`}>
-          <h3 className="text-xl font-medium line-clamp-2 text-primary-800 hover:text-primary-500 hover:underline transition-colors">
+          <h3 className="line-clamp-2 font-medium text-primary-800 text-xl transition-colors hover:text-primary-500 hover:underline">
             {post.title}
           </h3>
         </Link>
-        <p className="text-gray-600 line-clamp-3">{post.description}</p>
-        <div className="flex flex-row gap-4 text-sm text-gray-500">
+        <p className="line-clamp-3 text-gray-600">{post.description}</p>
+        <div className="flex flex-row gap-4 text-gray-500 text-sm">
           <span>{post.author}</span>
           <span>•</span>
           <span>{formattedDate}</span>

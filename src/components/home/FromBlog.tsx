@@ -19,7 +19,7 @@ export default async function FromBlog() {
           <SectionDescription description="Confira as últimas notícias do nosso blog." />
         </header>
 
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col gap-8 md:flex-row">
           {posts.map((post, index) => (
             <ArticleCard
               key={post.slug}
@@ -87,7 +87,7 @@ const ArticleCard = ({
       />
       <Link
         href={`/artigos/${post.slug}`}
-        className="group relative w-full aspect-video block overflow-hidden rounded-lg"
+        className="group relative block aspect-video w-full overflow-hidden rounded-lg"
         aria-label={`Ler mais sobre ${post.title}`}
         title={`Ler mais sobre ${post.title}`}
       >
@@ -100,9 +100,9 @@ const ArticleCard = ({
         />
         <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
       </Link>
-      <div className="flex flex-col gap-2 h-[5.25rem]">
+      <div className="flex h-[5.25rem] flex-col gap-2">
         <Link href={`/artigos/${post.slug}`}>
-          <h3 className="text-lg font-medium text-primary-800 hover:text-primary-500 hover:underline transition-colors line-clamp-2">
+          <h3 className="line-clamp-2 font-medium text-lg text-primary-800 transition-colors hover:text-primary-500 hover:underline">
             {post.title}
           </h3>
         </Link>
@@ -116,7 +116,7 @@ const ArticleCard = ({
         </div>
       </div>
       <p className="text-base">{post.description}</p>
-      <div className="flex flex-row gap-2 justify-end">
+      <div className="flex flex-row justify-end gap-2">
         <Button asChild outline variant="link" className="px-0">
           <Link
             href={`/artigos/${post.slug}`}

@@ -31,7 +31,7 @@ export function Pagination() {
   const _showEllipsisEnd = pages[pages.length - 1] < totalPages;
 
   return (
-    <div className="flex flex-row gap-2 md:gap-4 relative justify-between py-10">
+    <div className="relative flex flex-row justify-between gap-2 py-10 md:gap-4">
       <Button
         variant="primary"
         outline

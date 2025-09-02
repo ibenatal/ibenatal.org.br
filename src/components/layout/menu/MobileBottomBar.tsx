@@ -10,8 +10,8 @@ export function MobileBottomBar() {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path;
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-primary-100 block md:hidden px-4 sm:px-4 z-50">
-      <div className="flex justify-between h-15 items-center max-w-[40rem]  w-full mx-auto">
+    <div className="fixed right-0 bottom-0 left-0 z-50 block bg-primary-100 px-4 sm:px-4 md:hidden">
+      <div className="mx-auto flex h-15 w-full max-w-[40rem] items-center justify-between">
         {menuItems.map((item) => {
           const Icon = item.icon;
           return (

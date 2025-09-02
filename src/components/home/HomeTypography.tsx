@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 export function SectionTitle({ title }: { title: string }) {
   return (
-    <h2 className="lg:text-6xl md:text-5xl sm:text-4xl text-2xl font-bold text-center text-primary-700">
+    <h2 className="text-center font-bold text-2xl text-primary-700 sm:text-4xl md:text-5xl lg:text-6xl">
       {title}
     </h2>
   );
@@ -10,7 +10,7 @@ export function SectionTitle({ title }: { title: string }) {
 
 export function SectionDescription({ description }: { description: string }) {
   return (
-    <p className="text-base sm:text-xl lg:text-2xl text-center leading-relaxed">
+    <p className="text-center text-base leading-relaxed sm:text-xl lg:text-2xl">
       {description}
     </p>
   );
@@ -31,7 +31,7 @@ export function CardTitle({
   return (
     <h3
       className={cn(
-        'sm:text-2xl text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary-700 ',
+        'text-center font-bold text-2xl text-primary-700 sm:text-2xl md:text-3xl lg:text-4xl ',
         className,
       )}
     >
@@ -42,7 +42,7 @@ export function CardTitle({
 
 export function CardDescription({ description }: { description: string }) {
   return (
-    <p className="text-sm sm:text-base lg:text-xl leading-relaxed">
+    <p className="text-sm leading-relaxed sm:text-base lg:text-xl">
       {description}
     </p>
   );
@@ -58,7 +58,7 @@ export function CardParagraph({
   return (
     <p
       className={cn(
-        'text-sm sm:text-base lg:text-xl leading-relaxed',
+        'text-sm leading-relaxed sm:text-base lg:text-xl',
         className,
       )}
     >

@@ -91,8 +91,8 @@ export function WeeklyEvents() {
     <>
       {nextEvents.length === 0 ? (
         <>
-          <div className="bg-slate-200 h-[92px] w-full rounded-2xl animate-pulse"></div>
-          <div className="bg-slate-200 h-[92px] w-full rounded-2xl animate-pulse"></div>
+          <div className="h-[92px] w-full animate-pulse rounded-2xl bg-slate-200"></div>
+          <div className="h-[92px] w-full animate-pulse rounded-2xl bg-slate-200"></div>
         </>
       ) : (
         nextEvents.map((event) => (

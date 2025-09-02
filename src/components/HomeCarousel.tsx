@@ -27,7 +27,7 @@ interface HomeCarouselProps {
 
 export default function HomeCarousel({ slides }: HomeCarouselProps) {
   return (
-    <div className="relative w-full home-carousel">
+    <div className="home-carousel relative w-full">
       <style jsx global>{`
         .home-carousel .swiper-button-next,
         .home-carousel .swiper-button-prev {
@@ -74,10 +74,10 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
         pagination={{ clickable: true }}
         autoplay={{ delay: 10_000, disableOnInteraction: false }}
         loop={true}
-        className="w-full aspect-video lg:aspect-auto lg:h-[600px]"
+        className="aspect-video w-full lg:aspect-auto lg:h-[600px]"
       >
         {slides.map((slide) => (
-          <SwiperSlide key={slide.id} className="relative w-full h-full">
+          <SwiperSlide key={slide.id} className="relative h-full w-full">
             <div className="absolute inset-0">
               <Image
                 src={slide.image}
@@ -91,14 +91,14 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
               />
               <div className="absolute inset-0 bg-secondary/50" />
             </div>
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-8 text-white">
+            <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-8">
               {!!slide.title && (
-                <h2 className="text-2xl md:text-5xl font-bold mb-4">
+                <h2 className="mb-4 font-bold text-2xl md:text-5xl">
                   {slide.title}
                 </h2>
               )}
               {!!slide.subtitle && (
-                <p className="text-lg md:text-2xl mb-8">{slide.subtitle}</p>
+                <p className="mb-8 text-lg md:text-2xl">{slide.subtitle}</p>
               )}
               {!!slide.buttonLink && !!slide.buttonText && (
                 <Button

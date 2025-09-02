@@ -6,7 +6,7 @@ import { LinkUI } from '@/components/ui/link-ui';
 
 export default function Page() {
   return (
-    <Container className="py-16 flex flex-col gap-16">
+    <Container className="flex flex-col gap-16 py-16">
       <ButtonDocs />
       <LinkDocs />
       <LucideIconsDocs />
@@ -28,10 +28,10 @@ function ButtonDocs() {
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b">
-                  <th className="text-left p-2">Prop</th>
-                  <th className="text-left p-2">Type</th>
-                  <th className="text-left p-2">Default</th>
-                  <th className="text-left p-2">Description</th>
+                  <th className="p-2 text-left">Prop</th>
+                  <th className="p-2 text-left">Type</th>
+                  <th className="p-2 text-left">Default</th>
+                  <th className="p-2 text-left">Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -236,7 +236,7 @@ function IconsDocs() {
       <div className="grid grid-cols-2 gap-4">
         {Object.entries(icons).map(([name, Icon]) => (
           <div key={name} className="flex flex-col items-center gap-2">
-            <Icon className="w-6 h-6" />
+            <Icon className="h-6 w-6" />
             <span>{name}</span>
           </div>
         ))}
@@ -284,10 +284,10 @@ function LinkDocs() {
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b">
-                  <th className="text-left p-2">Prop</th>
-                  <th className="text-left p-2">Type</th>
-                  <th className="text-left p-2">Default</th>
-                  <th className="text-left p-2">Description</th>
+                  <th className="p-2 text-left">Prop</th>
+                  <th className="p-2 text-left">Type</th>
+                  <th className="p-2 text-left">Default</th>
+                  <th className="p-2 text-left">Description</th>
                 </tr>
               </thead>
               <tbody>

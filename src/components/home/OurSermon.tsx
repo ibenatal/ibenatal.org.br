@@ -34,7 +34,7 @@ export default function OurSermon() {
           <SectionDescription description="Confira as últimas reflexões" />
         </header>
 
-        <article className="flex flex-col gap-6 sm:gap-8 sm:flex-row">
+        <article className="flex flex-col gap-6 sm:flex-row sm:gap-8">
           <VideoSchema
             name={sermonTitle}
             description="Sermão da série sobre o livro de Romanos"
@@ -52,7 +52,7 @@ export default function OurSermon() {
               className="rounded object-cover"
             />
           </div>
-          <div className="flex flex-col gap-8 w-full sm:w-1/2">
+          <div className="flex w-full flex-col gap-8 sm:w-1/2">
             <CardTitle title={sermonTitle} className="text-left" />
             <div className="flex flex-row gap-8">
               <time dateTime={sermonDate} className="text-sm">

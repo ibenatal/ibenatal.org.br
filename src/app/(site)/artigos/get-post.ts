@@ -5,7 +5,11 @@ import type { Post } from './get-posts';
 
 export async function getPost(slug: string): Promise<Post | null> {
   try {
-    const filePath = path.join(process.cwd(), 'src/app/(site)/artigos/content', `${slug}.mdx`);
+    const filePath = path.join(
+      process.cwd(),
+      'src/app/(site)/artigos/content',
+      `${slug}.mdx`,
+    );
     const content = await readFile(filePath, 'utf8');
 
     // Import the MDX file to get its metadata

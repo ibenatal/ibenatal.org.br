@@ -1,7 +1,8 @@
 export const whatsapp = {
   label: '(84) 99912-3905',
   hrefClean: 'https://wa.me/5584999123905',
-  hrefWithMessage: 'https://wa.me/5584999123905?text=Olá, gostaria de saber mais sobre a IBE.',
+  hrefWithMessage:
+    'https://wa.me/5584999123905?text=Olá, gostaria de saber mais sobre a IBE.',
   hrefToPray: 'https://wa.me/5584999123905?text=Gostaria de pedir oração.',
 };
 

@@ -8,8 +8,8 @@ export default function OurMinistries() {
       <SectionContainer>
         <div className="flex flex-col gap-6 sm:gap-18">
           <SectionTitle title="Nossas Redes" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-8">
-            <div className="flex flex-col gap-6 sm:gap-8 items-center">
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-3 lg:gap-8">
+            <div className="flex flex-col items-center gap-6 sm:gap-8">
               <CardTitle>Definição de Redes</CardTitle>
               <CardParagraph className="lg:text-base">
                 As redes são grupos intencionais que visam conectar as pessoas
@@ -23,7 +23,7 @@ export default function OurMinistries() {
               </CardParagraph>
             </div>
 
-            <div className="flex flex-col gap-6 sm:gap-8 items-center">
+            <div className="flex flex-col items-center gap-6 sm:gap-8">
               <CardTitle>Propósitos das Redes</CardTitle>
               <CardParagraph className="lg:text-base">
                 Têm como objetivos primários atrair, conectar, e expandir,
@@ -33,7 +33,7 @@ export default function OurMinistries() {
                 da igreja.
               </CardParagraph>
             </div>
-            <div className="flex flex-col gap-6 sm:gap-8 items-center">
+            <div className="flex flex-col items-center gap-6 sm:gap-8">
               <CardTitle>Foco das Redes</CardTitle>
               <CardParagraph className="lg:text-base">
                 Devem Manter um componente devocional em todos os encontros,
@@ -44,7 +44,7 @@ export default function OurMinistries() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {redes.slice(0, 3).map((rede) => (
             <div key={rede.id} className="flex flex-col gap-6 sm:gap-8">
               <div className="relative aspect-video w-full">
@@ -54,7 +54,7 @@ export default function OurMinistries() {
                   height={333}
                   width={192}
                   quality={100}
-                  className="rounded object-cover absolute inset-0 left-0 top-0 w-full h-full"
+                  className="absolute inset-0 top-0 left-0 h-full w-full rounded object-cover"
                 />
               </div>
               <CardTitle>{rede.title}</CardTitle>
@@ -62,7 +62,7 @@ export default function OurMinistries() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:mx-auto md:w-2/3 mt-8">
+        <div className="mt-8 grid grid-cols-1 gap-8 md:mx-auto md:w-2/3 md:grid-cols-2">
           {redes.slice(3).map((rede) => (
             <div key={rede.id} className="flex flex-col gap-6 sm:gap-8">
               <div className="relative h-[192px] w-full">
@@ -71,7 +71,7 @@ export default function OurMinistries() {
                   alt={rede.title}
                   height={333}
                   width={192}
-                  className="rounded object-cover absolute inset-0 left-0 top-0 w-full h-full"
+                  className="absolute inset-0 top-0 left-0 h-full w-full rounded object-cover"
                 />
               </div>
               <CardTitle title={rede.title} />

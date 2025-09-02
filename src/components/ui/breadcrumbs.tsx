@@ -33,11 +33,11 @@ export function Breadcrumbs({ items, className, ...props }: BreadcrumbsProps) {
                 <span className="mx-2 text-muted-foreground">/</span>
               )}
               {index === breadcrumbItems.length - 1 ? (
-                <span className="text-white/90 font-medium">{item.label}</span>
+                <span className="font-medium text-white/90">{item.label}</span>
               ) : (
                 <Link
                   href={item.href}
-                  className="text-white/70 decoration hover:underline transition-colors"
+                  className="decoration text-white/70 transition-colors hover:underline"
                 >
                   {item.label}
                 </Link>

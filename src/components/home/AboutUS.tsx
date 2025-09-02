@@ -40,7 +40,7 @@ export default function AboutUS() {
 
 const NossaVisaoContent = ({ className }: { className?: string }) => {
   return (
-    <div className={cn('flex flex-col gap-6 sm:gap-8 items-center', className)}>
+    <div className={cn('flex flex-col items-center gap-6 sm:gap-8', className)}>
       <Image
         src="/images/icons/biblia.png"
         alt="Nossa Visão"
@@ -57,7 +57,7 @@ const NossaVisaoContent = ({ className }: { className?: string }) => {
 
 const NossaMissaoContent = ({ className }: { className?: string }) => {
   return (
-    <div className={cn('flex flex-col gap-6 sm:gap-8 items-center', className)}>
+    <div className={cn('flex flex-col items-center gap-6 sm:gap-8', className)}>
       <Image
         src="/images/icons/igreja.png"
         alt="Nossa Missão"
@@ -81,7 +81,7 @@ const NossaMissaoContent = ({ className }: { className?: string }) => {
 
 const NossosValoresContent = ({ className }: { className?: string }) => {
   return (
-    <div className={cn('flex flex-col gap-6 sm:gap-8 items-center', className)}>
+    <div className={cn('flex flex-col items-center gap-6 sm:gap-8', className)}>
       <Image
         src="/images/icons/por-do-sol.png"
         alt="Nossos Valores"
@@ -89,7 +89,7 @@ const NossosValoresContent = ({ className }: { className?: string }) => {
         height={80}
       />
       <CardTitle>Nossos Valores</CardTitle>
-      <ul className="w-full md:w-auto list-disc list-inside text-sm sm:text-base lg:text-lg leading-relaxed lg:ml-2">
+      <ul className="w-full list-inside list-disc text-sm leading-relaxed sm:text-base md:w-auto lg:ml-2 lg:text-lg">
         <li>Amor Compassivo</li>
         <li>Acolhimento Genuíno</li>
         <li>Discipulado Transformador</li>
@@ -104,7 +104,7 @@ const NossosValoresContent = ({ className }: { className?: string }) => {
 
 const PilaresContent = ({ className }: { className?: string }) => {
   return (
-    <div className={cn('flex flex-col gap-6 sm:gap-8 items-center', className)}>
+    <div className={cn('flex flex-col items-center gap-6 sm:gap-8', className)}>
       <Image
         src="/images/icons/por-do-sol.png"
         alt="Nossos Valores"
@@ -117,7 +117,7 @@ const PilaresContent = ({ className }: { className?: string }) => {
         fé e se tornarem membros ativos da comunidade.
       </CardParagraph>
 
-      <ul className="w-full md:w-auto list-decimal list-inside text-sm sm:text-base lg:text-lg leading-relaxed lg:ml-2">
+      <ul className="w-full list-inside list-decimal text-sm leading-relaxed sm:text-base md:w-auto lg:ml-2 lg:text-lg">
         <li>
           Atrair: <span className="font-bold">Convidar e receber pessoas.</span>
         </li>

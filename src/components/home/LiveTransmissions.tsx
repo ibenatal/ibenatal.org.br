@@ -98,12 +98,12 @@ function TransmissionCard({
         <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
       </Link>
       <div className="flex flex-col gap-2">
-        <h3 className="font-semibold text-lg line-clamp-2">
+        <h3 className="line-clamp-2 font-semibold text-lg">
           {transmission.title}
         </h3>
         <time
           dateTime={transmission.publishedAt}
-          className="text-sm text-primary-900/70"
+          className="text-primary-900/70 text-sm"
         >
           {new Date(
             `${transmission.publishedAt}T00:00:00-03:00`,
@@ -128,7 +128,7 @@ export default function LiveTransmissions() {
         </header>
 
         <div className="flex flex-col gap-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {last3Transmissions.map((transmission) => (
               <TransmissionCard
                 key={transmission.id}

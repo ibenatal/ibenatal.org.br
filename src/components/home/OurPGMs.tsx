@@ -16,7 +16,7 @@ export default function OurPGMs() {
         <div className="flex flex-col gap-6 sm:gap-8">
           <SectionTitle title="Nossos PGMs" />
           <div className="flex flex-col gap-2">
-            <p className="text-sm sm:text-base lg:text-lg text-left leading-relaxed">
+            <p className="text-left text-sm leading-relaxed sm:text-base lg:text-lg">
               Um Pequeno Grupo Multiplicador é um grupo de pessoas que se reúne
               regularmente com o objetivo de promover o crescimento espiritual,
               a comunhão, o evangelismo e o discipulado, tendo como missão clara
@@ -24,14 +24,14 @@ export default function OurPGMs() {
               grupo original. Os grupos se reúnem quinzenalmente, normalmente em
               casas ou em salas da igreja.
             </p>
-            <p className="text-sm sm:text-base lg:text-lg text-left leading-relaxed">
+            <p className="text-left text-sm leading-relaxed sm:text-base lg:text-lg">
               Os encontros geralmente incluem leitura e estudo da Bíblia,
               oração, partilha de experiências e apoio mútuo.
             </p>
           </div>
         </div>
 
-        <div className="w-full our-pgs-carousel">
+        <div className="our-pgs-carousel w-full">
           <style jsx global>{`
             .our-pgs-carousel .swiper-button-next,
             .our-pgs-carousel .swiper-button-prev {
@@ -99,14 +99,14 @@ export default function OurPGMs() {
           >
             {redes.map((rede) => (
               <SwiperSlide key={rede.id}>
-                <div className="flex flex-col gap-6 sm:gap-8 p-4 pb-20">
+                <div className="flex flex-col gap-6 p-4 pb-20 sm:gap-8">
                   <div className="relative h-[192px] w-full">
                     <Image
                       src={rede.image}
                       alt={rede.description}
                       height={333}
                       width={192}
-                      className="rounded object-cover absolute inset-0 left-0 top-0 w-full h-full"
+                      className="absolute inset-0 top-0 left-0 h-full w-full rounded object-cover"
                     />
                   </div>
                   <CardTitle title={rede.description} />

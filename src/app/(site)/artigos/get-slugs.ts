@@ -10,7 +10,9 @@ export async function getSlugs(): Promise<string[]> {
     const files = await readdir(dirPath);
 
     // Filter for MDX files and remove the extension
-    return files.filter((file) => file.endsWith('.mdx')).map((file) => file.replace('.mdx', ''));
+    return files
+      .filter((file) => file.endsWith('.mdx'))
+      .map((file) => file.replace('.mdx', ''));
   } catch (error) {
     console.error('Error reading content directory:', error);
     return [];

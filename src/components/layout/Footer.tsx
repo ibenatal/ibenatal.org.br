@@ -8,8 +8,8 @@ import { menuItems } from './menu/menuItems';
 
 export function Footer() {
   return (
-    <footer className="bg-primary-700 text-white divide-y divide-white/50 px-4 mb-[3.75rem] md:mb-0">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 sm:gap-4 pt-14 pb-10">
+    <footer className="mb-[3.75rem] divide-y divide-white/50 bg-primary-700 px-4 text-white md:mb-0">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 pt-14 pb-10 sm:gap-4 md:flex-row">
         <section
           className="flex flex-col gap-4 md:w-6/12"
           aria-label="Informações de contato"
@@ -20,7 +20,7 @@ export function Footer() {
               alt="Igreja Batista da Esperança"
               width={107}
               height={80}
-              className="w-[48px] md:w-[107px] h-auto"
+              className="h-auto w-[48px] md:w-[107px]"
             />
           </Link>
           <div>Igreja Batista da Esperança</div>
@@ -33,7 +33,7 @@ export function Footer() {
             title="Abrir no WhatsApp"
             aria-label="Abrir no WhatsApp"
           >
-            <WhatsappFillIcon className="w-4 h-4" />
+            <WhatsappFillIcon className="h-4 w-4" />
             <span>{whatsapp.label}</span>
           </LinkUI>
           <address className="not-italic">
@@ -46,9 +46,9 @@ export function Footer() {
               aria-label="Abrir no Google Maps"
               title="Abrir no Google Maps"
             >
-              <MapPin className="w-4 h-4 mt-1.5" />
+              <MapPin className="mt-1.5 h-4 w-4" />
               <div className="flex flex-col gap-1">
-                <p className="w-full inline-flex items-center gap-2">
+                <p className="inline-flex w-full items-center gap-2">
                   {locationInfo.address},
                   <span className="whitespace-nowrap">
                     {locationInfo.neighborhood}
@@ -66,7 +66,7 @@ export function Footer() {
           className="flex flex-col gap-4 md:w-3/12"
           aria-label="Links de navegação"
         >
-          <h3 className="text-2xl font-bold">Links</h3>
+          <h3 className="font-bold text-2xl">Links</h3>
           <nav className="flex flex-col gap-2">
             {menuItems.map((item) => (
               <Link href={item.to} key={item.to}>
@@ -79,7 +79,7 @@ export function Footer() {
           className="flex flex-col gap-4 md:w-3/12"
           aria-label="Redes sociais"
         >
-          <h3 className="text-2xl font-bold">Siga-nos</h3>
+          <h3 className="font-bold text-2xl">Siga-nos</h3>
           <nav className="flex flex-col gap-2">
             <LinkUI
               href={socialLinks.youtube.href}
@@ -89,7 +89,7 @@ export function Footer() {
               title="Abrir no Youtube"
               aria-label="Abrir no Youtube"
             >
-              <Youtube className="w-4 h-4" />
+              <Youtube className="h-4 w-4" />
               <span>Youtube</span>
             </LinkUI>
             <LinkUI
@@ -100,14 +100,14 @@ export function Footer() {
               title="Abrir no Instagram"
               aria-label="Abrir no Instagram"
             >
-              <Instagram className="w-4 h-4" />
+              <Instagram className="h-4 w-4" />
               <span>Instagram</span>
             </LinkUI>
           </nav>
         </section>
       </div>
       <div className=" ">
-        <div className="max-w-6xl mx-auto py-6 flex justify-between">
+        <div className="mx-auto flex max-w-6xl justify-between py-6">
           <small>
             &copy; {new Date().getFullYear()} Igreja Batista da Esperança. Todos
             os direitos reservados.
@@ -119,7 +119,7 @@ export function Footer() {
               rel="noopener noreferrer"
               title="Quer ajudar com o site?"
             >
-              <Github className="w-4 h- text-white/50" />
+              <Github className="h- w-4 text-white/50" />
             </LinkUI>
           </small>
         </div>

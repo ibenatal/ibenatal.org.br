@@ -46,7 +46,7 @@ const EventCard = ({
 
   return (
     <article
-      className={cn('flex flex-row gap-2 items-start relative', className)}
+      className={cn('relative flex flex-row items-start gap-2', className)}
     >
       <EventSchema
         name={title}
@@ -56,17 +56,17 @@ const EventCard = ({
         image={fullImageUrl}
         url={fullUrl}
       />
-      <div className="flex flex-col gap-2 bg-white rounded-lg p-2 max-sm:absolute max-sm:top-2 max-sm:left-2 max-sm:z-10 shadow-2xs max-sm:opacity-90">
+      <div className="flex flex-col gap-2 rounded-lg bg-white p-2 shadow-2xs max-sm:absolute max-sm:top-2 max-sm:left-2 max-sm:z-10 max-sm:opacity-90">
         <time dateTime={date} className="flex flex-col">
-          <span className="text-base text-primary text-center py-1">
+          <span className="py-1 text-center text-base text-primary">
             {day} {capitalize(monthName)}
           </span>
-          <span className="text-sm bg-primary p-2 rounded-md text-white text-center">
+          <span className="rounded-md bg-primary p-2 text-center text-sm text-white">
             {time}
           </span>
         </time>
       </div>
-      <div className="flex flex-col gap-4 flex-1">
+      <div className="flex flex-1 flex-col gap-4">
         <div className="relative aspect-3/4 w-full">
           <Image
             src={image}
@@ -76,8 +76,8 @@ const EventCard = ({
             className="rounded object-cover"
           />
         </div>
-        <h3 className="text-2xl font-bold text-primary">{title}</h3>
-        <div className="flex flex-col gap-2 justify-start items-start">
+        <h3 className="font-bold text-2xl text-primary">{title}</h3>
+        <div className="flex flex-col items-start justify-start gap-2">
           <p className="text-base">{description}</p>
           <address className="not-italic">{address}</address>
         </div>
@@ -92,7 +92,7 @@ interface SpecialEventCardsProps {
 
 export function SpecialEventCards({ events }: SpecialEventCardsProps) {
   return (
-    <div className="flex flex-col md:flex-row gap-12 sm:gap-8">
+    <div className="flex flex-col gap-12 sm:gap-8 md:flex-row">
       {events.map((event) => (
         <EventCard
           key={`${event.title}-${event.date}`}

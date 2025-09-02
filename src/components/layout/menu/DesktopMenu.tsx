@@ -3,14 +3,14 @@ import { menuItems } from './menuItems';
 
 export function DesktopMenu() {
   return (
-    <nav className="md:block hidden">
+    <nav className="hidden md:block">
       <ul className="flex gap-2">
         {menuItems.map((item) => (
           <li key={item.to}>
             <Link
               href={item.to}
               title={item.label}
-              className="text-lg xl:text-xl hover:bg-black/60 px-4 py-3"
+              className="px-4 py-3 text-lg hover:bg-black/60 xl:text-xl"
             >
               {item.label}
             </Link>

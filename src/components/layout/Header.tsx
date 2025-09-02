@@ -46,11 +46,11 @@ export function Header() {
     <header
       ref={headerRef}
       className={cn(
-        'bg-primary-500 text-white/90 md:relative fixed top-0 left-0 right-0 w-full transition-transform duration-300 ease-in-out h-14 md:h-auto z-50',
+        'fixed top-0 right-0 left-0 z-50 h-14 w-full bg-primary-500 text-white/90 transition-transform duration-300 ease-in-out md:relative md:h-auto',
         !isVisible ? '-translate-y-full' : 'translate-y-0',
       )}
     >
-      <div className="flex max-w-7xl mx-auto justify-center md:justify-between items-center px-3 py-2 md:py-4 md:px-4 h-full">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-center px-3 py-2 md:justify-between md:px-4 md:py-4">
         <div aria-description="Logo" className="flex items-center gap-8">
           <Link href="/" title="Ir para a página inicial">
             <Image
@@ -58,12 +58,12 @@ export function Header() {
               alt="Igreja Batista da Esperança"
               width={107}
               height={80}
-              className="w-[48px] md:w-[107px] h-auto"
+              className="h-auto w-[48px] md:w-[107px]"
             />
           </Link>
         </div>
         <Link href="/" title="Ir para a página inicial">
-          <h1 className="textlg xl:text-xl font-bold text-white/90 hidden lg:block">
+          <h1 className="textlg hidden font-bold text-white/90 lg:block xl:text-xl">
             Igreja Batista da Esperança
           </h1>
         </Link>

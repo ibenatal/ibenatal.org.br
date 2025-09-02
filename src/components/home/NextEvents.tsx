@@ -50,19 +50,19 @@ const SPECIAL_EVENTS: SpecialEvent[] = [
 
 function LoadingEventCards() {
   return (
-    <div className="flex flex-col md:flex-row gap-12 sm:gap-8">
+    <div className="flex flex-col gap-12 sm:gap-8 md:flex-row">
       {[1, 2, 3].map((index) => (
         <div
           key={index}
-          className="w-full md:w-1/3 flex flex-row gap-2 items-start relative animate-pulse"
+          className="relative flex w-full animate-pulse flex-row items-start gap-2 md:w-1/3"
         >
-          <div className="flex flex-col gap-2 bg-slate-200 rounded-lg p-2 h-[72px] w-[72px]" />
-          <div className="flex flex-col gap-4 flex-1">
-            <div className="relative aspect-3/4 w-full bg-slate-200 rounded" />
-            <div className="h-8 bg-slate-200 rounded w-3/4" />
+          <div className="flex h-[72px] w-[72px] flex-col gap-2 rounded-lg bg-slate-200 p-2" />
+          <div className="flex flex-1 flex-col gap-4">
+            <div className="relative aspect-3/4 w-full rounded bg-slate-200" />
+            <div className="h-8 w-3/4 rounded bg-slate-200" />
             <div className="flex flex-col gap-2">
-              <div className="h-4 bg-slate-200 rounded w-full" />
-              <div className="h-4 bg-slate-200 rounded w-2/3" />
+              <div className="h-4 w-full rounded bg-slate-200" />
+              <div className="h-4 w-2/3 rounded bg-slate-200" />
             </div>
           </div>
         </div>

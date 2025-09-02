@@ -109,7 +109,7 @@ export default async function ArticlePage({
 
   return (
     <main className="bg-neutral-100">
-      <SectionContainer className="relative pb-16 max-w-4xl lg:pt-8 lg:gap-8">
+      <SectionContainer className="relative max-w-4xl pb-16 lg:gap-8 lg:pt-8">
         <div className="relative aspect-video">
           <Image
             src={post.image || '/images/articles/article-default.png'}
@@ -119,7 +119,7 @@ export default async function ArticlePage({
           />
         </div>
 
-        <article className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <article className="overflow-hidden rounded-lg bg-white shadow-lg">
           <BlogPostSchema
             headline={post.title}
             description={post.description}
@@ -130,14 +130,19 @@ export default async function ArticlePage({
           />
 
           <div className="px-8 py-8 md:p-12 lg:py-12">
-            <header className="max-w-3xl mx-auto mb-12">
-              <Link href={`/artigos/${post.slug}`} className="flex items-center gap-2" prefetch={false} title={post.title}>
+            <header className="mx-auto mb-12 max-w-3xl">
+              <Link
+                href={`/artigos/${post.slug}`}
+                className="flex items-center gap-2"
+                prefetch={false}
+                title={post.title}
+              >
                 <Heading as="h1" className="mb-8 text-5xl">
                   {post.title}
                 </Heading>
               </Link>
 
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+              <div className="flex flex-wrap items-center gap-4 text-gray-600 text-sm">
                 <div className="flex items-center gap-2">
                   <span>Por {post.author}</span>
                 </div>
@@ -148,11 +153,11 @@ export default async function ArticlePage({
               </div>
 
               {post.tags && post.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="mt-4 flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm capitalize"
+                      className="rounded-full bg-gray-100 px-3 py-1 text-gray-700 text-sm capitalize"
                     >
                       {tag}
                     </span>
@@ -161,11 +166,11 @@ export default async function ArticlePage({
               )}
             </header>
 
-            <div className="max-w-3xl mx-auto prose prose-lg prose-primary gap-6 flex flex-col text-lg">
+            <div className="prose prose-lg prose-primary mx-auto flex max-w-3xl flex-col gap-6 text-lg">
               <Content />
             </div>
 
-            <footer className="max-w-3xl mx-auto mt-12 pt-8 border-t">
+            <footer className="mx-auto mt-12 max-w-3xl border-t pt-8">
               <Button asChild variant="primary">
                 <Link href="/artigos">← Voltar para lista de artigos</Link>
               </Button>

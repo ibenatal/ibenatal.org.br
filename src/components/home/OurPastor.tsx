@@ -20,25 +20,31 @@ export function OurPastor() {
           <SectionDescription description="Conheça o pastor da IBE Natal" />
         </header>
 
-        <article className="flex flex-col gap-6 sm:gap-8 sm:flex-row">
-          <div className="flex flex-col gap-8 w-full sm:w-5/12">
+        <article className="flex flex-col gap-6 sm:flex-row sm:gap-8">
+          <div className="flex w-full flex-col gap-8 sm:w-5/12">
             <CardTitle title={pastorName} className="text-left" />
             <div className="flex flex-col gap-4">
               {pastorDescription.map((description, index) => (
-                <p key={String(index)} className="text-sm sm:text-base lg:text-lg leading-relaxed">
+                <p
+                  key={String(index)}
+                  className="text-sm leading-relaxed sm:text-base lg:text-lg"
+                >
                   {description}
                 </p>
               ))}
             </div>
             <div className="flex justify-center sm:justify-start">
               <Button asChild outline>
-                <Link href={pastorUrl} aria-label={`Conhecer mais sobre ${pastorName}`}>
+                <Link
+                  href={pastorUrl}
+                  aria-label={`Conhecer mais sobre ${pastorName}`}
+                >
                   Conhecer mais
                 </Link>
               </Button>
             </div>
           </div>
-          <div className="relative w-full sm:w-7/12 h-[450px]">
+          <div className="relative h-[450px] w-full sm:w-7/12">
             <Image
               src={pastorImageUrl}
               alt={pastorName}

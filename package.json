@@ -18,12 +18,12 @@
     "dev": "env-cmd next dev --turbopack --hostname 0.0.0.0",
     "build": "BUILD_TIMESTAMP=$(date +%s) next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:biome": "biome lint .",
-    "format": "biome format .",
-    "format:check": "biome format --check .",
-    "clean": "rm -rf .next out",
-    "typecheck": "tsc --noEmit"
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write --unsafe .",
+    "format": "biome format --check .",
+    "format:fix": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

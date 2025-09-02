@@ -17,22 +17,22 @@ export function MobileMenu() {
       <DrawerTrigger asChild>
         <button
           type="button"
-          className="md:hidden hover:bg-black/50 transition-colors duration-300 active:bg-black/50 rounded-full p-2"
+          className="rounded-full p-2 transition-colors duration-300 hover:bg-black/50 active:bg-black/50 md:hidden"
           aria-label="Menu"
         >
-          <RoundMenuIcon className="w-7 h-7 text-white" />
+          <RoundMenuIcon className="h-7 w-7 text-white" />
         </button>
       </DrawerTrigger>
-      <DrawerContent className="bg-[#696D5F] text-white !border-l-0">
+      <DrawerContent className="!border-l-0 bg-[#696D5F] text-white">
         <DrawerHeader>
-          <DrawerTitle className="text-xl font-bold text-black/50">
+          <DrawerTitle className="font-bold text-black/50 text-xl">
             Menu
           </DrawerTitle>
           <DrawerClose
-            className="absolute right-4 top-4 rounded-full hover:bg-black/50 p-2"
+            className="absolute top-4 right-4 rounded-full p-2 hover:bg-black/50"
             aria-label="Close menu"
           >
-            <BaselineCloseIcon className="w-6 h-6 text-white" />
+            <BaselineCloseIcon className="h-6 w-6 text-white" />
           </DrawerClose>
         </DrawerHeader>
         <div className="p-4">
