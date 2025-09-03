@@ -3,7 +3,7 @@ import { ContentLayout } from '@/components/layout/ContentLayout';
 import MissaoRiachuelo from './missao-riachuelo.mdx';
 
 export const metadata: Metadata = {
-  title: 'Missão Riachuelo - Congregação IBE | IBE',
+  title: 'Missão Riachuelo - Congregação IBE | IBE Natal',
   description:
     'Conheça a história da Missão Riachuelo, a primeira Igreja Batista plantada nas terras riachuelenses. Uma jornada de fé, obediência e perseverança desde 2019.',
   keywords: [
@@ -19,7 +19,8 @@ export const metadata: Metadata = {
     'Pequenos Grupos',
   ],
   openGraph: {
-    title: 'Missão Riachuelo - Congregação IBE | IBE',
+    url: 'https://ibenatal.org.br/missao-riachuelo',
+    title: 'Missão Riachuelo - Congregação IBE | IBE Natal',
     description:
       'Conheça a história da Missão Riachuelo, a primeira Igreja Batista plantada nas terras riachuelenses.',
     type: 'website',
@@ -31,6 +32,12 @@ export const metadata: Metadata = {
         alt: 'Missão Riachuelo - Igreja Batista da Esperança',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Missão Riachuelo - Congregação IBE | IBE Natal',
+    description: 'Conheça a história da Missão Riachuelo, a primeira Igreja Batista plantada nas terras riachuelenses.',
+    images: ['/images/missao-riachuelo/igreja-batista-de-riachuelo.jpg'],
   },
 };
 

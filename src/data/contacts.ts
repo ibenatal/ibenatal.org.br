@@ -59,6 +59,6 @@ export const socialLinks = {
   },
   instagram: {
     label: 'Instagram',
-    href: 'https://www.instagram.com/familiaibe',
+    href: 'https://www.instagram.com/ibenatal_',
   },
 };

@@ -2,11 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { DesktopMenu } from './menu/DesktopMenu';
 import { cn } from '@/lib/utils';
 
 export function Header() {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
   const [isVisible, setIsVisible] = useState(true);
   const [_lastScrollY, setLastScrollY] = useState(0);
   const headerRef = useRef<HTMLElement>(null);
@@ -63,9 +66,15 @@ export function Header() {
           </Link>
         </div>
         <Link href="/" title="Ir para a página inicial">
-          <h1 className="textlg hidden font-bold text-white/90 lg:block xl:text-xl">
-            Igreja Batista da Esperança
-          </h1>
+          {isHomePage ? (
+            <h1 className="textlg hidden font-bold text-white/90 lg:block xl:text-xl">
+              Igreja Batista da Esperança
+            </h1>
+          ) : (
+            <p className="textlg hidden font-bold text-white/90 lg:block xl:text-xl">
+              Igreja Batista da Esperança
+            </p>
+          )}
         </Link>
         {/* <MobileMenu /> */}
         <DesktopMenu />
