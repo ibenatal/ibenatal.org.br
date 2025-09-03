@@ -160,3 +160,101 @@ export function BreadcrumbSchema({
 
   return <JsonLd data={breadcrumbData} testId={`breadcrumb-schema`} />;
 }
+
+// Church organization schema
+export function ChurchOrganizationSchema({
+  name,
+  description,
+  image,
+  url,
+  address,
+  foundingDate,
+  parentOrganization,
+}: {
+  name: string;
+  description: string;
+  image: string;
+  url: string;
+  address: string;
+  foundingDate?: string;
+  parentOrganization?: string;
+}) {
+  const churchData: WithContext<any> = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name,
+    description,
+    image,
+    url,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: address,
+    },
+    ...(foundingDate && { foundingDate }),
+    ...(parentOrganization && {
+      parentOrganization: {
+        '@type': 'Organization',
+        name: parentOrganization,
+      },
+    }),
+  };
+
+  return <JsonLd data={churchData} testId={`church-organization-schema-${name}`} />;
+}
+
+// Web page schema
+export function WebPageSchema({
+  name,
+  description,
+  image,
+  url,
+  author,
+  datePublished,
+  dateModified,
+  breadcrumbs,
+}: {
+  name: string;
+  description: string;
+  image: string;
+  url: string;
+  author?: string;
+  datePublished?: string;
+  dateModified?: string;
+  breadcrumbs?: {
+    name: string;
+    item: string;
+  }[];
+}) {
+  const webPageData: WithContext<any> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name,
+    description,
+    image,
+    url,
+    ...(author && {
+      author: {
+        '@type': 'Person',
+        name: author,
+      },
+    }),
+    ...(datePublished && { datePublished }),
+    ...(dateModified && { dateModified }),
+    ...(breadcrumbs && {
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Thing',
+            '@id': item.item,
+            name: item.name,
+          },
+        })),
+      },
+    }),
+  };
+
+  return <JsonLd data={webPageData} testId={`web-page-schema-${name}`} />;
+}
