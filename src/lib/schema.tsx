@@ -46,7 +46,7 @@ export function EventSchema({
   startDate: string;
   location: string;
   image: string;
-  url: string;
+  url?: string;
 }) {
   const eventData: WithContext<Event> = {
     '@context': 'https://schema.org',

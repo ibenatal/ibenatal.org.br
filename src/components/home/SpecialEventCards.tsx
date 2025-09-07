@@ -3,14 +3,13 @@ import Image from 'next/image';
 import { EventSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 
-interface SpecialEvent {
+export interface SpecialEvent {
   title: string;
   image: string;
   date: string;
   time: string;
   address: string;
   description: string;
-  url: string;
 }
 
 type EventCardProps = {
@@ -20,7 +19,7 @@ type EventCardProps = {
   time: string;
   address: string;
   description: string;
-  url: string;
+  url?: string;
   className?: string;
 };
 
@@ -42,7 +41,7 @@ const EventCard = ({
 
   // Full absolute URL for schema
   const fullImageUrl = new URL(image, 'https://ibenatal.org.br').toString();
-  const fullUrl = new URL(url, 'https://ibenatal.org.br').toString();
+  const fullUrl = url ? new URL(url, 'https://ibenatal.org.br').toString() : undefined;
 
   return (
     <article

@@ -4,16 +4,8 @@ import { locationInfo } from '@/data/contacts';
 import { SectionContainer } from '../layout/Container';
 import { SectionDescription, SectionTitle } from './HomeTypography';
 import { Separator } from './Separator';
-import { SpecialEventCards } from './SpecialEventCards';
+import { SpecialEvent, SpecialEventCards } from './SpecialEventCards';
 
-interface SpecialEvent {
-  title: string;
-  image: string;
-  date: string;
-  time: string;
-  address: string;
-  description: string;
-}
 
 const SPECIAL_EVENTS: SpecialEvent[] = [
   {
