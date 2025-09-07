@@ -13,7 +13,6 @@ interface SpecialEvent {
   time: string;
   address: string;
   description: string;
-  url: string;
 }
 
 const SPECIAL_EVENTS: SpecialEvent[] = [
@@ -24,7 +23,6 @@ const SPECIAL_EVENTS: SpecialEvent[] = [
     time: '08:00',
     address: locationInfo.getFullAddress(),
     description: 'Rede de Mulheres: Bazar',
-    url: '/eventos/evento-2',
   },
   {
     title: 'Retiro de Casais 2025',
@@ -34,7 +32,6 @@ const SPECIAL_EVENTS: SpecialEvent[] = [
     address: locationInfo.getFullAddress(),
     description:
       'Um final de semana especial para fortalecer laços, crescer em fé e viver momentos inesquecíveis. De 31 de outubro a 02 de novembro no Hotel Marista, com palestras, dinâmicas, noites temáticas e todas as refeições inclusas. Participe!',
-    url: '/eventos/evento-2',
   },
   {
     title: 'Um dia na roça',
@@ -44,8 +41,15 @@ const SPECIAL_EVENTS: SpecialEvent[] = [
     address: locationInfo.getFullAddress(),
     description:
       'Brincadeiras, brindes, comidas tipicas, quadrilhas malucas e sorteiro de balaio',
-    url: '/eventos/um-dia-de-roca',
   },
+  {
+    title: 'Chá da Primavera',
+    image: '/images/eventos/cha-primavera.png',
+    date: '2025-09-20',
+    time: '17:00',
+    address: locationInfo.getFullAddress(),
+    description: 'Rede da Mulheres: Florecendo em todas as estações',
+  }
 ];
 
 function LoadingEventCards() {
