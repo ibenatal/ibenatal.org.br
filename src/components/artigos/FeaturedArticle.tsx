@@ -6,10 +6,10 @@ import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 export function FeaturedArticle({ post }: { post: Post }) {
   const formattedDate = dateIsoToDDMMYYYY(post.date);
   return (
-    <div className="rounded-lg bg-white">
+    <div className="rounded-lg">
       <Link
         href={`/artigos/${post.slug}`}
-        className="group relative block aspect-video w-full overflow-hidden"
+        className="group relative block aspect-video w-full overflow-hidden rounded-lg bg-white"
         aria-label={`Ler mais sobre ${post.title}`}
         title={`Ler mais sobre ${post.title}`}
       >
