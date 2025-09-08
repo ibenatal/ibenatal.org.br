@@ -2,6 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import { Children, isValidElement } from 'react';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
+  console.log(components);
   return {
     ...components,
     p: (props) => {
@@ -84,5 +85,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       // biome-ignore lint/performance/noImgElement: TODO: implement later
       <img className="h-auto w-full rounded shadow" {...props} />
     ),
+    blockquote: (props) => {
+      const { className, ...rest } = props as any;
+      const mergedClassName = [
+        'border-l-4 border-primary-500 pl-4',
+        className,
+      ]
+        .filter(Boolean)
+        .join(' ');
+      return <blockquote {...rest} className={mergedClassName} />;
+    },
   };
 }
