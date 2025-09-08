@@ -24,12 +24,6 @@ export default async function FromBlog() {
             <ArticleCard
               key={post.slug}
               post={post}
-              // title={post.title}
-              // image={post.image || '/images/jovens.png'}
-              // date={post.date}
-              // author={post.author}
-              // shortDescription={post.description}
-              // url={`/artigos/${post.slug}`}
               className={cn(
                 'w-full md:w-1/2 lg:w-1/3',
                 index === 2 && 'last-of-type:hidden lg:last-of-type:flex',
@@ -44,22 +38,10 @@ export default async function FromBlog() {
 
 type ArticleCardProps = {
   post: Post;
-  // title: string;
-  // image: string;
-  // date: string;
-  // author: string;
-  // shortDescription: string;
-  // url: string;
   className?: string;
 };
 
 const ArticleCard = ({
-  // title,
-  // image,
-  // date,
-  // author,
-  // shortDescription,
-  // url,
   post,
   className,
 }: ArticleCardProps) => {
