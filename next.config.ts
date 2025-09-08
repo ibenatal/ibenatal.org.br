@@ -16,6 +16,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/missao-riachuelo',
+        destination: '/pib-riachuelo',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const withMDX = createMDX({

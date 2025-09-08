@@ -109,13 +109,13 @@ export default async function ArticlePage({
 
   return (
     <main className="bg-neutral-100">
-      <SectionContainer className="relative max-w-4xl pb-16 lg:gap-8 lg:pt-8">
+      <SectionContainer className="relative max-w-4xl pb-16 lg:gap-8 lg:pt-8" isContentPage>
         <div className="relative aspect-video">
           <Image
             src={post.image || '/images/articles/article-default.png'}
             alt={post.title}
             fill
-            className="rounded-lg object-cover"
+            className="sm:rounded-lg object-cover"
           />
         </div>
 
@@ -129,8 +129,8 @@ export default async function ArticlePage({
             url={fullUrl}
           />
 
-          <div className="px-8 py-8 md:p-12 lg:py-12">
-            <header className="mx-auto mb-12 max-w-3xl">
+          <div className="sm:px-8 py-8 md:p-12 lg:py-12">
+            <header className="mx-auto mb-12 max-w-3xl px-2.5 sm:px-0">
               <Link
                 href={`/artigos/${post.slug}`}
                 className="flex items-center gap-2"
@@ -142,7 +142,7 @@ export default async function ArticlePage({
                 </Heading>
               </Link>
 
-              <div className="flex flex-wrap items-center gap-4 text-gray-600 text-sm">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-600 text-xs sm:text-sm">
                 <div className="flex items-center gap-2">
                   <span>Por {post.author}</span>
                 </div>
@@ -157,7 +157,7 @@ export default async function ArticlePage({
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-gray-100 px-3 py-1 text-gray-700 text-sm capitalize"
+                      className="rounded-full bg-gray-100 px-3 py-1 text-gray-700 text-xs sm:text-sm capitalize"
                     >
                       {tag}
                     </span>
@@ -170,7 +170,7 @@ export default async function ArticlePage({
               <Content />
             </div>
 
-            <footer className="mx-auto mt-12 max-w-3xl border-t pt-8">
+            <footer className="mx-auto mt-12 max-w-3xl border-t pt-8 px-2.5 sm:px-0">
               <Button asChild variant="primary">
                 <Link href="/artigos">← Voltar para lista de artigos</Link>
               </Button>

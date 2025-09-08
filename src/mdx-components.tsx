@@ -19,7 +19,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       // Otherwise render the p wrapper with styling
       return (
         <p
-          className="whitespace-pre-wrap font-body font-normal text-lg text-primary-900 leading-relaxed "
+          className="px-2.5 sm:px-0 whitespace-pre-wrap font-body font-normal text-base md:text-lg text-primary-900 leading-relaxed "
           {...props}
         />
       );
@@ -60,11 +60,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    ul: (props) => <ul className="ml-6 list-outside list-disc" {...props} />,
-    ol: (props) => <ol className="ml-6 list-outside list-decimal" {...props} />,
+    ul: (props) => <ul className="ml-6 list-outside list-disc pr-2.5 sm:pr-0 inline-flex flex-col gap-2.5" {...props} />,
+    ol: (props) => <ol className="ml-6 list-outside list-decimal pr-2.5 sm:pr-0 inline-flex flex-col gap-2.5" {...props} />,
     li: (props) => (
       <li
-        className="mb-3 leading-relaxed marker:mr-0 marker:text-theme-light dark:marker:text-theme-dark"
+        className="leading-relaxed marker:mr-0 marker:text-theme-light dark:marker:text-theme-dark text-sm md:text-base"
         {...props}
       />
     ),
@@ -83,7 +83,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     img: (props) => (
       // biome-ignore lint/a11y/useAltText: TODO: implement later
       // biome-ignore lint/performance/noImgElement: TODO: implement later
-      <img className="h-auto w-full rounded shadow" {...props} />
+      <img className="h-auto w-full sm:rounded shadow sm:transform-none" {...props} />
     ),
     blockquote: (props) => {
       const { className, ...rest } = props as any;

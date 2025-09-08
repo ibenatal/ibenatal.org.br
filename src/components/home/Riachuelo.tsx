@@ -8,17 +8,17 @@ export function Riachuelo() {
     'Hoje, através de Pequenos Grupos, projetos sociais e evangelismo, estamos levando o amor de Cristo aos corações riachuelenses.',
   ];
   const missionImageUrl =
-    '/images/missao-riachuelo/igreja-batista-de-riachuelo.jpg';
-  const missionUrl = '/missao-riachuelo';
+    '/images/pib-riachuelo/igreja-batista-de-riachuelo.jpg';
+  const missionUrl = '/pib-riachuelo';
 
   return (
     <ImageDescriptionSection
       title={missionTitle}
       subtitle="Conheça nossa missão pioneira em Riachuelo"
-      personName="Missão Riachuelo"
+      personName="PIB Riachuelo"
       descriptions={missionDescription}
       imageUrl={missionImageUrl}
-      imageAlt="Missão Riachuelo - Igreja Batista"
+      imageAlt="PIB Riachuelo - Igreja Batista"
       buttonText="Conhecer missão completa"
       buttonUrl={missionUrl}
       buttonAriaLabel="Conhecer a missão completa em Riachuelo"

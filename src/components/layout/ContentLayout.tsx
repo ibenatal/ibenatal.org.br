@@ -21,13 +21,13 @@ export function ContentLayout({
         <Image src={image} alt={title} fill className="object-cover" />
         <div className="absolute top-0 left-0 z-10 h-full w-full bg-black/70"></div>
       </div>
-      <SectionContainer className="relative z-10 max-w-4xl pt-28">
-        <div className="flex flex-col gap-6">
+      <SectionContainer className="relative z-10 max-w-4xl pt-28" isContentPage>
+        <div className="flex flex-col gap-6 px-2.5 sm:px-0">
           <h1 className="font-bold text-4xl text-white">{title}</h1>
           <Breadcrumbs items={breadcrumbs} />
         </div>
         <div className="rounded-lg bg-white">
-          <div className="flex flex-col gap-8 p-4 lg:p-10">{children}</div>
+          <div className="flex flex-col gap-8 py-4 px-0 lg:p-10">{children}</div>
         </div>
       </SectionContainer>
     </main>
