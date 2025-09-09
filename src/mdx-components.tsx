@@ -64,7 +64,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ol: (props) => <ol className="ml-6 list-outside list-decimal pr-2.5 sm:pr-0 inline-flex flex-col gap-2.5" {...props} />,
     li: (props) => (
       <li
-        className="leading-relaxed marker:mr-0 marker:text-theme-light dark:marker:text-theme-dark text-sm md:text-base"
+        className="leading-relaxed marker:mr-0 marker:text-theme-light dark:marker:text-theme-dark text-base sm:text-lg"
         {...props}
       />
     ),
