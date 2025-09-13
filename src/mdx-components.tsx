@@ -2,7 +2,6 @@ import type { MDXComponents } from 'mdx/types';
 import { Children, isValidElement } from 'react';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
-  console.log(components);
   return {
     ...components,
     p: (props) => {
