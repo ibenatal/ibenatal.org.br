@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 import { BlogPostSchema } from '@/lib/schema';
 import { formatArticleDate } from '@/utils/datetime';
+import { Suspense } from 'react';
+import { ArticleMore } from '@/components/artigos/ArticleMore';
 import { getPost } from '../get-post';
 import { getSlugs } from '../get-slugs';
 
@@ -171,6 +173,10 @@ export default async function ArticlePage({
             </div>
 
             <footer className="mx-auto mt-12 max-w-3xl border-t pt-8 px-2.5 sm:px-0">
+              <Suspense fallback={<div className="mb-8 h-24 w-full animate-pulse rounded-lg bg-gray-100" />}>
+                <ArticleMore slug={slug} />
+              </Suspense>
+              <div className="border-t pt-8"/>
               <Button asChild variant="primary">
                 <Link href="/artigos">← Voltar para lista de artigos</Link>
               </Button>

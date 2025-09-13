@@ -65,6 +65,11 @@ async function getContentFiles(): Promise<string[]> {
 }
 
 export async function getPosts({ limit = 10 }: GetPostsProps): Promise<Post[]> {
+  const allPosts = await getAllPosts();
+  return allPosts.slice(0, limit);
+}
+
+export async function getAllPosts(): Promise<Post[]> {
   const files = await getContentFiles();
 
   const postsWithMetadata = (await Promise.all(files.map(loadPostMetadata)))
@@ -72,6 +77,5 @@ export async function getPosts({ limit = 10 }: GetPostsProps): Promise<Post[]> {
 
   const sortedPosts = postsWithMetadata.sort((a, b) => +new Date(b.date) - +new Date(a.date));
 
-  const posts = sortedPosts.slice(0, limit);
-  return posts;
+  return sortedPosts;
 }
