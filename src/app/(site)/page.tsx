@@ -12,27 +12,18 @@ import WaysToContribute from '@/components/home/WaysToContribute';
 import { homeSlides } from '@/data/carousel';
 import { Riachuelo } from '@/components/home/Riachuelo';
 
-export const metadata = {
-  // title: 'IBE - Igreja Batista da Esperança',
-  // description: 'Igreja Batista da Esperança',
-};
-
 export default function SitePage() {
   return (
     <main className="bg-neutral-100">
       <HomeCarousel slides={homeSlides} />
       <AboutUS />
-      <Separator />
       <OurMinistries />
-      <Separator />
       <OurPastor />
       <GetInTouch />
       <OurPGMs />
       <Separator />
       <FromBlog />
-      <Separator />
       <Riachuelo />
-      <Separator />
       <NextEvents />
       <LiveTransmissions />
       <WaysToContribute />

@@ -4,7 +4,7 @@ import { CardParagraph, CardTitle, SectionTitle } from './HomeTypography';
 
 export default function OurMinistries() {
   return (
-    <section aria-label="Nossas Redes">
+    <section aria-label="Nossas Redes" className="bg-primary-200/50">
       <SectionContainer>
         <div className="flex flex-col gap-6 sm:gap-18">
           <SectionTitle title="Nossas Redes" />

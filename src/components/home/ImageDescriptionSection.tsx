@@ -17,6 +17,7 @@ interface ImageDescriptionSectionProps {
   buttonAriaLabel: string;
   imageClass?: string;
   contentClass?: string;
+  sectionClassName?: string;
   layout?: 'left-to-right' | 'right-to-left';
 }
 
@@ -31,6 +32,7 @@ export function ImageDescriptionSection({
   buttonUrl,
   buttonAriaLabel,
   contentClass,
+  sectionClassName,
   imageClass = 'h-[450px]',
   layout = 'left-to-right',
 }: ImageDescriptionSectionProps) {
@@ -72,7 +74,7 @@ export function ImageDescriptionSection({
   );
 
   return (
-    <section aria-label={title}>
+    <section aria-label={title} className={sectionClassName}>
       <SectionContainer>
         <header className="flex flex-col gap-8">
           <SectionTitle title={title} />
