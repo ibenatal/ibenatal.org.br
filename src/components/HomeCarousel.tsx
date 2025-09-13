@@ -49,8 +49,13 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
         @media (max-width: 767px) {
           .home-carousel .swiper-button-next,
           .home-carousel .swiper-button-prev {
-            top: 90%;
+            top: 84%;
           }
+        }
+        .home-carousel .swiper-pagination {
+          left: 5rem;
+          right: 5rem;
+          width: calc(100% - 10rem);
         }
 
         .home-carousel .swiper-pagination-bullet {
