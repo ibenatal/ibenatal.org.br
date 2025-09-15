@@ -27,7 +27,7 @@ export function ContentLayout({
           <Breadcrumbs items={breadcrumbs} />
         </div>
         <div className="rounded-lg bg-white">
-          <div className="flex flex-col gap-8 py-4 px-0 lg:p-10">{children}</div>
+          <div className="flex flex-col gap-8 px-0 py-4 lg:p-10">{children}</div>
         </div>
       </SectionContainer>
     </main>

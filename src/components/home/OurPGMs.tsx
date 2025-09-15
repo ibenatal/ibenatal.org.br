@@ -99,7 +99,7 @@ export default function OurPGMs() {
           >
             {redes.map((rede) => (
               <SwiperSlide key={rede.id}>
-                <div className="flex flex-col gap-6 pb-20 sm:gap-8 md:p-4">
+                <div className="flex flex-col gap-6 pb-20 sm:gap-8 md:p-4 md:pb-20">
                   <div className="relative h-[192px] w-full">
                     <Image
                       src={rede.image}

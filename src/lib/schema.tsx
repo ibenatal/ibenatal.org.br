@@ -3,8 +3,10 @@ import type {
   BlogPosting,
   BreadcrumbList,
   Event,
+  Organization,
   Thing,
   VideoObject,
+  WebPage,
   WithContext,
 } from 'schema-dts';
 import type { Author } from '@/@types/posts';
@@ -180,7 +182,7 @@ export function ChurchOrganizationSchema({
   foundingDate?: string;
   parentOrganization?: string;
 }) {
-  const churchData: WithContext<any> = {
+  const churchData: WithContext<Organization> = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name,
@@ -228,7 +230,7 @@ export function WebPageSchema({
     item: string;
   }[];
 }) {
-  const webPageData: WithContext<any> = {
+  const webPageData: WithContext<WebPage> = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name,

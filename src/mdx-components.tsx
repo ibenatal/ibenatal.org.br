@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
+import type { ComponentProps } from 'react';
 import { Children, isValidElement } from 'react';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -97,8 +98,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    blockquote: (props) => {
-      const { className, ...rest } = props as any;
+    blockquote: (props: ComponentProps<'blockquote'>) => {
+      const { className, ...rest } = props;
       const mergedClassName = [
         'border-l-4 border-primary-500 pl-1 ml-2.5 md:ml-0 md:pl-4 font-serif py-2.5',
         className,
