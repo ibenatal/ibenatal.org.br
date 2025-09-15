@@ -19,7 +19,7 @@ export default async function BlogPage() {
   if (!posts || posts.length === 0) {
     return (
       <main className="relative bg-neutral-100">
-        <div className="absolute top-0 left-0 z-0 h-[500px] w-full bg-blue-500">
+        <header className="absolute top-0 left-0 z-0 h-[500px] w-full bg-blue-500">
           <Image
             src="/images/articles/blog-header.png"
             alt="Blog"
@@ -27,7 +27,7 @@ export default async function BlogPage() {
             className="object-cover"
           />
           <div className="absolute top-0 left-0 h-full w-full bg-black/70"></div>
-        </div>
+        </header>
         <SectionContainer className="relative z-10 pt-28">
           <div className="flex flex-col gap-4">
             <h1 className="font-bold text-4xl text-white">
@@ -48,7 +48,7 @@ export default async function BlogPage() {
 
   return (
     <main className="relative bg-neutral-100">
-      <div className="absolute top-0 left-0 z-0 h-[500px] w-full bg-blue-500">
+      <header className="absolute top-0 left-0 z-0 h-[500px] w-full bg-blue-500">
         <Image
           src="/images/articles/blog-header.png"
           alt="Blog"
@@ -56,36 +56,33 @@ export default async function BlogPage() {
           className="object-cover"
         />
         <div className="absolute top-0 left-0 h-full w-full bg-black/70"></div>
-      </div>
+      </header>
       <SectionContainer className="relative z-10 pt-28">
-        <div className="flex flex-col gap-4">
+        <div
+          className="flex flex-col gap-4"
+          aria-description="Título e descrição do blog"
+        >
           <h1 className="font-bold text-4xl text-white">Reflexões e Artigos</h1>
           <p className="text-lg text-white">
             Confira as últimas notícias do nosso blog.
           </p>
           <Breadcrumbs items={[{ label: 'Artigos', href: '/Artigos' }]} />
         </div>
-        <div>
-          <div className="flex flex-col gap-4 lg:flex-row">
-            <div className="2/3 w-full">
-              <FeaturedArticle post={featuredPost} />
-            </div>
-            {!isMobile && (
-              <div className="hidden w-1/3 lg:block">
-                <Widget posts={remainingPosts} />
-              </div>
-            )}
-          </div>
-          <div>
-            <h3 className="my-8 font-bold text-2xl">Últimos Artigos</h3>
-            <div className="grid grid-cols-1 gap-8 rounded-lg md:grid-cols-2 lg:grid-cols-3">
-              {remainingPosts.map((post) => (
-                <ArticleCard key={post.slug} post={post} />
-              ))}
-            </div>
-            {/* <Pagination /> */}
-          </div>
+        <div className="flex flex-col gap-4 lg:flex-row">
+          <FeaturedArticle post={featuredPost} className="2/3 w-full" />
+          {!isMobile && (
+            <Widget posts={remainingPosts} className="hidden w-1/3 lg:block" />
+          )}
         </div>
+        <section>
+          <h3 className="my-8 font-bold text-2xl">Últimos Artigos</h3>
+          <div className="grid grid-cols-1 gap-8 rounded-lg md:grid-cols-2 lg:grid-cols-3">
+            {remainingPosts.map((post) => (
+              <ArticleCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </section>
+        {/* <Pagination /> */}
       </SectionContainer>
     </main>
   );

@@ -1,13 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Post } from '@/app/(site)/artigos/get-posts';
+import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 
-export function FeaturedArticle({ post }: { post: Post }) {
+type FeaturedArticleProps = {
+  post: Post;
+  className?: string;
+};
+
+export function FeaturedArticle({ post, className }: FeaturedArticleProps) {
   const formattedDate = dateIsoToDDMMYYYY(post.date);
   return (
     <article
-      className="rounded-lg bg-white"
+      className={cn('rounded-lg bg-white', className)}
       itemScope
       itemType="https://schema.org/Article"
     >

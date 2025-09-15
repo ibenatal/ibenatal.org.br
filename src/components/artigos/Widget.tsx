@@ -1,11 +1,17 @@
 import Link from 'next/link';
 import type { Post } from '@/app/(site)/artigos/get-posts';
+import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 
-export function Widget({ posts }: { posts: Post[] }) {
+type WidgetProps = {
+  posts: Post[];
+  className?: string;
+};
+
+export function Widget({ posts, className }: WidgetProps) {
   return (
     <section
-      className="rounded-lg bg-white p-4"
+      className={cn('', className)}
       aria-labelledby="most-popular-heading"
     >
       <MostPopularWidget posts={posts} />
@@ -13,10 +19,14 @@ export function Widget({ posts }: { posts: Post[] }) {
   );
 }
 
-export function MostPopularWidget({ posts }: { posts: Post[] }) {
+type MostPopularWidgetProps = {
+  posts: Post[];
+};
+
+export function MostPopularWidget({ posts }: MostPopularWidgetProps) {
   const mostPopularPosts = posts.slice(0, 5);
   return (
-    <div className="rounded-lg bg-white">
+    <div className="rounded-lg bg-white p-4">
       <h3 id="most-popular-heading" className="font-medium">
         Mais Populares
       </h3>

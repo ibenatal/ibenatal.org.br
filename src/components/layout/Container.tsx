@@ -24,7 +24,7 @@ export function SectionContainer({
   isContentPage?: boolean;
 }) {
   return (
-    <div
+    <section
       className={cn(
         'mx-auto flex max-w-6xl flex-col gap-8 py-16 sm:px-4 sm:py-24 lg:gap-16',
         isContentPage ? '' : 'px-3',
@@ -32,6 +32,6 @@ export function SectionContainer({
       )}
     >
       {children}
-    </div>
+    </section>
   );
 }
