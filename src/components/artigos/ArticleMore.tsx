@@ -18,61 +18,65 @@ export async function ArticleMore({ slug }: { slug: string }) {
       >
         Quer ler mais?
       </h3>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {prevPost ? (
-          <Link
-            href={`/artigos/${prevPost.slug}`}
-            className="group flex items-center gap-4 rounded-lg bg-gray-50 p-3 transition hover:bg-gray-100 sm:p-4"
-            aria-label={`Ler artigo anterior: ${prevPost.title}`}
-            title={prevPost.title}
-          >
-            <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={prevPost.image || '/images/articles/article-default.png'}
-                alt={prevPost.title}
-                fill
-                sizes="96px"
-                className="object-cover"
-              />
-            </div>
-            <div className="min-w-0">
-              <div className="text-gray-500 text-xs">Artigo anterior</div>
-              <div className="truncate font-medium text-primary-800 group-hover:underline">
-                {prevPost.title}
+          <li>
+            <Link
+              href={`/artigos/${prevPost.slug}`}
+              rel="prev"
+              className="group flex items-center gap-4 rounded-lg bg-gray-50 p-3 transition hover:bg-gray-100 sm:p-4"
+              aria-label={`Artigo anterior: ${prevPost.title}`}
+            >
+              <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md">
+                <Image
+                  src={prevPost.image || '/images/articles/article-default.png'}
+                  alt={`Capa do artigo: ${prevPost.title}`}
+                  fill
+                  sizes="96px"
+                  className="object-cover"
+                />
               </div>
-            </div>
-          </Link>
+              <div className="min-w-0">
+                <div className="text-gray-500 text-xs">Artigo anterior</div>
+                <div className="truncate font-medium text-primary-800 group-hover:underline">
+                  {prevPost.title}
+                </div>
+              </div>
+            </Link>
+          </li>
         ) : (
-          <div className="hidden sm:block" aria-hidden="true" />
+          <li className="hidden sm:block" aria-hidden="true" />
         )}
 
         {nextPost ? (
-          <Link
-            href={`/artigos/${nextPost.slug}`}
-            className="group flex items-center gap-4 rounded-lg bg-gray-50 p-3 transition hover:bg-gray-100 sm:flex-row-reverse sm:p-4"
-            aria-label={`Ler próximo artigo: ${nextPost.title}`}
-            title={nextPost.title}
-          >
-            <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md">
-              <Image
-                src={nextPost.image || '/images/articles/article-default.png'}
-                alt={nextPost.title}
-                fill
-                sizes="96px"
-                className="object-cover"
-              />
-            </div>
-            <div className="min-w-0 sm:text-right">
-              <div className="text-gray-500 text-xs">Próximo artigo</div>
-              <div className="truncate font-medium text-primary-800 group-hover:underline">
-                {nextPost.title}
+          <li>
+            <Link
+              href={`/artigos/${nextPost.slug}`}
+              rel="next"
+              className="group flex items-center gap-4 rounded-lg bg-gray-50 p-3 transition hover:bg-gray-100 sm:flex-row-reverse sm:p-4"
+              aria-label={`Próximo artigo: ${nextPost.title}`}
+            >
+              <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md">
+                <Image
+                  src={nextPost.image || '/images/articles/article-default.png'}
+                  alt={`Capa do artigo: ${nextPost.title}`}
+                  fill
+                  sizes="96px"
+                  className="object-cover"
+                />
               </div>
-            </div>
-          </Link>
+              <div className="min-w-0 sm:text-right">
+                <div className="text-gray-500 text-xs">Próximo artigo</div>
+                <div className="truncate font-medium text-primary-800 group-hover:underline">
+                  {nextPost.title}
+                </div>
+              </div>
+            </Link>
+          </li>
         ) : (
-          <div className="hidden sm:block" aria-hidden="true" />
+          <li className="hidden sm:block" aria-hidden="true" />
         )}
-      </div>
+      </ul>
     </section>
   );
 }

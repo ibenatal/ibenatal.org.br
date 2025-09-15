@@ -6,34 +6,63 @@ import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 export function FeaturedArticle({ post }: { post: Post }) {
   const formattedDate = dateIsoToDDMMYYYY(post.date);
   return (
-    <div className="rounded-lg">
+    <article
+      className="rounded-lg bg-white"
+      itemScope
+      itemType="https://schema.org/Article"
+    >
       <Link
         href={`/artigos/${post.slug}`}
-        className="group relative block aspect-video w-full overflow-hidden rounded-lg bg-white"
-        aria-label={`Ler mais sobre ${post.title}`}
-        title={`Ler mais sobre ${post.title}`}
+        className="group block overflow-hidden rounded-lg bg-white"
+        aria-label={`Ler mais: ${post.title}`}
       >
-        <Image
-          src={post.image || '/images/articles/article-default.png'}
-          alt={post.title}
-          fill
-          className="rounded-t-lg object-cover transition-transform group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
-      </Link>
-      <div className="flex flex-col gap-8 p-4 lg:p-10">
-        <Link href={`/artigos/${post.slug}`}>
-          <h3 className="font-bold text-2xl text-primary-800 transition-colors hover:text-primary-500 hover:underline lg:text-4xl">
+        <div className="relative block aspect-video w-full overflow-hidden">
+          <Image
+            src={post.image || '/images/articles/article-default.png'}
+            alt={post.image ? post.title : 'Imagem padrão de artigo'}
+            fill
+            sizes="(max-width: 1024px) 100vw, 960px"
+            priority
+            className="rounded-t-lg object-cover transition-transform group-hover:scale-105"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10"
+          />
+        </div>
+        <div className="flex flex-col gap-8 p-4 lg:p-10">
+          <h3
+            className="font-bold text-2xl text-primary-800 transition-colors group-hover:text-primary-500 group-hover:underline lg:text-4xl"
+            itemProp="headline"
+          >
             {post.title}
           </h3>
-        </Link>
-        <p className="text-base text-gray-500 lg:text-lg">{post.description}</p>
-        <div className="flex flex-row gap-4 text-xs lg:text-base">
-          <span>{post.author}</span>
-          <span>{formattedDate}</span>
-          <span>{post.readTime}</span>
+          <p
+            className="text-base text-gray-500 lg:text-lg"
+            itemProp="description"
+          >
+            {post.description}
+          </p>
+          <div className="flex flex-row gap-4 text-gray-500 text-xs lg:text-base">
+            <span
+              itemProp="author"
+              itemScope
+              itemType="https://schema.org/Person"
+            >
+              <span itemProp="name">{post.author}</span>
+            </span>
+            <time dateTime={post.date} itemProp="datePublished">
+              {formattedDate}
+            </time>
+            <span
+              aria-description="Tempo de leitura"
+              title={`Tempo de leitura ${post.readTime}`}
+            >
+              {post.readTime}
+            </span>
+          </div>
         </div>
-      </div>
-    </div>
+      </Link>
+    </article>
   );
 }

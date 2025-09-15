@@ -63,7 +63,7 @@ export default async function ContactsPage() {
               </ContactCard>
             </div>
 
-            <FeaturedArticle
+            <CallingUs
               title="Não hesite em nos chamar"
               description="Fale com a gente! Estamos à disposição para atender você pelo telefone, WhatsApp ou mensagem. Seja para tirar dúvidas, receber oração ou saber mais, será um prazer conversar com você."
             />
@@ -107,7 +107,7 @@ function ContactCard({
   );
 }
 
-function FeaturedArticle({
+function CallingUs({
   title,
   description,
 }: {
