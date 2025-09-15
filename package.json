@@ -9,8 +9,7 @@
   },
   "homepage": "https://ibenatal.org.br",
   "engines": {
-    "node": ">=22.0.0",
-    "pnpm": ">=8.0.0"
+    "node": ">=22.0.0"
   },
   "author": "David Costa <davidcostadevr@gmail.com>",
   "license": "MIT",
