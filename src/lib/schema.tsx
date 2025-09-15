@@ -7,6 +7,7 @@ import type {
   VideoObject,
   WithContext,
 } from 'schema-dts';
+import type { Author } from '@/@types/posts';
 
 // Helper function to create JSON-LD script element
 export const JsonLd = memo(
@@ -81,7 +82,7 @@ export function BlogPostSchema({
   headline: string;
   description: string;
   datePublished: string;
-  author: string;
+  author: Author;
   image: string;
   url: string;
 }) {
@@ -93,7 +94,7 @@ export function BlogPostSchema({
     datePublished,
     author: {
       '@type': 'Person',
-      name: author,
+      name: author.name,
     },
     image,
     url,
@@ -199,7 +200,9 @@ export function ChurchOrganizationSchema({
     }),
   };
 
-  return <JsonLd data={churchData} testId={`church-organization-schema-${name}`} />;
+  return (
+    <JsonLd data={churchData} testId={`church-organization-schema-${name}`} />
+  );
 }
 
 // Web page schema

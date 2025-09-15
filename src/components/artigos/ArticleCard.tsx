@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import type { Post } from '@/app/(site)/artigos/get-posts';
+import type { Post } from '@/@types/posts';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 
 export function ArticleCard({ post }: { post: Post }) {
@@ -47,7 +47,7 @@ export function ArticleCard({ post }: { post: Post }) {
             itemScope
             itemType="https://schema.org/Person"
           >
-            <span itemProp="name">{post.author}</span>
+            <span itemProp="name">{post.author.name}</span>
           </span>
           <span aria-hidden="true">•</span>
           <time dateTime={post.date} itemProp="datePublished">

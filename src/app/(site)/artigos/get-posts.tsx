@@ -1,18 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
+import type { Post, PostMetadata } from '@/@types/posts';
 import { getReadTime } from '@/utils/readtime';
-
-export type Post = {
-  image?: string;
-  slug: string;
-  title: string;
-  date: string;
-  tags: string[];
-  description: string;
-  author: string;
-  readTime: number;
-  file: string;
-};
 
 type GetPostsProps = {
   limit?: number;
@@ -26,12 +15,14 @@ async function loadPostMetadata(fileName: string): Promise<Post | null> {
       fileName,
     );
     const content = await readFile(filePath, 'utf8');
-    const post = await import(`./content/${fileName}`);
+    const post = (await import(`./content/${fileName}`)) as {
+      metadata: PostMetadata;
+    };
 
     const metadata = {
       ...post.metadata,
       readTime: getReadTime(content),
-    };
+    } as const;
 
     if (!metadata) {
       console.error(`No metadata found in ${fileName}`);
@@ -72,10 +63,13 @@ export async function getPosts({ limit = 10 }: GetPostsProps): Promise<Post[]> {
 export async function getAllPosts(): Promise<Post[]> {
   const files = await getContentFiles();
 
-  const postsWithMetadata = (await Promise.all(files.map(loadPostMetadata)))
-    .filter((post) => post !== null);
+  const postsWithMetadata = (
+    await Promise.all(files.map(loadPostMetadata))
+  ).filter((post) => post !== null);
 
-  const sortedPosts = postsWithMetadata.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+  const sortedPosts = postsWithMetadata.sort(
+    (a, b) => +new Date(b.date) - +new Date(a.date),
+  );
 
   return sortedPosts;
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import { AuthorCard } from '@/components/artigo/AuthorCard';
 import { ArticleMore } from '@/components/artigos/ArticleMore';
 import { SectionContainer } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
@@ -109,6 +110,9 @@ export default async function ArticlePage({
     'https://ibenatal.org.br',
   ).toString();
 
+  // Load author info for the AuthorCard
+  const { getAuthorInfo } = await import('@/data/authors');
+  const authorInfo = getAuthorInfo(post.author);
   return (
     <main className="bg-neutral-100">
       <SectionContainer
@@ -151,7 +155,7 @@ export default async function ArticlePage({
 
               <div className="flex flex-wrap items-center gap-2 text-gray-600 text-xs sm:gap-4 sm:text-sm">
                 <div className="flex items-center gap-2">
-                  <span>Por {post.author}</span>
+                  <span>Por {post.author.name}</span>
                 </div>
                 <span>•</span>
                 <time dateTime={post.date}>{formattedDate}</time>
@@ -175,6 +179,10 @@ export default async function ArticlePage({
 
             <div className="prose prose-lg prose-primary mx-auto flex max-w-3xl flex-col gap-6 text-lg">
               <Content />
+            </div>
+
+            <div className="mx-auto mt-10 max-w-3xl px-2.5 sm:px-0">
+              <AuthorCard {...authorInfo} />
             </div>
 
             <footer className="mx-auto mt-12 max-w-3xl border-t px-2.5 pt-8 sm:px-0">

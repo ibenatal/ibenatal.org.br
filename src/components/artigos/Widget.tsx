@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Post } from '@/app/(site)/artigos/get-posts';
+import type { Post } from '@/@types/posts';
 import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 

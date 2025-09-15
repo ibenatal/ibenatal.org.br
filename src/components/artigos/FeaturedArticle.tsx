@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import type { Post } from '@/app/(site)/artigos/get-posts';
+import type { Post } from '@/@types/posts';
 import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 
@@ -55,7 +55,7 @@ export function FeaturedArticle({ post, className }: FeaturedArticleProps) {
               itemScope
               itemType="https://schema.org/Person"
             >
-              <span itemProp="name">{post.author}</span>
+              <span itemProp="name">{post.author.name}</span>
             </span>
             <time dateTime={post.date} itemProp="datePublished">
               {formattedDate}

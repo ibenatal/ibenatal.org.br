@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPosts, type Post } from '@/app/(site)/artigos/get-posts';
+import type { Post } from '@/@types/posts';
+import { getPosts } from '@/app/(site)/artigos/get-posts';
 import { BlogPostSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
@@ -95,7 +96,7 @@ const ArticleCard = ({ post, className }: ArticleCardProps) => {
             {formattedDate}
           </time>
           <span className="text-sm">
-            por <span>{post.author}</span>
+            por <span>{post.author.name}</span>
           </span>
         </div>
       </div>
