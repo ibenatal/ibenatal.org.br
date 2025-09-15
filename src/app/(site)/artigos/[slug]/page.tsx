@@ -121,6 +121,8 @@ export default async function ArticlePage({
             alt={post.title}
             fill
             className="object-cover sm:rounded-lg"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
+            quality={100}
           />
         </div>
 

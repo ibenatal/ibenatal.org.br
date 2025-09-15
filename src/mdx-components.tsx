@@ -100,7 +100,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     blockquote: (props) => {
       const { className, ...rest } = props as any;
       const mergedClassName = [
-        'border-l-4 border-primary-500 pl-1 ml-2.5 md:ml-0 md:pl-4',
+        'border-l-4 border-primary-500 pl-1 ml-2.5 md:ml-0 md:pl-4 font-serif py-2.5',
         className,
       ]
         .filter(Boolean)
