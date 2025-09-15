@@ -50,7 +50,7 @@ export default async function BlogPage() {
     <main className="relative bg-neutral-100">
       <header className="absolute top-0 left-0 z-0 h-[500px] w-full bg-blue-500">
         <Image
-          src="/images/articles/blog-header.png"
+          src="/images/articles/articles-header.jpg"
           alt="Blog"
           fill
           className="object-cover"
