@@ -19,7 +19,7 @@ export function OurPastor() {
       buttonText="Conhecer mais"
       buttonUrl={pastorUrl}
       buttonAriaLabel={`Conhecer mais sobre ${pastorName}`}
-      imageClass="h-[450px]"
+      imageClass="h-[350px] sm:h-[450px]"
       layout="left-to-right"
     />
   );

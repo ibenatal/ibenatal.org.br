@@ -18,52 +18,62 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       // Otherwise render the p wrapper with styling
       return (
         <p
-          className="px-2.5 sm:px-0 whitespace-pre-wrap font-body font-normal text-base md:text-lg text-primary-900 leading-relaxed "
+          className="whitespace-pre-wrap px-2.5 font-body font-normal text-base text-primary-900 leading-relaxed sm:px-0 md:text-lg "
           {...props}
         />
       );
     },
     h1: (props) => (
       <h1
-        className="font-bold font-title text-5xl text-primary-900 leading-tight"
+        className="pl-2.5 font-bold font-title text-5xl text-primary-900 leading-tight md:pl-0"
         {...props}
       />
     ),
     h2: (props) => (
       <h2
-        className="font-bold font-title text-4xl text-primary-900 leading-tight"
+        className="pl-2.5 font-bold font-title text-4xl text-primary-900 leading-tight md:pl-0"
         {...props}
       />
     ),
     h3: (props) => (
       <h3
-        className="font-bold font-title text-3xl text-primary-900 leading-tight"
+        className="pl-2.5 font-bold font-title text-3xl text-primary-900 leading-tight md:pl-0"
         {...props}
       />
     ),
     h4: (props) => (
       <h4
-        className="font-bold font-title text-2xl text-primary-900 leading-tight"
+        className="pl-2.5 font-bold font-title text-2xl text-primary-900 leading-tight md:pl-0"
         {...props}
       />
     ),
     h5: (props) => (
       <h5
-        className="font-bold font-title text-primary-900 text-xl leading-tight"
+        className="pl-2.5 font-bold font-title text-primary-900 text-xl leading-tight md:pl-0"
         {...props}
       />
     ),
     h6: (props) => (
       <h6
-        className="font-bold font-title text-base text-primary-900 leading-tight"
+        className="pl-2.5 font-bold font-title text-base text-primary-900 leading-tight md:pl-0"
         {...props}
       />
     ),
-    ul: (props) => <ul className="ml-6 list-outside list-disc pr-2.5 sm:pr-0 inline-flex flex-col gap-2.5" {...props} />,
-    ol: (props) => <ol className="ml-6 list-outside list-decimal pr-2.5 sm:pr-0 inline-flex flex-col gap-2.5" {...props} />,
+    ul: (props) => (
+      <ul
+        className="ml-6 inline-flex list-outside list-disc flex-col gap-2.5 pr-2.5 sm:pr-0"
+        {...props}
+      />
+    ),
+    ol: (props) => (
+      <ol
+        className="ml-6 inline-flex list-outside list-decimal flex-col gap-2.5 pr-2.5 sm:pr-0"
+        {...props}
+      />
+    ),
     li: (props) => (
       <li
-        className="leading-relaxed marker:mr-0 marker:text-theme-light dark:marker:text-theme-dark text-base sm:text-lg"
+        className="text-base leading-relaxed marker:mr-0 marker:text-theme-light sm:text-lg dark:marker:text-theme-dark"
         {...props}
       />
     ),
@@ -82,12 +92,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     img: (props) => (
       // biome-ignore lint/a11y/useAltText: TODO: implement later
       // biome-ignore lint/performance/noImgElement: TODO: implement later
-      <img className="h-auto w-full sm:rounded shadow sm:transform-none" {...props} />
+      <img
+        className="h-auto w-full shadow sm:transform-none sm:rounded"
+        {...props}
+      />
     ),
     blockquote: (props) => {
       const { className, ...rest } = props as any;
       const mergedClassName = [
-        'border-l-4 border-primary-500 pl-4',
+        'border-l-4 border-primary-500 pl-1 ml-2.5 md:ml-0 md:pl-4',
         className,
       ]
         .filter(Boolean)

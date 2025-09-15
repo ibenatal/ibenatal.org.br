@@ -48,8 +48,10 @@ export function Footer() {
             >
               <MapPin className="mt-1.5 h-4 w-4" />
               <div className="flex flex-col gap-1">
-                <p className="inline-flex w-full items-center gap-2">
-                  {locationInfo.address},
+                <p className="inline-flex w-full flex-wrap items-center gap-2">
+                  <span className="whitespace-nowrap">
+                    {locationInfo.address},
+                  </span>
                   <span className="whitespace-nowrap">
                     {locationInfo.neighborhood}
                   </span>
@@ -90,7 +92,10 @@ export function Footer() {
               aria-label="Abrir no Youtube"
             >
               <Youtube className="h-4 w-4" />
-              <span>Youtube</span>
+              <span>
+                Youtube:{' '}
+                <span className="whitespace-nowrap underline">FamíliaIBE</span>
+              </span>
             </LinkUI>
             <LinkUI
               href={socialLinks.instagram.href}
@@ -101,16 +106,21 @@ export function Footer() {
               aria-label="Abrir no Instagram"
             >
               <Instagram className="h-4 w-4" />
-              <span>Instagram</span>
+              <span>
+                Instagram:{' '}
+                <span className="whitespace-nowrap underline">@ibenatal_</span>
+              </span>
             </LinkUI>
           </nav>
         </section>
       </div>
       <div className=" ">
-        <div className="mx-auto flex max-w-6xl justify-between py-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-2 py-6">
           <small>
-            &copy; {new Date().getFullYear()} Igreja Batista da Esperança. Todos
-            os direitos reservados.
+            &copy; {new Date().getFullYear()} Igreja Batista da Esperança.{' '}
+            <span className="whitespace-nowrap">
+              Todos os direitos reservados.
+            </span>
           </small>
           <small>
             <LinkUI

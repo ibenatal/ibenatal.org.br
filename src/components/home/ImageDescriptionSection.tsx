@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
+// import { useIsMobile } from '@/hooks/useBreakpoint';
+import { cn } from '@/lib/utils';
 import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
 import { CardTitle, SectionDescription, SectionTitle } from './HomeTypography';
-import { cn } from '@/lib/utils';
 
 interface ImageDescriptionSectionProps {
   title: string;
@@ -36,7 +37,16 @@ export function ImageDescriptionSection({
   imageClass = 'h-[450px]',
   layout = 'left-to-right',
 }: ImageDescriptionSectionProps) {
+  // const _isMobile = useIsMobile();
   const isReversed = layout === 'right-to-left';
+
+  const buttonElement = (
+    <Button asChild outline>
+      <Link href={buttonUrl} aria-label={buttonAriaLabel}>
+        {buttonText}
+      </Link>
+    </Button>
+  );
 
   const contentSection = (
     <div className={cn('flex w-full flex-col gap-8 sm:w-5/12', contentClass)}>
@@ -51,25 +61,23 @@ export function ImageDescriptionSection({
           </p>
         ))}
       </div>
-      <div className="flex justify-center sm:justify-start">
-        <Button asChild outline>
-          <Link href={buttonUrl} aria-label={buttonAriaLabel}>
-            {buttonText}
-          </Link>
-        </Button>
+      <div className="hidden justify-center sm:flex sm:justify-start">
+        {buttonElement}
       </div>
     </div>
   );
 
   const imageSection = (
-    <div className={cn('relative w-full sm:w-7/12', imageClass)}>
-      <Image
-        src={imageUrl}
-        alt={imageAlt}
-        fill
-        sizes="(max-width: 768px) 100vw, 50vw"
-        className="rounded object-cover"
-      />
+    <div className="flex flex-col gap-8 sm:w-7/12">
+      <div className={cn('relative w-full', imageClass)}>
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="rounded object-cover"
+        />
+      </div>
     </div>
   );
 
@@ -93,6 +101,7 @@ export function ImageDescriptionSection({
               {imageSection}
             </>
           )}
+          <div className="flex justify-center sm:hidden">{buttonElement}</div>
         </article>
       </SectionContainer>
     </section>

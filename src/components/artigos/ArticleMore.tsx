@@ -12,7 +12,10 @@ export async function ArticleMore({ slug }: { slug: string }) {
 
   return (
     <section aria-labelledby="more-articles-heading" className="mb-8">
-      <h3 id="more-articles-heading" className="mb-4 font-bold text-2xl text-center">
+      <h3
+        id="more-articles-heading"
+        className="mb-4 text-center font-bold text-2xl"
+      >
         Quer ler mais?
       </h3>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -33,7 +36,7 @@ export async function ArticleMore({ slug }: { slug: string }) {
               />
             </div>
             <div className="min-w-0">
-              <div className="text-xs text-gray-500">Artigo anterior</div>
+              <div className="text-gray-500 text-xs">Artigo anterior</div>
               <div className="truncate font-medium text-primary-800 group-hover:underline">
                 {prevPost.title}
               </div>
@@ -46,7 +49,7 @@ export async function ArticleMore({ slug }: { slug: string }) {
         {nextPost ? (
           <Link
             href={`/artigos/${nextPost.slug}`}
-            className="group flex items-center gap-4 rounded-lg bg-gray-50 p-3 transition hover:bg-gray-100 sm:p-4 sm:flex-row-reverse"
+            className="group flex items-center gap-4 rounded-lg bg-gray-50 p-3 transition hover:bg-gray-100 sm:flex-row-reverse sm:p-4"
             aria-label={`Ler próximo artigo: ${nextPost.title}`}
             title={nextPost.title}
           >
@@ -59,8 +62,8 @@ export async function ArticleMore({ slug }: { slug: string }) {
                 className="object-cover"
               />
             </div>
-            <div className="min-w-0 text-right">
-              <div className="text-xs text-gray-500">Próximo artigo</div>
+            <div className="min-w-0 sm:text-right">
+              <div className="text-gray-500 text-xs">Próximo artigo</div>
               <div className="truncate font-medium text-primary-800 group-hover:underline">
                 {nextPost.title}
               </div>
@@ -73,5 +76,3 @@ export async function ArticleMore({ slug }: { slug: string }) {
     </section>
   );
 }
-
-

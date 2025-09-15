@@ -6,9 +6,9 @@ export default function OurMinistries() {
   return (
     <section aria-label="Nossas Redes" className="bg-primary-200/50">
       <SectionContainer>
-        <div className="flex flex-col gap-6 sm:gap-18">
+        <div className="flex flex-col gap-12 sm:gap-18">
           <SectionTitle title="Nossas Redes" />
-          <div className="grid grid-cols-1 gap-2 md:grid-cols-3 lg:gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-8">
             <div className="flex flex-col items-center gap-6 sm:gap-8">
               <CardTitle>Definição de Redes</CardTitle>
               <CardParagraph className="lg:text-base">
@@ -47,7 +47,7 @@ export default function OurMinistries() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {redes.slice(0, 3).map((rede) => (
             <div key={rede.id} className="flex flex-col gap-6 sm:gap-8">
-              <div className="relative aspect-video w-full">
+              <div className="relative aspect-[4/3] w-full sm:aspect-video">
                 <Image
                   src={rede.image}
                   alt={rede.title}
@@ -65,7 +65,7 @@ export default function OurMinistries() {
         <div className="mt-8 grid grid-cols-1 gap-8 md:mx-auto md:w-2/3 md:grid-cols-2">
           {redes.slice(3).map((rede) => (
             <div key={rede.id} className="flex flex-col gap-6 sm:gap-8">
-              <div className="relative h-[192px] w-full">
+              <div className="relative aspect-[4/3] w-full sm:aspect-video">
                 <Image
                   src={rede.image}
                   alt={rede.title}

@@ -41,7 +41,9 @@ const EventCard = ({
 
   // Full absolute URL for schema
   const fullImageUrl = new URL(image, 'https://ibenatal.org.br').toString();
-  const fullUrl = url ? new URL(url, 'https://ibenatal.org.br').toString() : undefined;
+  const fullUrl = url
+    ? new URL(url, 'https://ibenatal.org.br').toString()
+    : undefined;
 
   return (
     <article
@@ -77,8 +79,10 @@ const EventCard = ({
         </div>
         <h3 className="font-bold text-2xl text-primary">{title}</h3>
         <div className="flex flex-col items-start justify-start gap-2">
-          <p className="text-base">{description}</p>
-          <address className="not-italic">{address}</address>
+          <p className="text-sm lg:text-base">{description}</p>
+          <address className="text-sm not-italic lg:text-base">
+            {address}
+          </address>
         </div>
       </div>
     </article>
@@ -91,11 +95,11 @@ interface SpecialEventCardsProps {
 
 export function SpecialEventCards({ events }: SpecialEventCardsProps) {
   return (
-    <div className="flex flex-col gap-12 sm:gap-8 md:flex-row">
+    <div className="flex flex-col gap-12 sm:flex-row sm:gap-4">
       {events.map((event) => (
         <EventCard
           key={`${event.title}-${event.date}`}
-          className="w-full md:w-1/3"
+          className="w-full sm:w-1/2 md:w-1/3"
           {...event}
         />
       ))}

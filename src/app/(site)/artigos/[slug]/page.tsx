@@ -1,13 +1,13 @@
-import Image from 'next/image';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
+import { ArticleMore } from '@/components/artigos/ArticleMore';
 import { SectionContainer } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 import { BlogPostSchema } from '@/lib/schema';
 import { formatArticleDate } from '@/utils/datetime';
-import { Suspense } from 'react';
-import { ArticleMore } from '@/components/artigos/ArticleMore';
 import { getPost } from '../get-post';
 import { getSlugs } from '../get-slugs';
 
@@ -111,13 +111,16 @@ export default async function ArticlePage({
 
   return (
     <main className="bg-neutral-100">
-      <SectionContainer className="relative max-w-4xl pb-16 lg:gap-8 lg:pt-8" isContentPage>
+      <SectionContainer
+        className="relative max-w-4xl pb-16 lg:gap-8 lg:pt-8"
+        isContentPage
+      >
         <div className="relative aspect-video">
           <Image
             src={post.image || '/images/articles/article-default.png'}
             alt={post.title}
             fill
-            className="sm:rounded-lg object-cover"
+            className="object-cover sm:rounded-lg"
           />
         </div>
 
@@ -131,7 +134,7 @@ export default async function ArticlePage({
             url={fullUrl}
           />
 
-          <div className="sm:px-8 py-8 md:p-12 lg:py-12">
+          <div className="py-8 sm:px-8 md:p-12 lg:py-12">
             <header className="mx-auto mb-12 max-w-3xl px-2.5 sm:px-0">
               <Link
                 href={`/artigos/${post.slug}`}
@@ -144,7 +147,7 @@ export default async function ArticlePage({
                 </Heading>
               </Link>
 
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-600 text-xs sm:text-sm">
+              <div className="flex flex-wrap items-center gap-2 text-gray-600 text-xs sm:gap-4 sm:text-sm">
                 <div className="flex items-center gap-2">
                   <span>Por {post.author}</span>
                 </div>
@@ -159,7 +162,7 @@ export default async function ArticlePage({
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-gray-100 px-3 py-1 text-gray-700 text-xs sm:text-sm capitalize"
+                      className="rounded-full bg-gray-100 px-3 py-1 text-gray-700 text-xs capitalize sm:text-sm"
                     >
                       {tag}
                     </span>
@@ -172,11 +175,15 @@ export default async function ArticlePage({
               <Content />
             </div>
 
-            <footer className="mx-auto mt-12 max-w-3xl border-t pt-8 px-2.5 sm:px-0">
-              <Suspense fallback={<div className="mb-8 h-24 w-full animate-pulse rounded-lg bg-gray-100" />}>
+            <footer className="mx-auto mt-12 max-w-3xl border-t px-2.5 pt-8 sm:px-0">
+              <Suspense
+                fallback={
+                  <div className="mb-8 h-24 w-full animate-pulse rounded-lg bg-gray-100" />
+                }
+              >
                 <ArticleMore slug={slug} />
               </Suspense>
-              <div className="border-t pt-8"/>
+              <div className="border-t pt-8" />
               <Button asChild variant="primary">
                 <Link href="/artigos">← Voltar para lista de artigos</Link>
               </Button>

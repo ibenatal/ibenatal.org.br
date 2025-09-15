@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
 import { SectionDescription, SectionTitle } from './HomeTypography';
@@ -86,14 +87,16 @@ const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/FamíliaIBE/streams';
 
 function TransmissionCard({
   transmission,
+  className,
 }: {
+  className?: string;
   transmission: LiveTransmission;
 }) {
   const thumbnailUrl = getYouTubeThumbnail(transmission.videoId);
   const videoUrl = getYouTubeVideoUrl(transmission.videoId);
 
   return (
-    <article className="flex flex-col gap-4">
+    <article className={cn('flex flex-col gap-4', className)}>
       <Link
         href={videoUrl}
         target="_blank"
@@ -130,7 +133,7 @@ export default function LiveTransmissions() {
   const last3Transmissions = MOCK_TRANSMISSIONS.sort(
     (a, b) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  ).slice(0, 3);
+  ).slice(0, 4);
   return (
     <section aria-label="Transmissões ao Vivo">
       <SectionContainer>
@@ -141,10 +144,15 @@ export default function LiveTransmissions() {
 
         <div className="flex flex-col gap-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {last3Transmissions.map((transmission) => (
+            {last3Transmissions.map((transmission, index) => (
               <TransmissionCard
                 key={transmission.id}
                 transmission={transmission}
+                className={cn(
+                  // 'w-full md:w-1/2 lg:w-1/3',
+                  index === 3 &&
+                    'last-of-type:hidden sm:last-of-type:flex lg:last-of-type:hidden',
+                )}
               />
             ))}
           </div>

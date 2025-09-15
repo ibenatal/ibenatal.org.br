@@ -60,9 +60,9 @@ export default function OurPGMs() {
             }
             
             .our-pgs-carousel .swiper-pagination {
-                left: 5rem;
-                right: 5rem;
-                width: calc(100% - 10rem);
+                left: 4rem;
+                right: 4rem;
+                width: calc(100% - 8rem);
             }
             .our-pgs-carousel .swiper-pagination-bullet {
               background: black;
@@ -85,7 +85,7 @@ export default function OurPGMs() {
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            autoplay={{ delay: 5000 * 1000, disableOnInteraction: false }}
             loop={true}
             breakpoints={{
               640: {
@@ -99,7 +99,7 @@ export default function OurPGMs() {
           >
             {redes.map((rede) => (
               <SwiperSlide key={rede.id}>
-                <div className="flex flex-col gap-6 p-4 pb-20 sm:gap-8">
+                <div className="flex flex-col gap-6 pb-20 sm:gap-8 md:p-4">
                   <div className="relative h-[192px] w-full">
                     <Image
                       src={rede.image}

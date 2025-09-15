@@ -22,7 +22,7 @@ export function Riachuelo() {
       buttonText="Conhecer missão completa"
       buttonUrl={missionUrl}
       buttonAriaLabel="Conhecer a missão completa em Riachuelo"
-      imageClass="h-[350px] sm:w-5/12"
+      imageClass="h-[350px]"
       contentClass="sm:w-7/12"
       sectionClassName="bg-primary-200/50"
       layout="right-to-left"

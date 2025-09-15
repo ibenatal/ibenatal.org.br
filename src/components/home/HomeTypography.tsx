@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 export function SectionTitle({ title }: { title: string }) {
   return (
-    <h2 className="text-center font-bold text-2xl text-primary-700 sm:text-4xl md:text-5xl lg:text-6xl">
+    <h2 className="text-center font-bold text-3xl text-primary-700 sm:text-4xl md:text-5xl lg:text-6xl">
       {title}
     </h2>
   );

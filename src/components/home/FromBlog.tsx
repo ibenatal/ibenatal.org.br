@@ -19,7 +19,7 @@ export default async function FromBlog() {
           <SectionDescription description="Confira as últimas notícias do nosso blog." />
         </header>
 
-        <div className="flex flex-col gap-8 md:flex-row">
+        <div className="flex flex-col gap-8 sm:flex-row">
           {posts.map((post, index) => (
             <ArticleCard
               key={post.slug}
@@ -31,6 +31,11 @@ export default async function FromBlog() {
             />
           ))}
         </div>
+        <div className="flex justify-center">
+          <Button asChild variant="primary">
+            <Link href="/artigos">Ver mais artigos</Link>
+          </Button>
+        </div>
       </SectionContainer>
     </section>
   );
@@ -41,10 +46,7 @@ type ArticleCardProps = {
   className?: string;
 };
 
-const ArticleCard = ({
-  post,
-  className,
-}: ArticleCardProps) => {
+const ArticleCard = ({ post, className }: ArticleCardProps) => {
   const formattedDate = dateIsoToDDMMYYYY(post.date);
 
   // Full absolute URL for schema

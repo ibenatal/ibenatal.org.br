@@ -4,8 +4,7 @@ import { locationInfo } from '@/data/contacts';
 import { SectionContainer } from '../layout/Container';
 import { SectionDescription, SectionTitle } from './HomeTypography';
 import { Separator } from './Separator';
-import { SpecialEvent, SpecialEventCards } from './SpecialEventCards';
-
+import { type SpecialEvent, SpecialEventCards } from './SpecialEventCards';
 
 const SPECIAL_EVENTS: SpecialEvent[] = [
   {
@@ -41,16 +40,16 @@ const SPECIAL_EVENTS: SpecialEvent[] = [
     time: '17:00',
     address: locationInfo.getFullAddress(),
     description: 'Rede da Mulheres: Florecendo em todas as estações',
-  }
+  },
 ];
 
 function LoadingEventCards() {
   return (
-    <div className="flex flex-col gap-12 sm:gap-8 md:flex-row">
+    <div className="flex flex-col gap-12 sm:flex-row sm:gap-8">
       {[1, 2, 3].map((index) => (
         <div
           key={index}
-          className="relative flex w-full animate-pulse flex-row items-start gap-2 md:w-1/3"
+          className="relative flex w-full animate-pulse flex-row items-start gap-2 sm:w-1/2 md:w-1/3"
         >
           <div className="flex h-[72px] w-[72px] flex-col gap-2 rounded-lg bg-slate-200 p-2" />
           <div className="flex flex-1 flex-col gap-4">
