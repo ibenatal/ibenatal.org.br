@@ -31,7 +31,7 @@ export default function AboutPage() {
     '/images/articles/blog-header.png',
     'https://ibenatal.org.br',
   ).toString();
-  
+
   const fullUrl = new URL('/sobre-nos', 'https://ibenatal.org.br').toString();
 
   return (
@@ -45,12 +45,12 @@ export default function AboutPage() {
         datePublished="1969"
         breadcrumbs={[
           { name: 'Home', item: 'https://ibenatal.org.br/' },
-          { name: 'Sobre Nós', item: 'https://ibenatal.org.br/sobre-nos' }
+          { name: 'Sobre Nós', item: 'https://ibenatal.org.br/sobre-nos' },
         ]}
       />
-      
+
       <ContentLayout
-        image="/images/articles/blog-header.png"
+        image="/images/sobre-nos/sobre-nos-culto.jpg"
         title="Sobre a IBE"
         breadcrumbs={[{ label: 'Sobre Nós', href: '/sobre-nos' }]}
       >
