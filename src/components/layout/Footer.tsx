@@ -84,23 +84,6 @@ export function Footer() {
           <h3 className="font-bold text-2xl">Siga-nos</h3>
           <nav className="flex flex-col gap-2">
             <LinkUI
-              href={socialLinks.youtube.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="inverse"
-              title="Abrir no Youtube"
-              aria-label="Abrir no Youtube"
-              className="no-underline"
-            >
-              <Youtube className="h-4 w-4" />
-              <span>
-                Youtube:{' '}
-                <span className="whitespace-nowrap font-mono no-underline">
-                  {socialLinks.youtube.username}
-                </span>
-              </span>
-            </LinkUI>
-            <LinkUI
               href={socialLinks.instagram.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -117,6 +100,24 @@ export function Footer() {
                 </span>
               </span>
             </LinkUI>
+            <LinkUI
+              href={socialLinks.youtube.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="inverse"
+              title="Abrir no Youtube"
+              aria-label="Abrir no Youtube"
+              className="no-underline"
+            >
+              <Youtube className="h-4 w-4" />
+              <span>
+                Youtube:{' '}
+                <span className="whitespace-nowrap font-mono no-underline">
+                  {socialLinks.youtube.username}
+                </span>
+              </span>
+            </LinkUI>
+
             <LinkUI
               href={socialLinks.facebook.href}
               target="_blank"
