@@ -1,4 +1,4 @@
-import { Github, Instagram, MapPin, Youtube } from 'lucide-react';
+import { Facebook, Github, Instagram, MapPin, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { locationInfo, socialLinks, whatsapp } from '@/data/contacts';
@@ -90,11 +90,14 @@ export function Footer() {
               variant="inverse"
               title="Abrir no Youtube"
               aria-label="Abrir no Youtube"
+              className="no-underline"
             >
               <Youtube className="h-4 w-4" />
               <span>
                 Youtube:{' '}
-                <span className="whitespace-nowrap underline">FamíliaIBE</span>
+                <span className="whitespace-nowrap font-mono no-underline">
+                  {socialLinks.youtube.username}
+                </span>
               </span>
             </LinkUI>
             <LinkUI
@@ -104,11 +107,31 @@ export function Footer() {
               variant="inverse"
               title="Abrir no Instagram"
               aria-label="Abrir no Instagram"
+              className="no-underline"
             >
               <Instagram className="h-4 w-4" />
               <span>
                 Instagram:{' '}
-                <span className="whitespace-nowrap underline">@ibenatal_</span>
+                <span className="whitespace-nowrap font-mono no-underline">
+                  {socialLinks.instagram.username}
+                </span>
+              </span>
+            </LinkUI>
+            <LinkUI
+              href={socialLinks.facebook.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="inverse"
+              title="Abrir no Facebook"
+              aria-label="Abrir no Facebook"
+              className="no-underline"
+            >
+              <Facebook className="h-4 w-4" />
+              <span>
+                Facebook:{' '}
+                <span className="whitespace-nowrap font-mono no-underline">
+                  {socialLinks.facebook.username}
+                </span>
               </span>
             </LinkUI>
           </nav>

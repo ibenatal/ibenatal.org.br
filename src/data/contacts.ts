@@ -1,8 +1,7 @@
 export const whatsapp = {
   label: '(84) 99912-3905',
   hrefClean: 'https://wa.me/5584999123905',
-  hrefWithMessage:
-    'https://wa.me/5584999123905?text=Olá, gostaria de saber mais sobre a IBE.',
+  hrefWithMessage: 'https://wa.me/5584999123905?text=Olá, gostaria de saber mais sobre a IBE.',
   hrefToPray: 'https://wa.me/5584999123905?text=Gostaria de pedir oração.',
 };
 
@@ -55,10 +54,17 @@ export const contacts = {
 export const socialLinks = {
   youtube: {
     label: 'YouTube',
-    href: 'https://www.youtube.com/c/Fam%C3%ADliaIBE',
+    href: 'https://www.youtube.com/@ibenatal',
+    username: '@ibenatal',
   },
   instagram: {
     label: 'Instagram',
-    href: 'https://www.instagram.com/ibenatal_',
+    href: 'https://www.instagram.com/ibenatal__',
+    username: '@ibenatal__',
+  },
+  facebook: {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/ibesperanca',
+    username: 'ibesperanca',
   },
 };
