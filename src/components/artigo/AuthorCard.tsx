@@ -19,7 +19,8 @@ export function AuthorCard({
   className,
 }: AuthorCardProps) {
   let catchphraseText = catchphrase?.trim();
-  if (catchphraseText && catchphraseText[catchphraseText.length - 1] !== ',') {
+  if (catchphraseText) {
+    catchphraseText = catchphraseText.replace(/[.,]$/i, '');
     catchphraseText += ',';
   }
   return (
