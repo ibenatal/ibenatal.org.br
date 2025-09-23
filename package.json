@@ -11,7 +11,7 @@
   "engines": {
     "node": ">=22.0.0"
   },
-  "author": "David Costa <davidcostadevr@gmail.com>",
+  "author": "David Costa <davidcostadev@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "env-cmd next dev --turbopack --hostname 0.0.0.0",
