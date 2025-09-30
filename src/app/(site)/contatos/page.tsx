@@ -18,9 +18,10 @@ export default async function ContactsPage() {
     <main className="relative bg-neutral-100">
       <div className="absolute top-0 left-0 z-0 h-[300px] w-full bg-blue-500 lg:h-[500px]">
         <Image
-          src="/images/articles/blog-header.png"
-          alt="Blog"
+          src="/images/contatos/contato-header.png"
+          alt="Contatos"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute top-0 left-0 z-10 h-full w-full bg-black/70"></div>

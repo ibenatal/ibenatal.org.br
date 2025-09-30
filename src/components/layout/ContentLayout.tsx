@@ -18,7 +18,13 @@ export function ContentLayout({
   return (
     <main className="relative bg-neutral-100">
       <div className="absolute top-0 left-0 z-0 h-[300px] w-full bg-blue-500 lg:h-[500px]">
-        <Image src={image} alt={title} fill className="object-cover" />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className="absolute top-0 left-0 z-10 h-full w-full bg-black/70"></div>
       </div>
       <SectionContainer className="relative z-10 max-w-4xl pt-28" isContentPage>
@@ -27,7 +33,9 @@ export function ContentLayout({
           <Breadcrumbs items={breadcrumbs} />
         </div>
         <div className="rounded-lg bg-white">
-          <div className="flex flex-col gap-8 px-0 py-4 lg:p-10">{children}</div>
+          <div className="flex flex-col gap-8 px-0 py-4 lg:p-10">
+            {children}
+          </div>
         </div>
       </SectionContainer>
     </main>
