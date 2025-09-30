@@ -41,55 +41,61 @@ function getYouTubeVideoUrl(videoId: string) {
 const MOCK_TRANSMISSIONS: LiveTransmission[] = [
   {
     id: '2',
-    title: 'Culto de Domingo - 28/07/2025',
+    title: 'Culto de Domingo',
     videoId: '24B-oRQwwfg',
     publishedAt: '2025-07-28',
   },
   {
     id: '3',
-    title: 'Culto de Domingo - 20/07/2025',
+    title: 'Culto de Domingo',
     videoId: 'IHhFgFXJQDY',
     publishedAt: '2025-07-20',
   },
   {
     id: '4',
-    title: 'Culto de Domingo - 18/08/2025',
+    title: 'Culto de Domingo',
     videoId: 'nIQsOfelZyA',
     publishedAt: '2025-08-18',
   },
   {
     id: '5',
-    title: 'Culto de Domingo - 24/08/2025',
+    title: 'Culto de Domingo',
     videoId: 'N6BPaytgUnU',
     publishedAt: '2025-08-24',
   },
   {
     id: '6',
-    title: 'Culto de Domingo - 31/08/2025',
+    title: 'Culto de Domingo',
     videoId: 'hwY9Xb27Af8',
     publishedAt: '2025-08-31',
   },
   {
     id: '7',
-    title: 'Culto de Domingo - 07/09/2025',
+    title: 'Culto de Domingo',
     videoId: 'JTgJMbWo6e8',
     publishedAt: '2025-09-07',
   },
   {
     id: '8',
-    title: 'Culto de Domingo - 14/09/2025',
+    title: 'Culto de Domingo',
     videoId: 'GbwhbMLh0kQ',
     publishedAt: '2025-09-14',
   },
   {
     id: '9',
-    title: 'Culto de Domingo - 21/09/2025',
+    title: 'Culto de Domingo',
     videoId: '6DPozmQkygI',
     publishedAt: '2025-09-21',
   },
+  {
+    id: '10',
+    title: 'Culto de Domingo',
+    videoId: 'td4NWWTIWiM',
+    publishedAt: '2025-09-28',
+  },
 ];
 
-const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/FamíliaIBE/streams';
+const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/@Ibenatal/streams';
 
 function TransmissionCard({
   transmission,
@@ -100,6 +106,10 @@ function TransmissionCard({
 }) {
   const thumbnailUrl = getYouTubeThumbnail(transmission.videoId);
   const videoUrl = getYouTubeVideoUrl(transmission.videoId);
+
+  const publishedAt = new Date(
+    `${transmission.publishedAt}T00:00:00-03:00`,
+  ).toLocaleDateString('pt-BR');
 
   return (
     <article className={cn('flex flex-col gap-4', className)}>
@@ -120,16 +130,8 @@ function TransmissionCard({
       </Link>
       <div className="flex flex-col gap-2">
         <h3 className="line-clamp-2 font-semibold text-lg">
-          {transmission.title}
+          {transmission.title} - {publishedAt}
         </h3>
-        <time
-          dateTime={transmission.publishedAt}
-          className="text-primary-900/70 text-sm"
-        >
-          {new Date(
-            `${transmission.publishedAt}T00:00:00-03:00`,
-          ).toLocaleDateString('pt-BR')}
-        </time>
       </div>
     </article>
   );
