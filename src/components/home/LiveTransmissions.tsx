@@ -107,9 +107,9 @@ function TransmissionCard({
   const thumbnailUrl = getYouTubeThumbnail(transmission.videoId);
   const videoUrl = getYouTubeVideoUrl(transmission.videoId);
 
-  const publishedAt = new Date(
-    `${transmission.publishedAt}T00:00:00-03:00`,
-  ).toLocaleDateString('pt-BR');
+  const publishedAt = new Date(`${transmission.publishedAt}T00:00:00-03:00`).toLocaleDateString(
+    'pt-BR',
+  );
 
   return (
     <article className={cn('flex flex-col gap-4', className)}>
@@ -139,8 +139,7 @@ function TransmissionCard({
 
 export default function LiveTransmissions() {
   const last3Transmissions = MOCK_TRANSMISSIONS.sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   ).slice(0, 4);
   return (
     <section aria-label="Transmissões ao Vivo">
@@ -158,8 +157,7 @@ export default function LiveTransmissions() {
                 transmission={transmission}
                 className={cn(
                   // 'w-full md:w-1/2 lg:w-1/3',
-                  index === 3 &&
-                    'last-of-type:hidden sm:last-of-type:flex lg:last-of-type:hidden',
+                  index === 3 && 'last-of-type:hidden sm:last-of-type:flex lg:last-of-type:hidden',
                 )}
               />
             ))}

@@ -1,5 +1,5 @@
-import 'server-only';
 import { Suspense } from 'react';
+import 'server-only';
 import { locationInfo } from '@/data/contacts';
 import { SectionContainer } from '../layout/Container';
 import { SectionDescription, SectionTitle } from './HomeTypography';
@@ -30,8 +30,7 @@ const SPECIAL_EVENTS: SpecialEvent[] = [
     date: '2025-08-02',
     time: '10:00',
     address: locationInfo.getFullAddress(),
-    description:
-      'Brincadeiras, brindes, comidas tipicas, quadrilhas malucas e sorteiro de balaio',
+    description: 'Brincadeiras, brindes, comidas tipicas, quadrilhas malucas e sorteiro de balaio',
   },
   {
     title: 'Chá da Primavera',
@@ -85,11 +84,9 @@ async function getUpcomingEvents() {
       .slice(0, 3); // Get next 3 upcoming events
 
     return upcomingEvents;
-  } catch (err) {
-    console.error('Error fetching special events:', err);
-    throw new Error(
-      'Erro ao carregar eventos especiais. Por favor, tente novamente mais tarde.',
-    );
+  } catch (error) {
+    console.error('Error fetching special events:', error);
+    throw new Error('Erro ao carregar eventos especiais. Por favor, tente novamente mais tarde.');
   }
 }
 

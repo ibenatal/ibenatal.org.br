@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-export function WhatsappFillIcon(props: SVGProps<SVGSVGElement>) {
+export function WhatsappFillIcon(properties: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@ export function WhatsappFillIcon(props: SVGProps<SVGSVGElement>) {
       width="1em"
       height="1em"
       aria-label="Whatsapp"
-      {...props}
+      {...properties}
     >
       <title>Whatsapp</title>
       <path

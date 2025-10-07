@@ -5,32 +5,29 @@ import { getAllPosts } from '@/app/(site)/artigos/get-posts';
 export async function ArticleMore({ slug }: { slug: string }) {
   const allPosts = await getAllPosts();
   const index = allPosts.findIndex((p) => p.slug === slug);
-  const prevPost = index < allPosts.length - 1 ? allPosts[index + 1] : null; // older
+  const previousPost = index < allPosts.length - 1 ? allPosts[index + 1] : null; // older
   const nextPost = index > 0 ? allPosts[index - 1] : null; // newer
 
-  if (!prevPost && !nextPost) return null;
+  if (!previousPost && !nextPost) return null;
 
   return (
     <section aria-labelledby="more-articles-heading" className="mb-8">
-      <h3
-        id="more-articles-heading"
-        className="mb-4 text-center font-bold text-2xl"
-      >
+      <h3 id="more-articles-heading" className="mb-4 text-center font-bold text-2xl">
         Quer ler mais?
       </h3>
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {prevPost ? (
+        {previousPost ? (
           <li>
             <Link
-              href={`/artigos/${prevPost.slug}`}
+              href={`/artigos/${previousPost.slug}`}
               rel="prev"
               className="group flex items-center gap-4 rounded-lg bg-gray-50 p-3 transition hover:bg-gray-100 sm:p-4"
-              aria-label={`Artigo anterior: ${prevPost.title}`}
+              aria-label={`Artigo anterior: ${previousPost.title}`}
             >
               <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md">
                 <Image
-                  src={prevPost.image || '/images/articles/article-default.png'}
-                  alt={`Capa do artigo: ${prevPost.title}`}
+                  src={previousPost.image || '/images/articles/article-default.png'}
+                  alt={`Capa do artigo: ${previousPost.title}`}
                   fill
                   sizes="96px"
                   className="object-cover"
@@ -39,7 +36,7 @@ export async function ArticleMore({ slug }: { slug: string }) {
               <div className="min-w-0">
                 <div className="text-gray-500 text-xs">Artigo anterior</div>
                 <div className="truncate font-medium text-primary-800 group-hover:underline">
-                  {prevPost.title}
+                  {previousPost.title}
                 </div>
               </div>
             </Link>

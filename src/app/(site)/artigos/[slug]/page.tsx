@@ -1,7 +1,7 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 import { AuthorCard } from '@/components/artigo/AuthorCard';
 import { ArticleMore } from '@/components/artigos/ArticleMore';
 import { SectionContainer } from '@/components/layout/Container';
@@ -33,10 +33,7 @@ export async function generateMetadata({
   imageUrl.searchParams.set('v', buildTimestamp);
   const imageUrlString = imageUrl.toString();
 
-  const pageUrl = new URL(
-    `/artigos/${slug}`,
-    'https://ibenatal.org.br',
-  ).toString();
+  const pageUrl = new URL(`/artigos/${slug}`, 'https://ibenatal.org.br').toString();
 
   return {
     title: post.title,
@@ -77,11 +74,7 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export default async function ArticlePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   // Get post metadata
   const post = await getPost(slug);
@@ -105,20 +98,14 @@ export default async function ArticlePage({
   fullImageUrl.searchParams.set('v', buildTimestamp);
   const fullImageUrlString = fullImageUrl.toString();
 
-  const fullUrl = new URL(
-    `/artigos/${slug}`,
-    'https://ibenatal.org.br',
-  ).toString();
+  const fullUrl = new URL(`/artigos/${slug}`, 'https://ibenatal.org.br').toString();
 
   // Load author info for the AuthorCard
   const { getAuthorInfo } = await import('@/data/authors');
   const authorInfo = getAuthorInfo(post.author);
   return (
     <main className="bg-neutral-100">
-      <SectionContainer
-        className="relative max-w-4xl pb-16 lg:gap-8 lg:pt-8"
-        isContentPage
-      >
+      <SectionContainer className="relative max-w-4xl pb-16 lg:gap-8 lg:pt-8" isContentPage>
         <div className="relative aspect-video">
           <Image
             src={post.image || '/images/articles/article-default.png'}
@@ -187,9 +174,7 @@ export default async function ArticlePage({
 
             <footer className="mx-auto mt-12 max-w-3xl border-t px-2.5 pt-8 sm:px-0">
               <Suspense
-                fallback={
-                  <div className="mb-8 h-24 w-full animate-pulse rounded-lg bg-gray-100" />
-                }
+                fallback={<div className="mb-8 h-24 w-full animate-pulse rounded-lg bg-gray-100" />}
               >
                 <ArticleMore slug={slug} />
               </Suspense>

@@ -4,12 +4,12 @@ import type { Post } from '@/@types/posts';
 import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 
-type FeaturedArticleProps = {
+type FeaturedArticleProperties = {
   post: Post;
   className?: string;
 };
 
-export function FeaturedArticle({ post, className }: FeaturedArticleProps) {
+export function FeaturedArticle({ post, className }: FeaturedArticleProperties) {
   const formattedDate = dateIsoToDDMMYYYY(post.date);
   return (
     <article
@@ -43,27 +43,17 @@ export function FeaturedArticle({ post, className }: FeaturedArticleProps) {
           >
             {post.title}
           </h3>
-          <p
-            className="text-base text-gray-500 lg:text-lg"
-            itemProp="description"
-          >
+          <p className="text-base text-gray-500 lg:text-lg" itemProp="description">
             {post.description}
           </p>
           <div className="flex flex-row gap-4 text-gray-500 text-xs lg:text-base">
-            <span
-              itemProp="author"
-              itemScope
-              itemType="https://schema.org/Person"
-            >
+            <span itemProp="author" itemScope itemType="https://schema.org/Person">
               <span itemProp="name">{post.author.name}</span>
             </span>
             <time dateTime={post.date} itemProp="datePublished">
               {formattedDate}
             </time>
-            <span
-              aria-description="Tempo de leitura"
-              title={`Tempo de leitura ${post.readTime}`}
-            >
+            <span aria-description="Tempo de leitura" title={`Tempo de leitura ${post.readTime}`}>
               {post.readTime}
             </span>
           </div>

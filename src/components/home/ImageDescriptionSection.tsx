@@ -6,7 +6,7 @@ import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
 import { CardTitle, SectionDescription, SectionTitle } from './HomeTypography';
 
-interface ImageDescriptionSectionProps {
+interface ImageDescriptionSectionProperties {
   title: string;
   subtitle: string;
   personName: string;
@@ -36,7 +36,7 @@ export function ImageDescriptionSection({
   sectionClassName,
   imageClass = 'h-[450px]',
   layout = 'left-to-right',
-}: ImageDescriptionSectionProps) {
+}: ImageDescriptionSectionProperties) {
   // const _isMobile = useIsMobile();
   const isReversed = layout === 'right-to-left';
 
@@ -53,17 +53,12 @@ export function ImageDescriptionSection({
       <CardTitle className="text-left">{personName}</CardTitle>
       <div className="flex flex-col gap-4">
         {descriptions.map((description, index) => (
-          <p
-            key={String(index)}
-            className="text-sm leading-relaxed sm:text-base lg:text-lg"
-          >
+          <p key={String(index)} className="text-sm leading-relaxed sm:text-base lg:text-lg">
             {description}
           </p>
         ))}
       </div>
-      <div className="hidden justify-center sm:flex sm:justify-start">
-        {buttonElement}
-      </div>
+      <div className="hidden justify-center sm:flex sm:justify-start">{buttonElement}</div>
     </div>
   );
 

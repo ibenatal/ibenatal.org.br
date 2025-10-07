@@ -27,11 +27,8 @@ export const metadata: Metadata = {
 };
 
 export default function PerfilPastoralPage() {
-  const fullImageUrl = new URL(
-    '/images/cultos/cultos-1.png',
-    'https://ibenatal.org.br',
-  ).toString();
-  
+  const fullImageUrl = new URL('/images/cultos/cultos-1.png', 'https://ibenatal.org.br').toString();
+
   const fullUrl = new URL('/perfil-pastoral', 'https://ibenatal.org.br').toString();
 
   return (
@@ -45,10 +42,10 @@ export default function PerfilPastoralPage() {
         datePublished="2003"
         breadcrumbs={[
           { name: 'Home', item: 'https://ibenatal.org.br/' },
-          { name: 'Perfil Pastoral', item: 'https://ibenatal.org.br/perfil-pastoral' }
+          { name: 'Perfil Pastoral', item: 'https://ibenatal.org.br/perfil-pastoral' },
         ]}
       />
-      
+
       <ContentLayout
         image="/images/cultos/cultos-1.png"
         title="Perfil Pastoral"

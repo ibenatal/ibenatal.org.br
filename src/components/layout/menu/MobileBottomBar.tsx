@@ -16,27 +16,18 @@ export function MobileBottomBar() {
           const Icon = item.icon;
           return (
             <Link href={item.to} key={item.to}>
-              <Button
-                size="icon"
-                className="size-12 sm:size-15"
-                variant="ghost"
-                asChild
-              >
+              <Button size="icon" className="size-12 sm:size-15" variant="ghost" asChild>
                 <div className="flex flex-col items-center justify-center gap-1">
                   <Icon
                     className={cn(
                       'size-6',
-                      isActive(item.to)
-                        ? 'text-primary-700'
-                        : 'text-primary-400',
+                      isActive(item.to) ? 'text-primary-700' : 'text-primary-400',
                     )}
                   />
                   <span
                     className={cn(
                       'text-xs',
-                      isActive(item.to)
-                        ? 'text-primary-700'
-                        : 'text-primary-400',
+                      isActive(item.to) ? 'text-primary-700' : 'text-primary-400',
                     )}
                   >
                     {item.label}

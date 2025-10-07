@@ -1,6 +1,6 @@
-import { Facebook, Github, Instagram, MapPin, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Facebook, Github, Instagram, MapPin, Youtube } from 'lucide-react';
 import { locationInfo, socialLinks, whatsapp } from '@/data/contacts';
 import { WhatsappFillIcon } from '../icons/WhatsappFillIcon';
 import { LinkUI } from '../ui/link-ui';
@@ -10,10 +10,7 @@ export function Footer() {
   return (
     <footer className="mb-[3.75rem] divide-y divide-white/50 bg-primary-700 px-4 text-white md:mb-0">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 pt-14 pb-10 sm:gap-4 md:flex-row">
-        <section
-          className="flex flex-col gap-4 md:w-6/12"
-          aria-label="Informações de contato"
-        >
+        <section className="flex flex-col gap-4 md:w-6/12" aria-label="Informações de contato">
           <Link href="/" title="Ir para a página inicial">
             <Image
               src="/ibe-logo.svg"
@@ -49,25 +46,17 @@ export function Footer() {
               <MapPin className="mt-1.5 h-4 w-4" />
               <div className="flex flex-col gap-1">
                 <p className="inline-flex w-full flex-wrap items-center gap-2">
-                  <span className="whitespace-nowrap">
-                    {locationInfo.address},
-                  </span>
-                  <span className="whitespace-nowrap">
-                    {locationInfo.neighborhood}
-                  </span>
+                  <span className="whitespace-nowrap">{locationInfo.address},</span>
+                  <span className="whitespace-nowrap">{locationInfo.neighborhood}</span>
                 </p>
                 <p>
-                  {locationInfo.city} {locationInfo.state} -{' '}
-                  {locationInfo.zipCode}
+                  {locationInfo.city} {locationInfo.state} - {locationInfo.zipCode}
                 </p>
               </div>
             </LinkUI>
           </address>
         </section>
-        <section
-          className="flex flex-col gap-4 md:w-3/12"
-          aria-label="Links de navegação"
-        >
+        <section className="flex flex-col gap-4 md:w-3/12" aria-label="Links de navegação">
           <h3 className="font-bold text-2xl">Links</h3>
           <nav className="flex flex-col gap-2">
             {menuItems.map((item) => (
@@ -77,10 +66,7 @@ export function Footer() {
             ))}
           </nav>
         </section>
-        <section
-          className="flex flex-col gap-4 md:w-3/12"
-          aria-label="Redes sociais"
-        >
+        <section className="flex flex-col gap-4 md:w-3/12" aria-label="Redes sociais">
           <h3 className="font-bold text-2xl">Siga-nos</h3>
           <nav className="flex flex-col gap-2">
             <LinkUI
@@ -142,9 +128,7 @@ export function Footer() {
         <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-2 py-6">
           <small>
             &copy; {new Date().getFullYear()} Igreja Batista da Esperança.{' '}
-            <span className="whitespace-nowrap">
-              Todos os direitos reservados.
-            </span>
+            <span className="whitespace-nowrap">Todos os direitos reservados.</span>
           </small>
           <small>
             <LinkUI

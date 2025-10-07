@@ -1,7 +1,6 @@
+import type * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
-import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
@@ -15,8 +14,7 @@ const buttonVariants = cva(
         secondary: 'bg-secondary text-white shadow-xs hover:bg-secondary/80',
         tertiary: 'bg-tertiary text-white shadow-xs hover:bg-tertiary/80',
         quaternary: 'bg-quaternary text-white shadow-xs hover:bg-quaternary/80',
-        ghost:
-          'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
+        ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       outline: {
@@ -34,8 +32,7 @@ const buttonVariants = cva(
       {
         variant: 'primary',
         outline: true,
-        className:
-          'border-2 border-primary bg-white/10 text-primary hover:bg-primary/10',
+        className: 'border-2 border-primary bg-white/10 text-primary hover:bg-primary/10',
       },
       {
         variant: 'destructive',
@@ -46,20 +43,17 @@ const buttonVariants = cva(
       {
         variant: 'secondary',
         outline: true,
-        className:
-          'border-2 border-secondary bg-white/10 text-secondary hover:bg-secondary/10',
+        className: 'border-2 border-secondary bg-white/10 text-secondary hover:bg-secondary/10',
       },
       {
         variant: 'tertiary',
         outline: true,
-        className:
-          'border-2 border-tertiary bg-white/10 text-tertiary hover:bg-tertiary/10',
+        className: 'border-2 border-tertiary bg-white/10 text-tertiary hover:bg-tertiary/10',
       },
       {
         variant: 'quaternary',
         outline: true,
-        className:
-          'border-2 border-quaternary bg-white/10 text-quaternary hover:bg-quaternary/10 ',
+        className: 'border-2 border-quaternary bg-white/10 text-quaternary hover:bg-quaternary/10 ',
       },
     ],
     defaultVariants: {
@@ -76,7 +70,7 @@ function Button({
   size,
   outline,
   asChild = false,
-  ...props
+  ...properties
 }: React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
@@ -87,7 +81,7 @@ function Button({
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, outline, className }))}
-      {...props}
+      {...properties}
     />
   );
 }

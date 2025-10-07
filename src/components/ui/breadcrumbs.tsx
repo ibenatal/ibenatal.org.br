@@ -1,22 +1,22 @@
 'use client';
 
-import Link from 'next/link';
 import type * as React from 'react';
+import Link from 'next/link';
 import { BreadcrumbSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 
-interface BreadcrumbsProps extends React.HTMLAttributes<HTMLDivElement> {
+interface BreadcrumbsProperties extends React.HTMLAttributes<HTMLDivElement> {
   items: {
     label: string;
     href: string;
   }[];
 }
 
-export function Breadcrumbs({ items, className, ...props }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, className, ...properties }: BreadcrumbsProperties) {
   // Always include Home as the first item
   const breadcrumbItems = [{ label: 'Home', href: '/' }, ...items];
 
-  const origin = typeof window !== 'undefined' ? window.location.origin : '';
+  const origin = globalThis.window === undefined ? '' : globalThis.location.origin;
 
   return (
     <>
@@ -24,14 +24,12 @@ export function Breadcrumbs({ items, className, ...props }: BreadcrumbsProps) {
       <nav
         className={cn('flex items-center space-x-2 text-sm', className)}
         aria-label="Breadcrumb"
-        {...props}
+        {...properties}
       >
         <ol className="flex items-center">
           {breadcrumbItems.map((item, index) => (
             <li key={item.href} className="flex items-center">
-              {index > 0 && (
-                <span className="mx-2 text-muted-foreground">/</span>
-              )}
+              {index > 0 && <span className="mx-2 text-muted-foreground">/</span>}
               {index === breadcrumbItems.length - 1 ? (
                 <span className="font-medium text-white/90">{item.label}</span>
               ) : (

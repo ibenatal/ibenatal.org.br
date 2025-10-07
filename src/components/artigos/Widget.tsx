@@ -3,27 +3,24 @@ import type { Post } from '@/@types/posts';
 import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 
-type WidgetProps = {
+type WidgetProperties = {
   posts: Post[];
   className?: string;
 };
 
-export function Widget({ posts, className }: WidgetProps) {
+export function Widget({ posts, className }: WidgetProperties) {
   return (
-    <section
-      className={cn('', className)}
-      aria-labelledby="most-popular-heading"
-    >
+    <section className={cn('', className)} aria-labelledby="most-popular-heading">
       <MostPopularWidget posts={posts} />
     </section>
   );
 }
 
-type MostPopularWidgetProps = {
+type MostPopularWidgetProperties = {
   posts: Post[];
 };
 
-export function MostPopularWidget({ posts }: MostPopularWidgetProps) {
+export function MostPopularWidget({ posts }: MostPopularWidgetProperties) {
   const mostPopularPosts = posts.slice(0, 5);
   return (
     <div className="rounded-lg bg-white p-4">

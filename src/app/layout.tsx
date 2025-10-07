@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Barlow, Roboto } from 'next/font/google';
-import './globals.css';
 import { Monitoring } from '@/components/analytics/Monitoring';
 import { ProductionLogger } from '@/components/ProductionLogger';
+import './globals.css';
 
 const roboto = Roboto({
   variable: '--font-roboto',

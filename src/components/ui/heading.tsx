@@ -1,7 +1,6 @@
+import type * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
-import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 
 const headingVariants = cva('scroll-m-20 tracking-tight text-balance', {
@@ -19,27 +18,17 @@ const headingVariants = cva('scroll-m-20 tracking-tight text-balance', {
   },
 });
 
-interface HeadingProps
+interface HeadingProperties
   extends React.HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof headingVariants> {
   asChild?: boolean;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 }
 
-function Heading({
-  className,
-  variant,
-  as,
-  asChild = false,
-  ...props
-}: HeadingProps) {
-  const Comp = asChild
-    ? Slot
-    : as || (variant as 'h1' | 'h2' | 'h3' | 'h4' | 'h5') || 'h1';
+function Heading({ className, variant, as, asChild = false, ...properties }: HeadingProperties) {
+  const Comp = asChild ? Slot : as || (variant as 'h1' | 'h2' | 'h3' | 'h4' | 'h5') || 'h1';
 
-  return (
-    <Comp className={cn(headingVariants({ variant, className }))} {...props} />
-  );
+  return <Comp className={cn(headingVariants({ variant, className }))} {...properties} />;
 }
 
 export { Heading, headingVariants };

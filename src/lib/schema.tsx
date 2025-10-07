@@ -13,20 +13,10 @@ import type { Author } from '@/@types/posts';
 
 // Helper function to create JSON-LD script element
 export const JsonLd = memo(
-  <T extends Thing>({
-    data,
-    testId,
-  }: {
-    data: WithContext<T>;
-    testId: string;
-  }) => {
+  <T extends Thing>({ data, testId }: { data: WithContext<T>; testId: string }) => {
     // Using key to ensure proper updates
     return (
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        data-testid={testId}
-      >
+      <script type="application/ld+json" suppressHydrationWarning data-testid={testId}>
         {JSON.stringify(data)}
       </script>
     );
@@ -202,9 +192,7 @@ export function ChurchOrganizationSchema({
     }),
   };
 
-  return (
-    <JsonLd data={churchData} testId={`church-organization-schema-${name}`} />
-  );
+  return <JsonLd data={churchData} testId={`church-organization-schema-${name}`} />;
 }
 
 // Web page schema

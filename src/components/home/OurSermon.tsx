@@ -13,18 +13,9 @@ export default function OurSermon() {
   const sermonUrl = '/sermoes/heading-title-for-sermon-series';
 
   // Full absolute URLs for schema
-  const fullThumbnailUrl = new URL(
-    thumbnailUrl,
-    'https://ibenatal.org.br',
-  ).toString();
-  const _fullSermonUrl = new URL(
-    sermonUrl,
-    'https://ibenatal.org.br',
-  ).toString();
-  const videoUrl = new URL(
-    '/videos/sermon-video.mp4',
-    'https://ibenatal.org.br',
-  ).toString();
+  const fullThumbnailUrl = new URL(thumbnailUrl, 'https://ibenatal.org.br').toString();
+  const _fullSermonUrl = new URL(sermonUrl, 'https://ibenatal.org.br').toString();
+  const videoUrl = new URL('/videos/sermon-video.mp4', 'https://ibenatal.org.br').toString();
 
   return (
     <section aria-label="Nossas Pregações">
@@ -62,10 +53,7 @@ export default function OurSermon() {
             </div>
             <div className="flex justify-center sm:justify-start">
               <Button asChild outline>
-                <Link
-                  href={sermonUrl}
-                  aria-label={`Ver mais sobre a pregação ${sermonTitle}`}
-                >
+                <Link href={sermonUrl} aria-label={`Ver mais sobre a pregação ${sermonTitle}`}>
                   Ver mais
                 </Link>
               </Button>

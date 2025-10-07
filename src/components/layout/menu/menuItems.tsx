@@ -1,10 +1,4 @@
-import {
-  BookIcon,
-  HomeIcon,
-  InfoIcon,
-  type LucideIcon,
-  MailIcon,
-} from 'lucide-react';
+import { BookIcon, HomeIcon, InfoIcon, type LucideIcon, MailIcon } from 'lucide-react';
 
 export const menuItems: {
   to: string;

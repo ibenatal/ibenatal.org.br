@@ -1,5 +1,5 @@
-import capitalize from 'lodash/capitalize';
 import Image from 'next/image';
+import capitalize from 'lodash/capitalize';
 import { EventSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 
@@ -12,7 +12,7 @@ export interface SpecialEvent {
   description: string;
 }
 
-type EventCardProps = {
+type EventCardProperties = {
   title: string;
   image: string;
   date: string;
@@ -32,23 +32,17 @@ const EventCard = ({
   description,
   url,
   className,
-}: EventCardProps) => {
+}: EventCardProperties) => {
   const eventDate = new Date(`${date}T00:00:00-03:00`);
   const day = eventDate.getDate();
-  const monthName = eventDate
-    .toLocaleString('pt-BR', { month: 'long' })
-    .slice(0, 3);
+  const monthName = eventDate.toLocaleString('pt-BR', { month: 'long' }).slice(0, 3);
 
   // Full absolute URL for schema
   const fullImageUrl = new URL(image, 'https://ibenatal.org.br').toString();
-  const fullUrl = url
-    ? new URL(url, 'https://ibenatal.org.br').toString()
-    : undefined;
+  const fullUrl = url ? new URL(url, 'https://ibenatal.org.br').toString() : undefined;
 
   return (
-    <article
-      className={cn('relative flex flex-row items-start gap-2', className)}
-    >
+    <article className={cn('relative flex flex-row items-start gap-2', className)}>
       <EventSchema
         name={title}
         description={description}
@@ -62,9 +56,7 @@ const EventCard = ({
           <span className="py-1 text-center text-base text-primary">
             {day} {capitalize(monthName)}
           </span>
-          <span className="rounded-md bg-primary p-2 text-center text-sm text-white">
-            {time}
-          </span>
+          <span className="rounded-md bg-primary p-2 text-center text-sm text-white">{time}</span>
         </time>
       </div>
       <div className="flex flex-1 flex-col gap-4">
@@ -80,20 +72,18 @@ const EventCard = ({
         <h3 className="font-bold text-2xl text-primary">{title}</h3>
         <div className="flex flex-col items-start justify-start gap-2">
           <p className="text-sm lg:text-base">{description}</p>
-          <address className="text-sm not-italic lg:text-base">
-            {address}
-          </address>
+          <address className="text-sm not-italic lg:text-base">{address}</address>
         </div>
       </div>
     </article>
   );
 };
 
-interface SpecialEventCardsProps {
+interface SpecialEventCardsProperties {
   events: SpecialEvent[];
 }
 
-export function SpecialEventCards({ events }: SpecialEventCardsProps) {
+export function SpecialEventCards({ events }: SpecialEventCardsProperties) {
   return (
     <div className="flex flex-col gap-12 sm:flex-row sm:gap-4">
       {events.map((event) => (

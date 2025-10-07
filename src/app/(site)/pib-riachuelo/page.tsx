@@ -37,7 +37,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PIB Riachuelo - Congregação IBE | IBE Natal',
-    description: 'Conheça a história da PIB Riachuelo, a primeira Igreja Batista plantada nas terras riachuelenses.',
+    description:
+      'Conheça a história da PIB Riachuelo, a primeira Igreja Batista plantada nas terras riachuelenses.',
     images: ['/images/pib-riachuelo/igreja-batista-de-riachuelo.jpg'],
   },
 };
@@ -48,7 +49,7 @@ export default function MissaoRiachueloPage() {
     '/images/pib-riachuelo/igreja-batista-de-riachuelo.jpg',
     'https://ibenatal.org.br',
   ).toString();
-  
+
   const fullUrl = new URL('/pib-riachuelo', 'https://ibenatal.org.br').toString();
 
   return (
@@ -62,7 +63,7 @@ export default function MissaoRiachueloPage() {
         foundingDate="2019"
         parentOrganization="Igreja Batista da Esperança - IBE Natal"
       />
-      
+
       <ContentLayout
         image="/images/pib-riachuelo/igreja-batista-de-riachuelo.jpg"
         title="PIB Riachuelo"

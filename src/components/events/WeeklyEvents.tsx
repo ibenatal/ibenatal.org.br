@@ -41,7 +41,7 @@ function computeNextEvents(): DisplayEvent[] {
       if (daysUntilEvent < 0) {
         daysUntilEvent += 7;
       } else if (daysUntilEvent === 0) {
-        const eventTime = parseInt(event.time.replace(':', ''));
+        const eventTime = Number.parseInt(event.time.replace(':', ''));
         if (currentTime >= eventTime) daysUntilEvent = 7;
       }
 
@@ -58,8 +58,7 @@ function computeNextEvents(): DisplayEvent[] {
       .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime())
       .slice(0, 2)
       .map((event) => {
-        const isToday =
-          event.dateObj.toDateString() === currentDate.toDateString();
+        const isToday = event.dateObj.toDateString() === currentDate.toDateString();
         return {
           title: event.title,
           date: isToday
@@ -74,8 +73,8 @@ function computeNextEvents(): DisplayEvent[] {
           time: event.time,
         };
       });
-  } catch (err) {
-    console.error('Error computing events:', err);
+  } catch (error) {
+    console.error('Error computing events:', error);
     return [];
   }
 }

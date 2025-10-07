@@ -18,7 +18,7 @@ export function Pagination() {
       start = Math.max(1, end - 4);
     }
 
-    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+    return Array.from({ length: end - start + 1 }, (_, index) => start + index);
   };
 
   const handlePageChange = (page: number) => {
@@ -27,8 +27,6 @@ export function Pagination() {
   };
 
   const pages = getPageRange();
-  const _showEllipsisStart = pages[0] > 1;
-  const _showEllipsisEnd = pages[pages.length - 1] < totalPages;
 
   return (
     <div className="relative flex flex-row justify-between gap-2 py-10 md:gap-4">
@@ -49,10 +47,7 @@ export function Pagination() {
             variant="primary"
             outline={page !== currentPage}
             onClick={() => handlePageChange(page)}
-            className={cn(
-              'hidden lg:block',
-              page === currentPage && 'bg-primary-500 text-white',
-            )}
+            className={cn('hidden lg:block', page === currentPage && 'bg-primary-500 text-white')}
           >
             {page}
           </Button>

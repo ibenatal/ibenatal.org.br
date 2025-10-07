@@ -1,6 +1,6 @@
-import { Mail, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { Mail, MapPin } from 'lucide-react';
 import { WhatsappFillIcon } from '@/components/icons/WhatsappFillIcon';
 import { SectionContainer } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
@@ -108,13 +108,7 @@ function ContactCard({
   );
 }
 
-function CallingUs({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
+function CallingUs({ title, description }: { title: string; description: string }) {
   return (
     <div className="rounded-lg bg-white">
       <div className="flex flex-col gap-8 p-4 lg:p-10">

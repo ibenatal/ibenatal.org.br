@@ -3,17 +3,13 @@ import path from 'node:path';
 import type { Post, PostMetadata } from '@/@types/posts';
 import { getReadTime } from '@/utils/readtime';
 
-type GetPostsProps = {
+type GetPostsProperties = {
   limit?: number;
 };
 
 async function loadPostMetadata(fileName: string): Promise<Post | null> {
   try {
-    const filePath = path.join(
-      process.cwd(),
-      'src/app/(site)/artigos/content',
-      fileName,
-    );
+    const filePath = path.join(process.cwd(), 'src/app/(site)/artigos/content', fileName);
     const content = await readFile(filePath, 'utf8');
     const post = (await import(`./content/${fileName}`)) as {
       metadata: PostMetadata;
@@ -55,7 +51,7 @@ async function getContentFiles(): Promise<string[]> {
   }
 }
 
-export async function getPosts({ limit = 10 }: GetPostsProps): Promise<Post[]> {
+export async function getPosts({ limit = 10 }: GetPostsProperties): Promise<Post[]> {
   const allPosts = await getAllPosts();
   return allPosts.slice(0, limit);
 }
@@ -63,13 +59,13 @@ export async function getPosts({ limit = 10 }: GetPostsProps): Promise<Post[]> {
 export async function getAllPosts(): Promise<Post[]> {
   const files = await getContentFiles();
 
-  const postsWithMetadata = (
-    await Promise.all(files.map(loadPostMetadata))
-  ).filter((post) => post !== null);
+  console.info('get posts from fill-destructive');
 
-  const sortedPosts = postsWithMetadata.sort(
-    (a, b) => +new Date(b.date) - +new Date(a.date),
+  const postsWithMetadata = (await Promise.all(files.map(loadPostMetadata))).filter(
+    (post) => post !== null,
   );
+
+  const sortedPosts = postsWithMetadata.sort((a, b) => +new Date(b.date) - +new Date(a.date));
 
   return sortedPosts;
 }

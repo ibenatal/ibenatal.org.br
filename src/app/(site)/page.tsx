@@ -1,4 +1,3 @@
-import HomeCarousel from '@/components/HomeCarousel';
 import AboutUS from '@/components/home/AboutUS';
 import FromBlog from '@/components/home/FromBlog';
 import { GetInTouch } from '@/components/home/GetInTouch';
@@ -7,10 +6,11 @@ import NextEvents from '@/components/home/NextEvents';
 import OurMinistries from '@/components/home/OurMinistries';
 import { OurPastor } from '@/components/home/OurPastor';
 import OurPGMs from '@/components/home/OurPGMs';
+import { Riachuelo } from '@/components/home/Riachuelo';
 import { Separator } from '@/components/home/Separator';
 import WaysToContribute from '@/components/home/WaysToContribute';
+import HomeCarousel from '@/components/HomeCarousel';
 import { homeSlides } from '@/data/carousel';
-import { Riachuelo } from '@/components/home/Riachuelo';
 
 export default function SitePage() {
   return (

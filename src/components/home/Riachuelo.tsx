@@ -7,8 +7,7 @@ export function Riachuelo() {
     'Após uma Escola de Sertões com 80 missionários, Messias e Thalita foram enviados como família missionária em Janeiro de 2020.',
     'Hoje, através de Pequenos Grupos, projetos sociais e evangelismo, estamos levando o amor de Cristo aos corações riachuelenses.',
   ];
-  const missionImageUrl =
-    '/images/pib-riachuelo/igreja-batista-de-riachuelo.jpg';
+  const missionImageUrl = '/images/pib-riachuelo/igreja-batista-de-riachuelo.jpg';
   const missionUrl = '/pib-riachuelo';
 
   return (

@@ -1,6 +1,6 @@
-import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Mail } from 'lucide-react';
 import { email, whatsapp } from '@/data/contacts';
 import { WeeklyEvents } from '../events/WeeklyEvents';
 import { WhatsappFillIcon } from '../icons/WhatsappFillIcon';
@@ -9,10 +9,7 @@ import { Button } from '../ui/button';
 
 export function GetInTouch() {
   return (
-    <section
-      aria-label="Entre em contato"
-      className="relative bg-quaternary-500"
-    >
+    <section aria-label="Entre em contato" className="relative bg-quaternary-500">
       <Image
         src="/images/bgGetInTouch.png"
         alt="Entre em contato"
@@ -31,24 +28,20 @@ export function GetInTouch() {
           >
             <div className="-translate-y-5 hover:-translate-y-6 flex max-w-[20rem] flex-col items-center gap-6 rounded bg-primary-500 px-4 py-10 text-center text-white shadow-2xl transition hover:bg-primary-500">
               <WhatsappFillIcon className="h-16 w-16" />
-              <div className="text-lg sm:text-2xl">
-                Faça seu pedido de oração
-              </div>
+              <div className="text-lg sm:text-2xl">Faça seu pedido de oração</div>
               <div className="text-3xl">{whatsapp.label}</div>
             </div>
           </Link>
         </div>
         <div className="flex flex-col gap-6 px-4 pt-16 pb-10 text-white sm:pb-20 md:pb-20 lg:relative lg:pl-8">
           <div className="flex flex-col gap-2">
-            <div className="text-base text-primary-300">
-              Entre em contato conosco
-            </div>
+            <div className="text-base text-primary-300">Entre em contato conosco</div>
             <div className="text-3xl">Não hesite em nos chamar</div>
           </div>
           <div className="text-lg">
-            Fale com a gente! Estamos à disposição para atender você pelo
-            telefone, WhatsApp ou mensagem. Seja para tirar dúvidas, receber
-            oração ou saber mais, será um prazer conversar com você.
+            Fale com a gente! Estamos à disposição para atender você pelo telefone, WhatsApp ou
+            mensagem. Seja para tirar dúvidas, receber oração ou saber mais, será um prazer
+            conversar com você.
           </div>
           <div className="flex gap-4">
             <Button>

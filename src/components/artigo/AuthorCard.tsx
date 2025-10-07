@@ -1,9 +1,9 @@
-import { InstagramIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { InstagramIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-type AuthorCardProps = {
+type AuthorCardProperties = {
   name: string;
   avatarSrc?: string;
   instagramUrl?: string;
@@ -17,7 +17,7 @@ export function AuthorCard({
   instagramUrl,
   catchphrase,
   className,
-}: AuthorCardProps) {
+}: AuthorCardProperties) {
   let catchphraseText = catchphrase?.trim();
   if (catchphraseText) {
     catchphraseText = catchphraseText.replace(/[.,]$/i, '');
@@ -57,14 +57,10 @@ export function AuthorCard({
       <div className="min-w-0 flex-1">
         <div className="flex flex-col gap-x-3 gap-y-2">
           {!!catchphraseText && (
-            <p className="mt-2 text-gray-700 text-sm italic sm:text-base">
-              {catchphraseText}
-            </p>
+            <p className="mt-2 text-gray-700 text-sm italic sm:text-base">{catchphraseText}</p>
           )}
           <div className="flex flex-row gap-x-3 gap-y-2">
-            <p className="truncate font-semibold text-base text-primary-900 sm:text-lg">
-              {name}
-            </p>
+            <p className="truncate font-semibold text-base text-primary-900 sm:text-lg">{name}</p>
             {!!instagramUrl && (
               <Link
                 href={instagramUrl}
@@ -85,4 +81,4 @@ export function AuthorCard({
   );
 }
 
-export type { AuthorCardProps };
+export type { AuthorCardProperties as AuthorCardProps };

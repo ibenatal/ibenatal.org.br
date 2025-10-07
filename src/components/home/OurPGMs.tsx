@@ -1,13 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { SectionContainer } from '../layout/Container';
 import { CardTitle, SectionTitle } from './HomeTypography';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 export default function OurPGMs() {
   return (
@@ -17,16 +17,15 @@ export default function OurPGMs() {
           <SectionTitle title="Nossos PGMs" />
           <div className="flex flex-col gap-2">
             <p className="text-left text-sm leading-relaxed sm:text-base lg:text-lg">
-              Um Pequeno Grupo Multiplicador é um grupo de pessoas que se reúne
-              regularmente com o objetivo de promover o crescimento espiritual,
-              a comunhão, o evangelismo e o discipulado, tendo como missão clara
-              a multiplicação — ou seja, a formação de novos grupos a partir do
-              grupo original. Os grupos se reúnem quinzenalmente, normalmente em
+              Um Pequeno Grupo Multiplicador é um grupo de pessoas que se reúne regularmente com o
+              objetivo de promover o crescimento espiritual, a comunhão, o evangelismo e o
+              discipulado, tendo como missão clara a multiplicação — ou seja, a formação de novos
+              grupos a partir do grupo original. Os grupos se reúnem quinzenalmente, normalmente em
               casas ou em salas da igreja.
             </p>
             <p className="text-left text-sm leading-relaxed sm:text-base lg:text-lg">
-              Os encontros geralmente incluem leitura e estudo da Bíblia,
-              oração, partilha de experiências e apoio mútuo.
+              Os encontros geralmente incluem leitura e estudo da Bíblia, oração, partilha de
+              experiências e apoio mútuo.
             </p>
           </div>
         </div>
@@ -44,12 +43,12 @@ export default function OurPGMs() {
               align-items: center;
               justify-content: center;
             }
-            
+
             .our-pgs-carousel .swiper-button-next:after,
             .our-pgs-carousel .swiper-button-prev:after {
               font-size: 20px;
             }
-            
+
             .our-pgs-carousel .swiper-button-next,
             .our-pgs-carousel .swiper-button-prev {
               top: 90%;
@@ -58,11 +57,11 @@ export default function OurPGMs() {
             .our-pgs-carousel .swiper-button-prev:hover {
               background: rgba(0, 0, 0, 0.5);
             }
-            
+
             .our-pgs-carousel .swiper-pagination {
-                left: 4rem;
-                right: 4rem;
-                width: calc(100% - 8rem);
+              left: 4rem;
+              right: 4rem;
+              width: calc(100% - 8rem);
             }
             .our-pgs-carousel .swiper-pagination-bullet {
               background: black;
@@ -73,7 +72,7 @@ export default function OurPGMs() {
               background: black;
               opacity: 0.5;
             }
-            
+
             .our-pgs-carousel .swiper-pagination-bullet-active {
               background: black;
               opacity: 1;

@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-export function RoundMenuIcon(props: SVGProps<SVGSVGElement>) {
+export function RoundMenuIcon(properties: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +9,7 @@ export function RoundMenuIcon(props: SVGProps<SVGSVGElement>) {
       height="1em"
       aria-label="Menu"
       role="img"
-      {...props}
+      {...properties}
     >
       <path
         fill="currentColor"

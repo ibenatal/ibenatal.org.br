@@ -39,8 +39,7 @@ function ButtonDocs() {
                   <td className="p-2 font-medium">variant</td>
                   <td className="p-2">
                     <code>
-                      primary | destructive | secondary | tertiary | quaternary
-                      | ghost | link
+                      primary | destructive | secondary | tertiary | quaternary | ghost | link
                     </code>
                   </td>
                   <td className="p-2">
@@ -78,9 +77,7 @@ function ButtonDocs() {
                   <td className="p-2">
                     <code>false</code>
                   </td>
-                  <td className="p-2">
-                    When true, button will be rendered as a child element
-                  </td>
+                  <td className="p-2">When true, button will be rendered as a child element</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-2 font-medium">className</td>
@@ -258,11 +255,7 @@ function LucideIconsDocs() {
       </div>
       <div className="grid grid-cols-2 gap-4">
         <Button variant="primary" asChild>
-          <a
-            href="https://lucide.dev/icons/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://lucide.dev/icons/" target="_blank" rel="noopener noreferrer">
             Lucide Icons
           </a>
         </Button>
@@ -309,9 +302,7 @@ function LinkDocs() {
                   <td className="p-2">
                     <code>false</code>
                   </td>
-                  <td className="p-2">
-                    When true, link will be rendered as a child element
-                  </td>
+                  <td className="p-2">When true, link will be rendered as a child element</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-2 font-medium">className</td>

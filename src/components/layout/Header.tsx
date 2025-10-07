@@ -1,18 +1,18 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
-import { DesktopMenu } from './menu/DesktopMenu';
 import { cn } from '@/lib/utils';
+import { DesktopMenu } from './menu/DesktopMenu';
 
 export function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
   const [isVisible, setIsVisible] = useState(true);
   const [_lastScrollY, setLastScrollY] = useState(0);
-  const headerRef = useRef<HTMLElement>(null);
+  const headerReference = useRef<HTMLElement>(null);
 
   useEffect(() => {
     let lastScrollTop = 0;
@@ -20,9 +20,9 @@ export function Header() {
 
     const handleScroll = () => {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
+        globalThis.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          const headerHeight = headerRef.current?.offsetHeight || 0;
+          const headerHeight = headerReference.current?.offsetHeight || 0;
 
           // Show header at the top of the page
           if (currentScrollY < headerHeight) {
@@ -47,10 +47,10 @@ export function Header() {
 
   return (
     <header
-      ref={headerRef}
+      ref={headerReference}
       className={cn(
         'fixed top-0 right-0 left-0 z-50 h-14 w-full bg-primary-500 text-white/90 transition-transform duration-300 ease-in-out md:relative md:h-auto',
-        !isVisible ? '-translate-y-full' : 'translate-y-0',
+        isVisible ? 'translate-y-0' : '-translate-y-full',
       )}
     >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-center px-3 py-2 md:justify-between md:px-4 md:py-4">

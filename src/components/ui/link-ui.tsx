@@ -1,7 +1,6 @@
+import type * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
-import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 
 const linkVariants = cva('inline-flex items-center gap-2', {
@@ -18,18 +17,16 @@ const linkVariants = cva('inline-flex items-center gap-2', {
   },
 });
 
-interface LinkProps
+interface LinkProperties
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
     VariantProps<typeof linkVariants> {
   asChild?: boolean;
 }
 
-function LinkUI({ className, variant, asChild = false, ...props }: LinkProps) {
+function LinkUI({ className, variant, asChild = false, ...properties }: LinkProperties) {
   const Comp = asChild ? Slot : 'a';
 
-  return (
-    <Comp className={cn(linkVariants({ variant, className }))} {...props} />
-  );
+  return <Comp className={cn(linkVariants({ variant, className }))} {...properties} />;
 }
 
 export { LinkUI, linkVariants };

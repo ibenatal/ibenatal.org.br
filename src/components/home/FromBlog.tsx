@@ -42,12 +42,12 @@ export default async function FromBlog() {
   );
 }
 
-type ArticleCardProps = {
+type ArticleCardProperties = {
   post: Post;
   className?: string;
 };
 
-const ArticleCard = ({ post, className }: ArticleCardProps) => {
+const ArticleCard = ({ post, className }: ArticleCardProperties) => {
   const formattedDate = dateIsoToDDMMYYYY(post.date);
 
   // Full absolute URL for schema
@@ -103,10 +103,7 @@ const ArticleCard = ({ post, className }: ArticleCardProps) => {
       <p className="text-base">{post.description}</p>
       <div className="flex flex-row justify-end gap-2">
         <Button asChild outline variant="link" className="px-0">
-          <Link
-            href={`/artigos/${post.slug}`}
-            aria-label={`Ler mais sobre ${post.title}`}
-          >
+          <Link href={`/artigos/${post.slug}`} aria-label={`Ler mais sobre ${post.title}`}>
             Ver mais
           </Link>
         </Button>

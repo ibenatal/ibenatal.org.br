@@ -12,6 +12,10 @@ export const metadata = {
   description: 'Confira as últimas notícias do nosso blog.',
 };
 
+// cache until next build like StaticSiteGenerationV1
+export const dynamic = 'force-static';
+export const revalidate = 60 * 60 * 24; // 24 hours
+
 export default async function BlogPage() {
   const isMobile = await isMobileDevice();
   const posts = await getPosts({ limit: 10 });
@@ -20,22 +24,13 @@ export default async function BlogPage() {
     return (
       <main className="relative bg-neutral-100">
         <header className="absolute top-0 left-0 z-0 h-[500px] w-full bg-blue-500">
-          <Image
-            src="/images/articles/blog-header.png"
-            alt="Blog"
-            fill
-            className="object-cover"
-          />
+          <Image src="/images/articles/blog-header.png" alt="Blog" fill className="object-cover" />
           <div className="absolute top-0 left-0 h-full w-full bg-black/70"></div>
         </header>
         <SectionContainer className="relative z-10 pt-28">
           <div className="flex flex-col gap-4">
-            <h1 className="font-bold text-4xl text-white">
-              Reflexões e Artigos
-            </h1>
-            <p className="text-lg text-white">
-              Nenhum artigo encontrado no momento.
-            </p>
+            <h1 className="font-bold text-4xl text-white">Reflexões e Artigos</h1>
+            <p className="text-lg text-white">Nenhum artigo encontrado no momento.</p>
             <Breadcrumbs items={[{ label: 'Artigos', href: '/Artigos' }]} />
           </div>
         </SectionContainer>
@@ -45,6 +40,8 @@ export default async function BlogPage() {
 
   const featuredPost = posts[0];
   const remainingPosts = posts.slice(1);
+
+  console.info('re-rendering blog posts', posts);
 
   return (
     <main className="relative bg-neutral-100">
@@ -58,21 +55,14 @@ export default async function BlogPage() {
         <div className="absolute top-0 left-0 h-full w-full bg-black/70"></div>
       </header>
       <SectionContainer className="relative z-10 pt-28">
-        <div
-          className="flex flex-col gap-4"
-          aria-description="Título e descrição do blog"
-        >
+        <div className="flex flex-col gap-4" aria-description="Título e descrição do blog">
           <h1 className="font-bold text-4xl text-white">Reflexões e Artigos</h1>
-          <p className="text-lg text-white">
-            Confira as últimas notícias do nosso blog.
-          </p>
+          <p className="text-lg text-white">Confira as últimas notícias do nosso blog.</p>
           <Breadcrumbs items={[{ label: 'Artigos', href: '/Artigos' }]} />
         </div>
         <div className="flex flex-col gap-4 lg:flex-row">
           <FeaturedArticle post={featuredPost} className="2/3 w-full" />
-          {!isMobile && (
-            <Widget posts={remainingPosts} className="hidden w-1/3 lg:block" />
-          )}
+          {!isMobile && <Widget posts={remainingPosts} className="hidden w-1/3 lg:block" />}
         </div>
         <section>
           <h3 className="my-8 font-bold text-2xl">Últimos Artigos</h3>

@@ -10,9 +10,7 @@ export function SectionTitle({ title }: { title: string }) {
 
 export function SectionDescription({ description }: { description: string }) {
   return (
-    <p className="text-center text-base leading-relaxed sm:text-xl lg:text-2xl">
-      {description}
-    </p>
+    <p className="text-center text-base leading-relaxed sm:text-xl lg:text-2xl">{description}</p>
   );
 }
 
@@ -41,11 +39,7 @@ export function CardTitle({
 }
 
 export function CardDescription({ description }: { description: string }) {
-  return (
-    <p className="text-sm leading-relaxed sm:text-base lg:text-xl">
-      {description}
-    </p>
-  );
+  return <p className="text-sm leading-relaxed sm:text-base lg:text-xl">{description}</p>;
 }
 
 export function CardParagraph({
@@ -56,13 +50,6 @@ export function CardParagraph({
   className?: string;
 }) {
   return (
-    <p
-      className={cn(
-        'text-sm leading-relaxed sm:text-base lg:text-xl',
-        className,
-      )}
-    >
-      {children}
-    </p>
+    <p className={cn('text-sm leading-relaxed sm:text-base lg:text-xl', className)}>{children}</p>
   );
 }

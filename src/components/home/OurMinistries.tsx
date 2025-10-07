@@ -12,33 +12,30 @@ export default function OurMinistries() {
             <div className="flex flex-col items-center gap-6 sm:gap-8">
               <CardTitle>Definição de Redes</CardTitle>
               <CardParagraph className="lg:text-base">
-                As redes são grupos intencionais que visam conectar as pessoas
-                dentro da igreja, formados com base em características
-                compartilhadas, interesses comuns ou estágios de vida similares.
-                São grupos fundamentados nos princípios bíblicos de comunhão e
-                encorajamento mútuo (At. 2:42-47; Hb. 10:24-25). Estes grupos
-                servem como plataformas dinâmicas para promover conexões mais
-                profundas, crescimento qualitativo e quantitativo e engajamento
-                ativo na vida da igreja e na missão cristã.
+                As redes são grupos intencionais que visam conectar as pessoas dentro da igreja,
+                formados com base em características compartilhadas, interesses comuns ou estágios
+                de vida similares. São grupos fundamentados nos princípios bíblicos de comunhão e
+                encorajamento mútuo (At. 2:42-47; Hb. 10:24-25). Estes grupos servem como
+                plataformas dinâmicas para promover conexões mais profundas, crescimento qualitativo
+                e quantitativo e engajamento ativo na vida da igreja e na missão cristã.
               </CardParagraph>
             </div>
 
             <div className="flex flex-col items-center gap-6 sm:gap-8">
               <CardTitle>Propósitos das Redes</CardTitle>
               <CardParagraph className="lg:text-base">
-                Têm como objetivos primários atrair, conectar, e expandir,
-                promovendo crescimento tanto quantitativo quanto qualitativo da
-                rede. Devem focar em gerar oportunidades para evangelismo,
-                comunhão, discipulado, edificação e ampliar o alcance relacional
+                Têm como objetivos primários atrair, conectar, e expandir, promovendo crescimento
+                tanto quantitativo quanto qualitativo da rede. Devem focar em gerar oportunidades
+                para evangelismo, comunhão, discipulado, edificação e ampliar o alcance relacional
                 da igreja.
               </CardParagraph>
             </div>
             <div className="flex flex-col items-center gap-6 sm:gap-8">
               <CardTitle>Foco das Redes</CardTitle>
               <CardParagraph className="lg:text-base">
-                Devem Manter um componente devocional em todos os encontros,
-                incluindo momentos de louvor, adoração e compartilhamento da
-                Palavra, adaptados ao contexto de cada evento.
+                Devem Manter um componente devocional em todos os encontros, incluindo momentos de
+                louvor, adoração e compartilhamento da Palavra, adaptados ao contexto de cada
+                evento.
               </CardParagraph>
             </div>
           </div>

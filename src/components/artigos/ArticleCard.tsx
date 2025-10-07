@@ -42,11 +42,7 @@ export function ArticleCard({ post }: { post: Post }) {
           </p>
         </div>
         <div className="flex flex-row items-center gap-4 px-4 pb-4 text-gray-500 text-sm">
-          <span
-            itemProp="author"
-            itemScope
-            itemType="https://schema.org/Person"
-          >
+          <span itemProp="author" itemScope itemType="https://schema.org/Person">
             <span itemProp="name">{post.author.name}</span>
           </span>
           <span aria-hidden="true">•</span>
@@ -54,10 +50,7 @@ export function ArticleCard({ post }: { post: Post }) {
             {formattedDate}
           </time>
           <span aria-hidden="true">•</span>
-          <span
-            aria-description="Tempo de leitura"
-            title={`Tempo de leitura ${post.readTime}`}
-          >
+          <span aria-description="Tempo de leitura" title={`Tempo de leitura ${post.readTime}`}>
             {post.readTime}
           </span>
         </div>

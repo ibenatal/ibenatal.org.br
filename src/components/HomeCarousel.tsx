@@ -2,13 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Button } from './ui/button';
 
 export type SlideItem = {
@@ -21,11 +20,11 @@ export type SlideItem = {
   buttonLink?: string;
 };
 
-interface HomeCarouselProps {
+interface HomeCarouselProperties {
   slides: SlideItem[];
 }
 
-export default function HomeCarousel({ slides }: HomeCarouselProps) {
+export default function HomeCarousel({ slides }: HomeCarouselProperties) {
   return (
     <div className="home-carousel relative w-full">
       <style jsx global>{`
@@ -98,21 +97,11 @@ export default function HomeCarousel({ slides }: HomeCarouselProps) {
             </div>
             <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-8">
               {!!slide.title && (
-                <h2 className="mb-4 font-bold text-2xl md:text-5xl">
-                  {slide.title}
-                </h2>
+                <h2 className="mb-4 font-bold text-2xl md:text-5xl">{slide.title}</h2>
               )}
-              {!!slide.subtitle && (
-                <p className="mb-8 text-lg md:text-2xl">{slide.subtitle}</p>
-              )}
+              {!!slide.subtitle && <p className="mb-8 text-lg md:text-2xl">{slide.subtitle}</p>}
               {!!slide.buttonLink && !!slide.buttonText && (
-                <Button
-                  variant="primary"
-                  outline
-                  size="lg"
-                  className="text-white"
-                  asChild
-                >
+                <Button variant="primary" outline size="lg" className="text-white" asChild>
                   <Link href={slide.buttonLink}>{slide.buttonText}</Link>
                 </Button>
               )}
