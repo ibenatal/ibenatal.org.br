@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Barlow, Roboto } from 'next/font/google';
 import { Monitoring } from '@/components/analytics/Monitoring';
 import { ProductionLogger } from '@/components/ProductionLogger';
+import { SentryClientInit } from '@/components/SentryClientInit';
 import './globals.css';
 
 const roboto = Roboto({
@@ -102,6 +103,7 @@ export default function RootLayout({
         className={`${roboto.variable} ${barlow.variable} antialiased`}
         suppressHydrationWarning
       >
+        <SentryClientInit />
         <ProductionLogger />
         <Monitoring />
         {children}
