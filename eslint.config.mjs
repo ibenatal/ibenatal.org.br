@@ -51,12 +51,9 @@ export default [
       'unused-imports': pluginUnused,
     },
     rules: {
-      '@typescript-eslint/no-unused-vars': 'off',
       'unused-imports/no-unused-imports': 'warn',
-      'unused-imports/no-unused-vars': [
-        'warn',
-        { vars: 'all', args: 'after-used', argsIgnorePattern: '^_' },
-      ],
+      'unused-imports/no-unused-vars': "off",
+      '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/require-await': 'off',
       '@typescript-eslint/triple-slash-reference': 'off',
     },

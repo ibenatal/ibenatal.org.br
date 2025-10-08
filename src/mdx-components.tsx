@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 import { Children, isValidElement } from 'react';
+import Image from 'next/image';
 import type { MDXComponents } from 'mdx/types';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -87,7 +88,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
     img: (properties) => (
-      <img className="h-auto w-full shadow sm:transform-none sm:rounded" {...properties} />
+      <Image className="h-auto w-full shadow sm:transform-none sm:rounded" {...properties} />
     ),
     blockquote: (properties: ComponentProps<'blockquote'>) => {
       const { className, ...rest } = properties;

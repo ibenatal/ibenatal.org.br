@@ -11,7 +11,6 @@ export function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
   const [isVisible, setIsVisible] = useState(true);
-  const [_lastScrollY, setLastScrollY] = useState(0);
   const headerReference = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -33,7 +32,6 @@ export function Header() {
           }
 
           lastScrollTop = currentScrollY;
-          setLastScrollY(currentScrollY);
           ticking = false;
         });
 

@@ -12,9 +12,7 @@ export default function OurSermon() {
   const thumbnailUrl = '/images/jovens.png';
   const sermonUrl = '/sermoes/heading-title-for-sermon-series';
 
-  // Full absolute URLs for schema
   const fullThumbnailUrl = new URL(thumbnailUrl, 'https://ibenatal.org.br').toString();
-  const _fullSermonUrl = new URL(sermonUrl, 'https://ibenatal.org.br').toString();
   const videoUrl = new URL('/videos/sermon-video.mp4', 'https://ibenatal.org.br').toString();
 
   return (
