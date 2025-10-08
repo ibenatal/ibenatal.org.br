@@ -12,9 +12,7 @@ export const metadata = {
   description: 'Confira as últimas notícias do nosso blog.',
 };
 
-// cache until next build like StaticSiteGenerationV1
 export const dynamic = 'force-static';
-export const revalidate = 60 * 60 * 24; // 24 hours
 
 export default async function BlogPage() {
   const isMobile = await isMobileDevice();
