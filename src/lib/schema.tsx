@@ -11,10 +11,8 @@ import type {
 } from 'schema-dts';
 import type { Author } from '@/@types/posts';
 
-// Helper function to create JSON-LD script element
 export const JsonLd = memo(
   <T extends Thing>({ data, testId }: { data: WithContext<T>; testId: string }) => {
-    // Using key to ensure proper updates
     return (
       <script type="application/ld+json" suppressHydrationWarning data-testid={testId}>
         {JSON.stringify(data)}
@@ -25,7 +23,6 @@ export const JsonLd = memo(
 
 JsonLd.displayName = 'JsonLd';
 
-// Event schema
 export function EventSchema({
   name,
   description,
@@ -56,13 +53,12 @@ export function EventSchema({
       },
     },
     image,
-    url,
+    ...(url ? { url } : {}),
   };
 
   return <JsonLd data={eventData} testId={`event-schema-${name}`} />;
 }
 
-// Blog post schema
 export function BlogPostSchema({
   headline,
   description,
@@ -95,7 +91,6 @@ export function BlogPostSchema({
   return <JsonLd data={blogData} testId={`blog-post-schema-${headline}`} />;
 }
 
-// Video schema
 export function VideoSchema({
   name,
   description,
@@ -115,7 +110,7 @@ export function VideoSchema({
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
     name,
-    description,
+    ...(description ? { description } : {}),
     thumbnailUrl,
     uploadDate,
     contentUrl,
@@ -128,7 +123,6 @@ export function VideoSchema({
   return <JsonLd data={videoData} testId={`video-schema-${name}`} />;
 }
 
-// Breadcrumb schema
 export function BreadcrumbSchema({
   items,
 }: {
@@ -154,7 +148,6 @@ export function BreadcrumbSchema({
   return <JsonLd data={breadcrumbData} testId={`breadcrumb-schema`} />;
 }
 
-// Church organization schema
 export function ChurchOrganizationSchema({
   name,
   description,
@@ -195,7 +188,6 @@ export function ChurchOrganizationSchema({
   return <JsonLd data={churchData} testId={`church-organization-schema-${name}`} />;
 }
 
-// Web page schema
 export function WebPageSchema({
   name,
   description,

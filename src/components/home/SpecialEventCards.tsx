@@ -37,7 +37,6 @@ const EventCard = ({
   const day = eventDate.getDate();
   const monthName = eventDate.toLocaleString('pt-BR', { month: 'long' }).slice(0, 3);
 
-  // Full absolute URL for schema
   const fullImageUrl = new URL(image, 'https://ibenatal.org.br').toString();
   const fullUrl = url ? new URL(url, 'https://ibenatal.org.br').toString() : undefined;
 
@@ -49,7 +48,7 @@ const EventCard = ({
         startDate={date}
         location={address}
         image={fullImageUrl}
-        url={fullUrl}
+        {...(fullUrl ? { url: fullUrl } : {})}
       />
       <div className="flex flex-col gap-2 rounded-lg bg-white p-2 shadow-2xs max-sm:absolute max-sm:top-2 max-sm:left-2 max-sm:z-10 max-sm:opacity-90">
         <time dateTime={date} className="flex flex-col">

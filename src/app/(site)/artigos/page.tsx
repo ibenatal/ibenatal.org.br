@@ -61,7 +61,7 @@ export default async function BlogPage() {
           <Breadcrumbs items={[{ label: 'Artigos', href: '/Artigos' }]} />
         </div>
         <div className="flex flex-col gap-4 lg:flex-row">
-          <FeaturedArticle post={featuredPost} className="2/3 w-full" />
+          {featuredPost && <FeaturedArticle post={featuredPost} className="2/3 w-full" />}
           {!isMobile && <Widget posts={remainingPosts} className="hidden w-1/3 lg:block" />}
         </div>
         <section>
