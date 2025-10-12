@@ -59,8 +59,8 @@ export const socialLinks = {
   },
   instagram: {
     label: 'Instagram',
-    href: 'https://www.instagram.com/ibenatal__',
-    username: '@ibenatal__',
+    href: 'https://www.instagram.com/ibenatal_',
+    username: '@ibenatal_',
   },
   facebook: {
     label: 'Facebook',
