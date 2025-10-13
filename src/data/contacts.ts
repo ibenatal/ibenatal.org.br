@@ -52,6 +52,11 @@ export const contacts = {
 };
 
 export const socialLinks = {
+  site: {
+    label: 'Site',
+    href: 'https://ibenatal.org.br',
+    username: 'IBE Natal',
+  },
   youtube: {
     label: 'YouTube',
     href: 'https://www.youtube.com/@ibenatal',
