@@ -1,5 +1,6 @@
-import { redirect } from 'next/navigation';
+import LinkPageContainer from '@/components/links/LinkPageContainer';
+import { linksData } from '@/data/links';
 
 export default function LinksPage() {
-  redirect('/links/all');
+  return <LinkPageContainer linksFor={linksData} />;
 }
