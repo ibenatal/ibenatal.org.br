@@ -39,7 +39,7 @@ export default async function BlogPage() {
   const featuredPost = posts[0];
   const remainingPosts = posts.slice(1);
 
-  console.info('re-rendering blog posts', posts);
+  // console.info('re-rendering blog posts', posts);
 
   return (
     <main className="relative bg-neutral-100">

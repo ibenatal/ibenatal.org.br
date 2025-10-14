@@ -59,7 +59,7 @@ export async function getPosts({ limit = 10 }: GetPostsProperties): Promise<Post
 export async function getAllPosts(): Promise<Post[]> {
   const files = await getContentFiles();
 
-  console.info('get posts from fill-destructive');
+  // console.info('get posts from fill-destructive');
 
   const postsWithMetadata = (await Promise.all(files.map(loadPostMetadata))).filter(
     (post) => post !== null,

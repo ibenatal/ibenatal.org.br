@@ -68,6 +68,7 @@ export default function OurMinistries() {
                   alt={rede.title}
                   height={333}
                   width={192}
+                  quality={100}
                   className="absolute inset-0 top-0 left-0 h-full w-full rounded object-cover"
                 />
               </div>
@@ -102,7 +103,7 @@ const redes: {
   {
     id: 2,
     title: 'Casais',
-    image: '/images/rede-de-casais.png',
+    image: '/images/rede-de-casais.jpg',
     link: '/casais',
   },
   {
