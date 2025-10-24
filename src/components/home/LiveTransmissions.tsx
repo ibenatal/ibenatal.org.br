@@ -93,6 +93,12 @@ const MOCK_TRANSMISSIONS: LiveTransmission[] = [
     videoId: 'td4NWWTIWiM',
     publishedAt: '2025-09-28',
   },
+  {
+    id: '11',
+    title: 'Culto de Domingo',
+    videoId: '9Mblsfrl_2o',
+    publishedAt: '2025-10-19',
+  },
 ];
 
 const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/@Ibenatal/streams';
