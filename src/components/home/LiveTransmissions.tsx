@@ -117,6 +117,12 @@ const MOCK_TRANSMISSIONS: LiveTransmission[] = [
     videoId: 'q1GXVkeHpvo',
     publishedAt: '2025-11-02',
   },
+  {
+    id: '16',
+    title: 'Aniversário IBE Natal',
+    videoId: 'mPOekxVAZt0',
+    publishedAt: '2025-11-23',
+  },
 ];
 
 const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/@Ibenatal/streams';
