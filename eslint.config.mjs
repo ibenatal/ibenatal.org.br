@@ -52,7 +52,7 @@ export default [
     },
     rules: {
       'unused-imports/no-unused-imports': 'warn',
-      'unused-imports/no-unused-vars': "off",
+      'unused-imports/no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/require-await': 'off',
       '@typescript-eslint/triple-slash-reference': 'off',

@@ -12,5 +12,3 @@ declare namespace NodeJS {
     SENTRY_DSN?: string;
   }
 }
-
-

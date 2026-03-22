@@ -18,8 +18,7 @@ const linkVariants = cva('inline-flex items-center gap-2', {
 });
 
 interface LinkProperties
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof linkVariants> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof linkVariants> {
   asChild?: boolean;
 }
 

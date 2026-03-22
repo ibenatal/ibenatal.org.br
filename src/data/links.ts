@@ -4,7 +4,7 @@ export type LinkItem = {
   title: string;
   label: string;
   href: string;
-  image: string; 
+  image: string;
   forLink: string[];
 };
 
@@ -45,5 +45,3 @@ export const linksData: LinkItem[] = [
     forLink: ['all', 'instagram'],
   },
 ];
-
-

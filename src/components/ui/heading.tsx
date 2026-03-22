@@ -19,8 +19,7 @@ const headingVariants = cva('scroll-m-20 tracking-tight text-balance', {
 });
 
 interface HeadingProperties
-  extends React.HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof headingVariants> {
+  extends React.HTMLAttributes<HTMLHeadingElement>, VariantProps<typeof headingVariants> {
   asChild?: boolean;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 }

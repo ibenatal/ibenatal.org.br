@@ -11,5 +11,3 @@ if (dsn) {
     sendDefaultPii: true,
   });
 }
-
-
