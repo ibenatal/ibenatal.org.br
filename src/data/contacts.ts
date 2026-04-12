@@ -1,8 +1,8 @@
 export const whatsapp = {
-  label: '(84) 99912-3905',
-  hrefClean: 'https://wa.me/5584999123905',
-  hrefWithMessage: 'https://wa.me/5584999123905?text=Olá, gostaria de saber mais sobre a IBE.',
-  hrefToPray: 'https://wa.me/5584999123905?text=Gostaria de pedir oração.',
+  label: '(84) 99465-5021',
+  hrefClean: 'https://wa.me/5584994655021',
+  hrefWithMessage: 'https://wa.me/5584994655021?text=Olá, gostaria de saber mais sobre a IBE.',
+  hrefToPray: 'https://wa.me/5584994655021?text=Gostaria de pedir oração.',
 };
 
 export const email = {
@@ -11,8 +11,8 @@ export const email = {
 };
 
 export const phone = {
-  label: '(84) 99912-3905',
-  href: 'tel:5584999123905',
+  label: '(84) 99465-5021',
+  href: 'tel:5584994655021',
 };
 
 interface LocationType {
