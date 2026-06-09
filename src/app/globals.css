@@ -4,12 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --primary: #696d5f;
+  --primary: #475235;
   --secondary: #885446;
   --tertiary: #9e8461;
   --quaternary: #6e323e;
 
-  --color-primary: #696d5f;
+  --color-primary: #475235;
   --color-secondary: #885446;
   --color-tertiary: #9e8461;
   --color-quaternary: #6e323e;
@@ -49,17 +49,17 @@
   --color-secondary-800: #5e3e23;
   --color-secondary-900: #472913;
   --color-secondary-950: #2e1608;
-  --color-primary-50: #f7f7f5;
-  --color-primary-100: #eff0ed;
-  --color-primary-200: #dadbd5;
-  --color-primary-300: #c2c4bb;
-  --color-primary-400: #96998b;
-  --color-primary-500: #696d5f;
-  --color-primary-600: #5d634e;
-  --color-primary-700: #475235;
-  --color-primary-800: #354222;
-  --color-primary-900: #223013;
-  --color-primary-950: #121f08;
+  --color-primary-50: #f6f7f4;
+  --color-primary-100: #eeefeb;
+  --color-primary-200: #daded3;
+  --color-primary-300: #bfc7b2;
+  --color-primary-400: #859669;
+  --color-primary-500: #475235;
+  --color-primary-600: #3b442c;
+  --color-primary-700: #303824;
+  --color-primary-800: #262c1b;
+  --color-primary-900: #1b2013;
+  --color-primary-950: #10130b;
 }
 
 @theme inline {
