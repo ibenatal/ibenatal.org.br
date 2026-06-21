@@ -11,7 +11,7 @@ interface WeeklyEvent {
 
 const WEEKLY_EVENTS: WeeklyEvent[] = [
   {
-    title: 'Culto de Fé',
+    title: 'Culto de Oração',
     dayOfWeek: 3, // Wednesday
     time: '19:30',
   },
