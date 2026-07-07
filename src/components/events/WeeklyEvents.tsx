@@ -18,7 +18,7 @@ const WEEKLY_EVENTS: WeeklyEvent[] = [
   {
     title: 'Culto de celebração dominical',
     dayOfWeek: 0, // Sunday
-    time: '10:00',
+    time: '18:00',
   },
 ];
 
