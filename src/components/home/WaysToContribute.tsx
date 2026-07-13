@@ -20,13 +20,13 @@ export default function WaysToContribute() {
           <div className="font-bold text-2xl">Banco Bradesco</div>
           <div className="text-lg">Agência: 3224-7</div>
           <div className="text-lg">Conta Corrente: 0075754-3</div>
-          <div className="text-lg">CNPJ: 08.512.048/0001/90</div>
+          <div className="text-lg">CNPJ: 08.512.048/0001-90</div>
         </div>
         <div className="md:1/2 flex flex-col gap-2 text-primary-900 lg:w-4/12 xl:w-3/12">
           <div className="font-bold text-2xl">PIX</div>
           <div className="text-lg">IGREJA BATISTA DA ESPERANÇA</div>
           <div className="text-lg">BCO BRADESCO S.A.</div>
-          <div className="text-lg">08.512.048/0001/90</div>
+          <div className="text-lg">08.512.048/0001-90</div>
         </div>
       </SectionContainer>
     </section>
