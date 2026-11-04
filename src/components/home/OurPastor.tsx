@@ -5,7 +5,7 @@ export function OurPastor() {
   const pastorDescription = [
     'O Rev. Celso Adriano da Silva é um servo dedicado à Palavra de Deus, com uma trajetória marcada pela fidelidade ao evangelho e pelo zelo no ensino bíblico. Com sólida formação teológica e uma vocação pastoral enraizada no amor a Cristo e às pessoas, ele tem servido à igreja com graça, profundidade e compromisso.',
   ];
-  const pastorImageUrl = '/images/pastor-celso.jpeg';
+  const pastorImageUrl = '/images/pastor-celso.jpg';
   const pastorUrl = '/perfil-pastoral';
 
   return (
