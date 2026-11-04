@@ -48,10 +48,9 @@ export default function OurMinistries() {
                 <Image
                   src={rede.image}
                   alt={rede.title}
-                  height={333}
-                  width={192}
-                  quality={100}
-                  className="absolute inset-0 top-0 left-0 h-full w-full rounded object-cover"
+                  fill
+                  sizes="(min-width: 1152px) 360px, (min-width: 768px) 33vw, 100vw"
+                  className="rounded object-cover"
                 />
               </div>
               <CardTitle>{rede.title}</CardTitle>
@@ -66,10 +65,9 @@ export default function OurMinistries() {
                 <Image
                   src={rede.image}
                   alt={rede.title}
-                  height={333}
-                  width={192}
-                  quality={100}
-                  className="absolute inset-0 top-0 left-0 h-full w-full rounded object-cover"
+                  fill
+                  sizes="(min-width: 1152px) 360px, (min-width: 768px) 33vw, 100vw"
+                  className="rounded object-cover"
                 />
               </div>
               <CardTitle title={rede.title} />
@@ -91,13 +89,13 @@ const redes: {
   {
     id: 3,
     title: 'Crianças',
-    image: '/images/rede-de-criancas.png',
+    image: '/images/rede-de-criancas.jpg',
     link: '/criancas',
   },
   {
     id: 1,
     title: 'Jovens',
-    image: '/images/rede-de-jovens.png',
+    image: '/images/rede-de-jovens.jpg',
     link: '/jovens',
   },
   {
@@ -109,13 +107,13 @@ const redes: {
   {
     id: 4,
     title: 'Homens',
-    image: '/images/rede-de-homens.png',
+    image: '/images/rede-de-homens.jpg',
     link: '/homens',
   },
   {
     id: 5,
     title: 'Mulheres',
-    image: '/images/rede-de-mulheres.png',
+    image: '/images/rede-de-mulheres.jpg',
     link: '/mulheres',
   },
 ];
