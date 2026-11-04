@@ -113,7 +113,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             fill
             className="object-cover sm:rounded-lg"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
-            quality={100}
           />
         </div>
 

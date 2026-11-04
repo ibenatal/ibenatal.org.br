@@ -87,8 +87,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...properties}
       />
     ),
+    // O next/image exige width/height; com h-auto w-full a imagem mantém a proporção real dela.
     img: (properties) => (
-      <Image className="h-auto w-full shadow sm:transform-none sm:rounded" {...properties} />
+      <Image
+        width={1600}
+        height={900}
+        sizes="(min-width: 768px) 768px, 100vw"
+        className="h-auto w-full shadow sm:transform-none sm:rounded"
+        {...properties}
+      />
     ),
     blockquote: (properties: ComponentProps<'blockquote'>) => {
       const { className, ...rest } = properties;

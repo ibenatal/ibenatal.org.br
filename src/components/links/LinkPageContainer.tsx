@@ -11,7 +11,6 @@ export default function LinkPageContainer({ linksFor }: { linksFor: LinkItem[] }
           alt="Background"
           fill
           priority
-          quality={100}
           className="object-cover"
         />
         <div className="absolute inset-0 bg-primary-800/60" />
@@ -39,7 +38,6 @@ export default function LinkPageContainer({ linksFor }: { linksFor: LinkItem[] }
                   alt={item.title}
                   width={56}
                   height={56}
-                  quality={100}
                   className="w-[56px] h-[56px]"
                 />
                 <div className="flex min-w-0 flex-1 flex-col">

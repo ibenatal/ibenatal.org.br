@@ -37,7 +37,6 @@ export function AuthorCard({
             alt={`Foto de ${name}`}
             fill
             sizes="80px"
-            quality={100}
             className="object-cover"
             priority={false}
           />
