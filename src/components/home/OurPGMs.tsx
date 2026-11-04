@@ -127,36 +127,36 @@ const redes: {
   {
     id: 3,
     description: 'Kids',
-    image: '/images/carousel/pg-criancas.png',
+    image: '/images/pgs/pg-criancas.png',
   },
   {
     id: 4,
     description: 'Turno Extra',
-    image: '/images/carousel/pg-turno-extra.png',
+    image: '/images/pgs/pg-turno-extra.png',
   },
   {
     id: 5,
     description: 'A Forja',
-    image: '/images/carousel/pg-forja.png',
+    image: '/images/pgs/pg-forja.png',
   },
   {
     id: 6,
     description: 'Unidos em Cristo',
-    image: '/images/carousel/pg-unidos.png',
+    image: '/images/pgs/pg-unidos.png',
   },
   {
     id: 7,
     description: 'Nasci de Novo',
-    image: '/images/carousel/pg-nasci-de-novo.png',
+    image: '/images/pgs/pg-nasci-de-novo.png',
   },
   {
     id: 8,
     description: 'Esperança',
-    image: '/images/carousel/pg-esperanca.png',
+    image: '/images/pgs/pg-esperanca.png',
   },
   {
     id: 9,
     description: 'Só a Graça',
-    image: '/images/pg-so-a-graca.png',
+    image: '/images/pgs/pg-so-a-graca.png',
   },
 ];
