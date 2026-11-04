@@ -5,12 +5,16 @@ import { withSentryConfig } from '@sentry/nextjs';
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   devIndicators: false,
+  // Libera o HMR do `next dev` quando acessado pela Tailscale
+  allowedDevOrigins: ['*.tail365b17.ts.net'],
   productionBrowserSourceMaps: true,
   experimental: {
     mdxRs: true,
   },
   serverExternalPackages: ['require-in-the-middle'],
   images: {
+    // 90 é usado no carrossel, que ocupa a tela inteira no desktop
+    qualities: [75, 90],
     remotePatterns: [
       {
         protocol: 'https',

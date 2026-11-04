@@ -18,6 +18,13 @@ export type SlideItem = {
   subtitle?: string;
   buttonText?: string;
   buttonLink?: string;
+  /** Escurece a imagem para dar contraste ao texto. Desligue para artes que já trazem texto. */
+  overlay?: boolean;
+  /**
+   * Vídeo de fundo, sem áudio, tocando em loop por cima de `image` (que vira a capa enquanto carrega
+   * e o que aparece para quem pediu menos animação no sistema).
+   */
+  video?: { av1: string; h264: string };
 };
 
 interface HomeCarouselProperties {
@@ -89,11 +96,25 @@ export default function HomeCarousel({ slides }: HomeCarouselProperties) {
                 fill
                 className="object-contain object-center lg:object-cover"
                 priority
+                quality={90}
+                sizes="100vw"
                 // unoptimized={true}
-                quality={100}
                 // unoptimized={slide.image.startsWith('http')}
               />
-              <div className="absolute inset-0 bg-secondary/50" />
+              {!!slide.video && (
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full object-contain object-center motion-reduce:hidden lg:object-cover"
+                >
+                  <source src={slide.video.av1} type='video/mp4; codecs="av01.0.08M.08"' />
+                  <source src={slide.video.h264} type='video/mp4; codecs="avc1.640028"' />
+                </video>
+              )}
+              {slide.overlay !== false && <div className="absolute inset-0 bg-secondary/50" />}
             </div>
             <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white md:px-8">
               {!!slide.title && (
