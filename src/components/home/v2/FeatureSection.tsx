@@ -114,11 +114,10 @@ export function OurPastorV2() {
   return (
     <FeatureSection
       ariaLabel="Perfil Pastoral"
-      eyebrow="Liderança"
-      title="Perfil"
-      accent="pastoral"
-      description="Conheça o pastor da IBENATAL."
-      role="Pastor da IBE Natal"
+      eyebrow="Perfil pastoral"
+      title="Conheça o pastor da"
+      accent="IBENATAL"
+      role="Pastor da IBENATAL"
       name="Rev. Celso Adriano da Silva"
       paragraphs={[
         'Um servo dedicado à Palavra de Deus, com uma trajetória marcada pela fidelidade ao evangelho e pelo zelo no ensino bíblico.',

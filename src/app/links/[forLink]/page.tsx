@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Acesso rápido aos nossos links oficiais',
   alternates: { canonical: '/links' },
   openGraph: {
-    title: 'Links - IBE Natal',
+    title: 'Links - IBENATAL',
     description: 'Acesso rápido aos nossos links oficiais',
     type: 'website',
   },

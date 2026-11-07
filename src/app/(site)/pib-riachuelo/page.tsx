@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     url: 'https://ibenatal.org.br/pib-riachuelo',
-    title: 'PIB Riachuelo - Congregação IBE | IBE Natal',
+    title: 'PIB Riachuelo - Congregação IBE | IBENATAL',
     description:
       'Conheça a história da PIB Riachuelo, a primeira Igreja Batista plantada nas terras riachuelenses.',
     type: 'website',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PIB Riachuelo - Congregação IBE | IBE Natal',
+    title: 'PIB Riachuelo - Congregação IBE | IBENATAL',
     description:
       'Conheça a história da PIB Riachuelo, a primeira Igreja Batista plantada nas terras riachuelenses.',
     images: ['/images/pib-riachuelo/igreja-batista-de-riachuelo.jpg'],
