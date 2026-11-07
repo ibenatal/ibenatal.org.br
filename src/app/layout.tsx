@@ -19,7 +19,7 @@ const barlow = Barlow({
 
 export async function generateMetadata(): Promise<Metadata> {
   const buildTimestamp = process.env.BUILD_TIMESTAMP || Date.now().toString();
-  const ogImageUrl = new URL('/images/og-image.png', 'https://ibenatal.org.br');
+  const ogImageUrl = new URL('/images/og-image.jpg', 'https://ibenatal.org.br');
   ogImageUrl.searchParams.set('v', buildTimestamp);
   const ogImageUrlString = ogImageUrl.toString();
 
