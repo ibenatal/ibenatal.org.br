@@ -5,7 +5,7 @@ import { SectionContainer } from '../layout/Container';
 import { Button } from '../ui/button';
 import { SectionDescription, SectionTitle } from './HomeTypography';
 
-interface LiveTransmission {
+export interface LiveTransmission {
   id: string;
   title: string;
   videoId: string;
@@ -19,7 +19,7 @@ interface LiveTransmission {
 // hqdefault.jpg (480x360)
 // mqdefault.jpg (320x180)
 // default.jpg (120x90)
-function getYouTubeThumbnail(
+export function getYouTubeThumbnail(
   videoId: string,
   quality: 'max' | 'sd' | 'hq' | 'mq' | 'default' = 'max',
 ) {
@@ -33,12 +33,12 @@ function getYouTubeThumbnail(
   return `https://img.youtube.com/vi/${videoId}/${qualityMap[quality]}.jpg`;
 }
 
-function getYouTubeVideoUrl(videoId: string) {
+export function getYouTubeVideoUrl(videoId: string) {
   return `https://www.youtube.com/watch?v=${videoId}`;
 }
 
 // This would typically come from an API or CMS
-const MOCK_TRANSMISSIONS: LiveTransmission[] = [
+export const MOCK_TRANSMISSIONS: LiveTransmission[] = [
   {
     id: '2',
     title: 'Culto de Domingo',
@@ -161,7 +161,7 @@ const MOCK_TRANSMISSIONS: LiveTransmission[] = [
   },
 ];
 
-const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/@Ibenatal/streams';
+export const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/@Ibenatal/streams';
 
 function TransmissionCard({
   transmission,

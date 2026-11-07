@@ -22,13 +22,13 @@ const WEEKLY_EVENTS: WeeklyEvent[] = [
   },
 ];
 
-interface DisplayEvent {
+export interface DisplayEvent {
   title: string;
   date: string;
   time: string;
 }
 
-function computeNextEvents(): DisplayEvent[] {
+export function computeNextEvents(): DisplayEvent[] {
   try {
     const now = new Date();
     const timeZone = 'America/Fortaleza';

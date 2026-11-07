@@ -49,13 +49,15 @@ export function Header() {
       className={cn(
         'fixed top-0 right-0 left-0 z-50 h-14 w-full bg-primary-500 text-white/90 transition-transform duration-300 ease-in-out md:relative md:h-auto',
         isVisible ? 'translate-y-0' : '-translate-y-full',
+        // Na home o topo é claro, na mesma cor de fundo da página.
+        isHomePage && 'border-primary-800/10 border-b bg-secondary-50 text-primary-800',
       )}
     >
       <div className="mx-auto flex h-full max-w-7xl items-center justify-center px-3 py-2 md:justify-between md:px-4 md:py-4">
         <div aria-description="Logo" className="flex items-center gap-8">
           <Link href="/" title="Ir para a página inicial">
             <Image
-              src="/ibe-logo.svg"
+              src={isHomePage ? '/ibe-logo-dark.svg' : '/ibe-logo.svg'}
               alt="Igreja Batista da Esperança"
               width={107}
               height={80}
@@ -65,7 +67,7 @@ export function Header() {
         </div>
         <Link href="/" title="Ir para a página inicial">
           {isHomePage ? (
-            <h1 className="textlg hidden font-bold text-white/90 lg:block xl:text-xl">
+            <h1 className="textlg hidden font-bold text-primary-800 lg:block xl:text-xl">
               Igreja Batista da Esperança
             </h1>
           ) : (
@@ -75,7 +77,7 @@ export function Header() {
           )}
         </Link>
         {/* <MobileMenu /> */}
-        <DesktopMenu />
+        <DesktopMenu tone={isHomePage ? 'light' : 'dark'} />
       </div>
     </header>
   );

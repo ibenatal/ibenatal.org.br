@@ -1,32 +1,30 @@
-import AboutUS from '@/components/home/AboutUS';
-import FromBlog from '@/components/home/FromBlog';
-import { GetInTouch } from '@/components/home/GetInTouch';
-import LiveTransmissions from '@/components/home/LiveTransmissions';
 import NextEvents from '@/components/home/NextEvents';
-import OurMinistries from '@/components/home/OurMinistries';
-import { OurPastor } from '@/components/home/OurPastor';
-import OurPGMs from '@/components/home/OurPGMs';
-import { Riachuelo } from '@/components/home/Riachuelo';
-import { Separator } from '@/components/home/Separator';
-import WaysToContribute from '@/components/home/WaysToContribute';
+import AboutUsV2 from '@/components/home/v2/AboutUsV2';
+import { OurPastorV2, RiachueloV2 } from '@/components/home/v2/FeatureSection';
+import FromBlogV2 from '@/components/home/v2/FromBlogV2';
+import { GetInTouchV2 } from '@/components/home/v2/GetInTouchV2';
+import LiveTransmissionsV2 from '@/components/home/v2/LiveTransmissionsV2';
+import OurMinistriesV2 from '@/components/home/v2/OurMinistriesV2';
+import OurPGMsV2 from '@/components/home/v2/OurPGMsV2';
+import WaysToContributeV2 from '@/components/home/v2/WaysToContributeV2';
 import HomeCarousel from '@/components/HomeCarousel';
 import { homeSlides } from '@/data/carousel';
 
 export default function SitePage() {
+  // `home-v2` aplica o estilo novo dos títulos em `NextEvents`, que usa a tipografia compartilhada.
   return (
-    <main className="bg-neutral-100">
+    <main className="home-v2 bg-secondary-50">
       <HomeCarousel slides={homeSlides} />
-      <AboutUS />
-      <OurMinistries />
-      <OurPastor />
-      <GetInTouch />
-      <OurPGMs />
-      <Separator />
-      <FromBlog />
-      <Riachuelo />
+      <AboutUsV2 />
+      <OurMinistriesV2 />
+      <OurPastorV2 />
+      <GetInTouchV2 />
+      <OurPGMsV2 />
+      <FromBlogV2 />
+      <RiachueloV2 />
       <NextEvents />
-      <LiveTransmissions />
-      <WaysToContribute />
+      <LiveTransmissionsV2 />
+      <WaysToContributeV2 />
     </main>
   );
 }
