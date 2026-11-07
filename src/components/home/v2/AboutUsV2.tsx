@@ -67,7 +67,7 @@ export default function AboutUsV2() {
           <div className="reveal flex flex-col gap-6">
             <Eyebrow className="text-quaternary-500">Seja bem-vindo</Eyebrow>
             <h2 className="font-bold text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
-              Venha conhecer a <span className="text-quaternary-500">IBE</span>
+              Venha conhecer a <span className="text-quaternary-500">IBENATAL</span>
             </h2>
             <p className="max-w-xl text-lg text-primary-800/75 leading-relaxed sm:text-xl">
               Estamos de braços abertos para receber você e sua família. Venha fazer parte da nossa

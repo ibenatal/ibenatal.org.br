@@ -117,7 +117,7 @@ export function OurPastorV2() {
       eyebrow="Liderança"
       title="Perfil"
       accent="pastoral"
-      description="Conheça o pastor da IBE Natal."
+      description="Conheça o pastor da IBENATAL."
       role="Pastor da IBE Natal"
       name="Rev. Celso Adriano da Silva"
       paragraphs={[
