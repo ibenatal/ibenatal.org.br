@@ -23,7 +23,7 @@ export function MobileMenu() {
           <RoundMenuIcon className="h-7 w-7 text-white" />
         </button>
       </DrawerTrigger>
-      <DrawerContent className="!border-l-0 bg-[#696D5F] text-white">
+      <DrawerContent className="!border-l-0 bg-primary text-white">
         <DrawerHeader>
           <DrawerTitle className="font-bold text-black/50 text-xl">Menu</DrawerTitle>
           <DrawerClose
