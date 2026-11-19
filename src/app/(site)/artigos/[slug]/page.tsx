@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
-import { IBM_Plex_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AuthorCard } from '@/components/artigo/AuthorCard';
@@ -13,20 +12,11 @@ import { formatArticleDate } from '@/utils/datetime';
 import { getPost } from '../get-post';
 import { getSlugs } from '../get-slugs';
 
-// Fonte do corpo do artigo, a mesma do davidcosta.dev. Carregada só aqui, não no site todo.
-const articleFont = IBM_Plex_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['400', '500', '700'],
-  style: ['normal', 'italic'],
-});
-
 // O MDX também é usado em Sobre nós, Perfil pastoral e PIB Riachuelo, então a tipografia
 // do artigo fica aqui no container, e não em mdx-components.tsx. Os seletores [&_p] têm
 // prioridade sobre os tamanhos que mdx-components.tsx define, e o texto fica em 20px
-// também no mobile.
+// também no mobile. A fonte é a Roboto do site, herdada do body.
 const articleBodyClassName = [
-  articleFont.className,
   'mx-auto flex max-w-3xl flex-col gap-[0.8rem] lg:gap-[1.6rem]',
   '[&_li]:text-xl [&_li]:text-neutral-700',
   '[&_p]:text-xl [&_p]:leading-relaxed [&_p]:text-neutral-700',
@@ -160,7 +150,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 </Heading>
               </Link>
 
-              <div className="flex flex-wrap items-center gap-2 text-gray-600 text-xs sm:gap-4 sm:text-sm">
+              <div className="flex flex-wrap items-center gap-2 font-heading font-semibold text-primary-800/60 text-xs uppercase tracking-[0.15em] sm:gap-4 sm:text-sm">
                 <div className="flex items-center gap-2">
                   <span>Por {post.author.name}</span>
                 </div>
