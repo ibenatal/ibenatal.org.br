@@ -6,6 +6,8 @@ import { SectionContainer } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { LinkUI } from '@/components/ui/link-ui';
 import { email, locationInfo, whatsapp } from '@/data/contacts';
+import { getBlurDataURL } from '@/lib/blur-placeholder';
+import { blurPlaceholder } from '@/lib/image-placeholder';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -13,14 +15,20 @@ export const metadata: Metadata = {
   description: 'Contatos da IBE - Igreja Batista da Esperança',
 };
 
+const HEADER_IMAGE = '/images/contatos/contato-header.png';
+
 export default async function ContactsPage() {
+  const headerBlurDataURL = await getBlurDataURL(HEADER_IMAGE);
+
   return (
     <main className="relative bg-neutral-100">
-      <div className="absolute top-0 left-0 z-0 h-[300px] w-full bg-blue-500 lg:h-[500px]">
+      <div className="absolute top-0 left-0 z-0 h-[300px] w-full bg-primary-900 lg:h-[500px]">
         <Image
-          src="/images/contatos/contato-header.png"
+          src={HEADER_IMAGE}
+          {...blurPlaceholder(headerBlurDataURL)}
           alt="Contatos"
           fill
+          preload
           sizes="100vw"
           className="object-cover"
         />

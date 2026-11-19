@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import type { Post, PostMetadata } from '@/@types/posts';
+import { getBlurDataURL } from '@/lib/blur-placeholder';
 import { getReadTime } from '@/utils/readtime';
 
 export async function getPost(slug: string): Promise<Post | null> {
@@ -20,6 +21,9 @@ export async function getPost(slug: string): Promise<Post | null> {
 
     return {
       ...post.metadata,
+      imageBlurDataURL: await getBlurDataURL(
+        post.metadata.image || '/images/articles/article-default.png',
+      ),
       file: filePath,
       slug,
       readTime: getReadTime(content),

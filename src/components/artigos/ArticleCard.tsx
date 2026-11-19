@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Post } from '@/@types/posts';
+import { blurPlaceholder } from '@/lib/image-placeholder';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 
 export function ArticleCard({ post }: { post: Post }) {
@@ -20,6 +21,7 @@ export function ArticleCard({ post }: { post: Post }) {
         <div className="relative block aspect-video w-full overflow-hidden rounded-lg">
           <Image
             src={post.image || '/images/articles/article-default.png'}
+            {...blurPlaceholder(post.imageBlurDataURL)}
             alt={`Capa do artigo: ${post.title}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"

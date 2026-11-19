@@ -18,6 +18,8 @@ export type PostMetadata = {
 
 export type Post = {
   image?: string;
+  /** Versão borrada da capa (data URL), mostrada enquanto a imagem carrega */
+  imageBlurDataURL?: string | undefined;
   slug: string;
   title: string;
   date: string;

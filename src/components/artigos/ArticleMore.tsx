@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAllPosts } from '@/app/(site)/artigos/get-posts';
+import { blurPlaceholder } from '@/lib/image-placeholder';
 
 export async function ArticleMore({ slug }: { slug: string }) {
   const allPosts = await getAllPosts();
@@ -27,6 +28,7 @@ export async function ArticleMore({ slug }: { slug: string }) {
               <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md">
                 <Image
                   src={previousPost.image || '/images/articles/article-default.png'}
+                  {...blurPlaceholder(previousPost.imageBlurDataURL)}
                   alt={`Capa do artigo: ${previousPost.title}`}
                   fill
                   sizes="96px"
@@ -56,6 +58,7 @@ export async function ArticleMore({ slug }: { slug: string }) {
               <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md">
                 <Image
                   src={nextPost.image || '/images/articles/article-default.png'}
+                  {...blurPlaceholder(nextPost.imageBlurDataURL)}
                   alt={`Capa do artigo: ${nextPost.title}`}
                   fill
                   sizes="96px"

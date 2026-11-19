@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { Post } from '@/@types/posts';
 import { getPosts } from '@/app/(site)/artigos/get-posts';
+import { blurPlaceholder } from '@/lib/image-placeholder';
 import { BlogPostSchema } from '@/lib/schema';
 import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
@@ -65,6 +66,7 @@ function ArticleCard({ post, className }: { post: Post; className?: string }) {
       >
         <Image
           src={image}
+          {...blurPlaceholder(post.imageBlurDataURL)}
           alt={post.title}
           fill
           sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"

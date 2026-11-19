@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Post } from '@/@types/posts';
+import { blurPlaceholder } from '@/lib/image-placeholder';
 import { cn } from '@/lib/utils';
 import { dateIsoToDDMMYYYY } from '@/utils/datetime';
 
@@ -25,6 +26,7 @@ export function FeaturedArticle({ post, className }: FeaturedArticleProperties) 
         <div className="relative block aspect-video w-full overflow-hidden">
           <Image
             src={post.image || '/images/articles/article-default.png'}
+            {...blurPlaceholder(post.imageBlurDataURL)}
             alt={post.image ? post.title : 'Imagem padrão de artigo'}
             fill
             sizes="(max-width: 1024px) 100vw, 960px"

@@ -7,6 +7,7 @@ import { ArticleMore } from '@/components/artigos/ArticleMore';
 import { SectionContainer } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
+import { blurPlaceholder } from '@/lib/image-placeholder';
 import { BlogPostSchema } from '@/lib/schema';
 import { formatArticleDate } from '@/utils/datetime';
 import { getPost } from '../get-post';
@@ -120,8 +121,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="relative aspect-video">
           <Image
             src={post.image || '/images/articles/article-default.png'}
+            {...blurPlaceholder(post.imageBlurDataURL)}
             alt={post.title}
             fill
+            preload
             className="object-cover sm:rounded-lg"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
           />

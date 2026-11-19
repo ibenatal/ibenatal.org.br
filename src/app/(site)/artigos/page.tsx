@@ -4,6 +4,8 @@ import { FeaturedArticle } from '@/components/artigos/FeaturedArticle';
 import { Widget } from '@/components/artigos/Widget';
 import { SectionContainer } from '@/components/layout/Container';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
+import { getBlurDataURL } from '@/lib/blur-placeholder';
+import { blurPlaceholder } from '@/lib/image-placeholder';
 import { isMobileDevice } from '@/utils/deviceDetection';
 import { getPosts } from './get-posts';
 
@@ -21,7 +23,7 @@ export default async function BlogPage() {
   if (!posts || posts.length === 0) {
     return (
       <main className="relative bg-neutral-100">
-        <header className="absolute top-0 left-0 z-0 h-[500px] w-full bg-blue-500">
+        <header className="absolute top-0 left-0 z-0 h-[500px] w-full bg-primary-900">
           <Image src="/images/articles/blog-header.png" alt="Blog" fill className="object-cover" />
           <div className="absolute top-0 left-0 h-full w-full bg-black/70"></div>
         </header>
@@ -36,6 +38,8 @@ export default async function BlogPage() {
     );
   }
 
+  const headerImage = '/images/articles/articles-header.jpg';
+  const headerBlurDataURL = await getBlurDataURL(headerImage);
   const featuredPost = posts[0];
   const remainingPosts = posts.slice(1);
 
@@ -43,11 +47,14 @@ export default async function BlogPage() {
 
   return (
     <main className="relative bg-neutral-100">
-      <header className="absolute top-0 left-0 z-0 h-[500px] w-full bg-blue-500">
+      <header className="absolute top-0 left-0 z-0 h-[500px] w-full bg-primary-900">
         <Image
-          src="/images/articles/articles-header.jpg"
+          src={headerImage}
+          {...blurPlaceholder(headerBlurDataURL)}
           alt="Blog"
           fill
+          preload
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute top-0 left-0 h-full w-full bg-black/70"></div>
