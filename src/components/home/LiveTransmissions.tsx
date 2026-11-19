@@ -159,6 +159,12 @@ export const MOCK_TRANSMISSIONS: LiveTransmission[] = [
     videoId: 'U7FM_4lcAv0',
     publishedAt: '2026-11-01',
   },
+  {
+    id: '23',
+    title: 'Culto de Celebração',
+    videoId: 'W18dIWhoG1Y',
+    publishedAt: '2026-11-15',
+  },
 ];
 
 export const YOUTUBE_CHANNEL_STREAMS = 'https://www.youtube.com/c/@Ibenatal/streams';
