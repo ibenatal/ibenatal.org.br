@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import { IBM_Plex_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AuthorCard } from '@/components/artigo/AuthorCard';
@@ -11,6 +12,26 @@ import { BlogPostSchema } from '@/lib/schema';
 import { formatArticleDate } from '@/utils/datetime';
 import { getPost } from '../get-post';
 import { getSlugs } from '../get-slugs';
+
+// Fonte do corpo do artigo, a mesma do davidcosta.dev. Carregada só aqui, não no site todo.
+const articleFont = IBM_Plex_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '500', '700'],
+  style: ['normal', 'italic'],
+});
+
+// O MDX também é usado em Sobre nós, Perfil pastoral e PIB Riachuelo, então a tipografia
+// do artigo fica aqui no container, e não em mdx-components.tsx. Os seletores [&_p] têm
+// prioridade sobre os tamanhos que mdx-components.tsx define, e o texto fica em 20px
+// também no mobile.
+const articleBodyClassName = [
+  articleFont.className,
+  'mx-auto flex max-w-3xl flex-col gap-[0.8rem] lg:gap-[1.6rem]',
+  '[&_li]:text-xl [&_li]:text-neutral-700',
+  '[&_p]:text-xl [&_p]:leading-relaxed [&_p]:text-neutral-700',
+  '[&_strong]:font-bold [&_strong]:text-neutral-950',
+].join(' ');
 
 export async function generateMetadata({
   params,
@@ -146,7 +167,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <span>•</span>
                 <time dateTime={post.date}>{formattedDate}</time>
                 <span>•</span>
-                <span>{post.readTime} min de leitura</span>
+                <span>{post.readTime} de leitura</span>
               </div>
 
               {post.tags && post.tags.length > 0 && (
@@ -163,7 +184,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               )}
             </header>
 
-            <div className="prose prose-lg prose-primary mx-auto flex max-w-3xl flex-col gap-6 text-lg">
+            <div className={articleBodyClassName}>
               <Content />
             </div>
 
